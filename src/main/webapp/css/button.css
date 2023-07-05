@@ -1,0 +1,59 @@
+ /* button */
+
+ .btn {
+     --bs-btn-border-width: none;
+     height: 30px;
+     font-size: 14px;
+     font-weight: 600;
+     color: #606060;
+ }
+
+ button.btn-primary {
+     height: 30px;
+
+     background-color: rgba(183, 221, 229, 0.90);
+ }
+
+ button.btn-primary:hover {
+     color: var(--bs-btn-hover-color);
+     background-color: #6DC2D2;
+     border-color: none;
+ }
+
+ .btn-check:checked+.btn,
+ .btn.active,
+ .btn.show,
+ .btn:first-child:active,
+ :not(.btn-check)+.btn:active {
+     color: var(--bs-btn-active-color);
+     background-color: #FDC761;
+     border-color: none;
+ }
+
+ button.btn-XXXL {
+     width: 240px;
+ }
+
+ button.btn-XXL {
+     width: 210px;
+ }
+
+ button.btn-XL {
+     width: 180px;
+ }
+
+ button.btn-L {
+     width: 150px;
+ }
+
+ button.btn-M {
+     width: 120px;
+ }
+
+ button.btn-S {
+     width: 90px;
+ }
+
+ button.btn-XS {
+     width: 60px;
+ }
