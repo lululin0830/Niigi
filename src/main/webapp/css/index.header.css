@@ -129,8 +129,8 @@ button.header-search-submit {
     color: #fff;
     background: #6DC2D2;
     border-radius: 50%;
-    padding: 0rem 0.7rem;
-    margin-left: 20px;
+    padding: 0 8px;
+    margin-left: 2rem;
     visibility: hidden;
 }
 
