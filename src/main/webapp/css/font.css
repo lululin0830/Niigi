@@ -2,56 +2,52 @@
     font-family: monospace, Helvetica, sans-serif, serif;
 }
 
-:root {
-    font-size: 10px;
-}
-
 h1 {
     font-style: normal;
     font-weight: 700;
-    font-size: 3.6rem;
+    font-size: 36px;
     color: #FDC761;
 }
 
 h2 {
     font-style: normal;
     font-weight: 600;
-    font-size: 2.8rem;
+    font-size: 28px;
     color: #4C4C4C;
 }
 
 h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 2.4rem;
+    font-size: 24px;
     color: #4C4C4C;
 }
 
 h4 {
     font-style: normal;
     font-weight: 550;
-    font-size: 2rem;
+    font-size: 20px;
     color: #606060;
 }
 
 h5 {
     font-style: normal;
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 18px;
     color: #606060;
 }
 
 h6 {
     font-style: normal;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 16px;
     color: #606060;
 }
 
 p {
     font-style: normal;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 16px;
     color: #606060;
 }
 

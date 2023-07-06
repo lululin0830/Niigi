@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #F7F7F7;
+}
+
 * {
     font-family: monospace, Helvetica, sans-serif, serif;
     box-sizing: border-box;
@@ -5,61 +12,73 @@
 
 input::placeholder {
     color: #958F86;
+
 }
 
-/* ----------- Header ----------- */
 header.header {
-    height: 100px;
+    width: 100%;
+    height: 150px;
     margin: 0;
     background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
-.header-logo img.logo {
-    margin: auto;
+.header_logo img.logo {
+    position: absolute;
+    width: 146px;
+    height: 78px;
+    left: 2%;
+    top: 22px;
+    margin-right: 1%;
 }
 
-.header-search {
+.header_search_form {
     display: flex;
     justify-content: center;
     align-items: center;
-    vertical-align: middle;
+    position: absolute;
+    width: 56%;
     height: 45px;
+    left: 17%;
+    top: 45px;
     background: rgba(253, 199, 97, 0.15);
     border-radius: 9px;
     border: 0;
-    margin: 0 20px;
 }
 
-.header-search-input {
+.header_search_input {
     box-sizing: border-box;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    /* width: 90%; */
+    width: 90%;
     height: 100%;
     border: none;
     color: #606060;
     background-color: rgba(0, 0, 0, 0);
 }
 
-.header-search-input:focus {
+.header_search_input:focus {
     box-sizing: border-box;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     border: none;
     outline: none;
-    padding-left: 5%;
+    padding: 5px;
 }
 
-.Search-hot {
+.Search_hot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     position: absolute;
-    top: 45%;
-    right: 32%;
-    margin-right: 9%;
+    width: 30%;
+    height: 24px;
+    right: 10%;
+    top: 30%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
 }
 
@@ -71,23 +90,31 @@ header.header {
     line-height: 18px;
     white-space: nowrap;
     color: rgba(96, 96, 96, 0.8);
-    margin-right: 5px;
 }
 
-button.header-search-submit {
-    border-width: 0px;
+.header_search_submit {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 90%;
+    top: 20%;
+    border: 0;
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
 }
-
 
 .fixed-nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    width: 22%;
+    height: 40px;
+    left: 76%;
+    top: 47px;
 }
 
-.fixed-nav-list {
+.fixed-nav_list {
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
@@ -96,6 +123,7 @@ button.header-search-submit {
 
 
 .btn_SCM-Center {
+
     width: 90px;
     height: 30px;
     font-style: normal;
@@ -110,18 +138,20 @@ button.header-search-submit {
 
 
 .header_icon {
-    position: relative;
     font-size: 0;
     box-sizing: border-box;
+    width: 40px;
+
 }
 
-.fixed-nav-list span.count {
+.fixed-nav_list span.count {
     position: absolute;
-    top: -5px;
+    top: 0%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 21px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -.11em;
@@ -129,24 +159,33 @@ button.header-search-submit {
     color: #fff;
     background: #6DC2D2;
     border-radius: 50%;
-    padding: 0rem 0.7rem;
+    padding: 0 .3rem 0 .2rem;
     margin-left: 20px;
-    visibility: hidden;
+    /* display: none; */
 }
 
-.fixed-nav-list span.-active {
-    visibility: visible;
-}
-
-.header-top {
+.header_top {
+    padding-bottom: 8px;
+    padding-top: 20px;
     position: relative;
-    height: 100px;
-    align-items: center;
+    display: flex;
+    align-content: flex-start;
+    height: 106px;
+    flex-wrap: wrap;
 }
 
-/* ------------ Nav ------------ */
+.wrap-expand {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 1000px;
+    width: 100%;
+    padding: 0;
+    background-color: none;
+}
 
-ul.main-nav {
+
+ul.main_nav {
     font-size: 0;
     display: flex;
     flex-direction: row;
@@ -159,9 +198,10 @@ ul.main-nav {
     height: 24px;
     margin-bottom: 1rem;
     flex-wrap: nowrap;
+    padding-top: 14px;
 }
 
-.navigation-nav-title {
+.navigation_nav-title {
     -webkit-text-size-adjust: 100%;
     word-wrap: break-word;
     font-size: 0;
@@ -209,7 +249,7 @@ ul.main-nav {
     cursor: pointer;
 }
 
-.main-navigation {
+.nav-main {
     position: relative;
     display: flex;
     align-content: flex-start;
@@ -217,5 +257,4 @@ ul.main-nav {
     align-items: center;
     height: 44px;
     flex-wrap: wrap;
-    background-color: white;
 }
