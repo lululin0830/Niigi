@@ -12,14 +12,14 @@ import java.text.*;
 public class MainOrderDAOImpl implements MainOrderDAO {
 
 	public static String driver = "com.mysql.cj.jdbc.Driver";
-	public static String url = "jdbc:mysql://localhost:3306/db01?serverTimezone=Asia/Taipei";
+	public static String url = "jdbc:mysql://localhost:3306/GP?serverTimezone=Asia/Taipei";
 	public static String user = "root";
 	public static String password = "password";
 
 	private static final String INSERT_STMT = """
 
 			
-			insert into `Main_Order` (
+			insert into `MainOrder` (
 				`orderId`,
 				`memberId`,
 				`totalAmount`,
@@ -36,16 +36,16 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 	private static final String GET_ALL_STMT = """
 
 			
-			select * from Main_Order order by orderId ; """;
+			select * from MainOrder order by orderId ; """;
 
 	private static final String GET_ONE_STMT = """
 
 			
-			select * from Main_Order where orderId = ? ; """;
+			select * from MainOrder where orderId = ? ; """;
 
 	private static final String UPDATE_PAYMENT_TIME_BILLING_TIME = """
 
-			update Main_Order
+			update MainOrder
 			set
 				paymentTime = ?,
 				billDate = ?
@@ -53,7 +53,7 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 
 	private static final String UPDATE_PAYMENT_STATU_order_status = """
 
-			update Main_Order
+			update MainOrder
 			set
 				paymentStatus = ?,
 				orderStatus = ?
@@ -62,15 +62,15 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 			""";
 	private static final String UPDATE_order_status = """
 
-			update Main_Order
+			update MainOrder
 			set orderStatus = ?
-			where order_Id = ? ;
+			where orderId = ? ;
 
 			""";
 
 	private static final String UPDATE_BILL_STATU = """
 
-			update Main_Order
+			update MainOrder
 			set billStatus = ?
 			where orderId = ? ;
 
@@ -78,7 +78,7 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 
 	private static final String DELETE = """
 
-			delete from Main_Order where orderId = ? ;
+			delete from MainOrder where orderId = ? ;
 
 			""";
 
