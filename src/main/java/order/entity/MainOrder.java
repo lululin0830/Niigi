@@ -12,194 +12,194 @@ public class MainOrder implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 2442580178437547429L;
 
-	private String order_id;
-	private String member_id;
-	private Timestamp order_Create_Time;
-	private String order_status;
-	private Integer total_amount;
-	private Integer total_gross_profit;
-	private Integer point_discount;
-	private Integer coupon_discount;
-	private Integer paid_amount;
-	private String payment_type;
-	private String payment_status;
-	private Timestamp payment_time;
-	private String bill_status;
-	private Date bill_date;
-	private String shipment_type;
+	private String orderId;
+	private String memberId;
+	private Timestamp orderCreateTime;
+	private String orderStatus;
+	private Integer totalAmount;
+	private Integer totalGrossProfit;
+	private Integer pointDiscount;
+	private Integer couponDiscount;
+	private Integer paidAmount;
+	private String paymentType;
+	private String paymentStatus;
+	private Timestamp paymentTime;
+	private String billStatus;
+	private Date billDate;
+	private String shipmentType;
 	private String recipient;
-	private String phone_num;
-	private String delivery_address;
+	private String phoneNum;
+	private String deliveryAddress;
 
 	public MainOrder() {
 
 	}
 
-	public MainOrder(String order_id, String member_id, Timestamp order_Create_Time,
-			String order_status, Integer total_amount, Integer total_gross_profit, Integer point_discount,
-			Integer coupon_discount, Integer paid_amount, String payment_type,
-			String payment_status, String bill_status, String shipment_type, String recipient,
-			String phone_num, String delivery_address) {
+	public MainOrder(String orderId, String memberId, Timestamp orderCreateTime,
+			String orderStatus, Integer totalAmount, Integer totalGrossProfit, Integer pointDiscount,
+			Integer couponDiscount, Integer paidAmount, String paymentType,
+			String paymentStatus, String billStatus, String shipmentType, String recipient,
+			String phoneNum, String deliveryAddress) {
 		super();
-		this.order_id = order_id;
-		this.member_id = member_id;
-		this.order_Create_Time = order_Create_Time;
-		this.order_status = order_status;
-		this.total_amount = total_amount;
-		this.total_gross_profit = total_gross_profit;
-		this.point_discount = point_discount;
-		this.coupon_discount = coupon_discount;
-		this.paid_amount = paid_amount;
-		this.payment_type = payment_type;
-		this.payment_status = payment_status;
-		this.bill_status = bill_status;
-		this.shipment_type = shipment_type;
+		this.orderId = orderId;
+		this.memberId = memberId;
+		this.orderCreateTime = orderCreateTime;
+		this.orderStatus = orderStatus;
+		this.totalAmount = totalAmount;
+		this.totalGrossProfit = totalGrossProfit;
+		this.pointDiscount = pointDiscount;
+		this.couponDiscount = couponDiscount;
+		this.paidAmount = paidAmount;
+		this.paymentType = paymentType;
+		this.paymentStatus = paymentStatus;
+		this.billStatus = billStatus;
+		this.shipmentType = shipmentType;
 		this.recipient = recipient;
-		this.phone_num = phone_num;
-		this.delivery_address = delivery_address;
+		this.phoneNum = phoneNum;
+		this.deliveryAddress = deliveryAddress;
 	}
 	
-	public MainOrder(String order_id, String member_id,
-			String order_status, Integer total_amount, Integer total_gross_profit, Integer point_discount,
-			Integer coupon_discount, Integer paid_amount, String payment_type,
-			String payment_status, String bill_status, String recipient,
-			String phone_num, String delivery_address) {
+	public MainOrder(String orderId, String memberId,
+			String orderStatus, Integer totalAmount, Integer totalGrossProfit, Integer pointDiscount,
+			Integer couponDiscount, Integer paidAmount, String paymentType,
+			String paymentStatus, String billStatus, String recipient,
+			String phoneNum, String deliveryAddress) {
 		super();
-		this.order_id = order_id;
-		this.member_id = member_id;
-		this.order_status = order_status;
-		this.total_amount = total_amount;
-		this.total_gross_profit = total_gross_profit;
-		this.point_discount = point_discount;
-		this.coupon_discount = coupon_discount;
-		this.paid_amount = paid_amount;
-		this.payment_type = payment_type;
-		this.payment_status = payment_status;
-		this.bill_status = bill_status;
+		this.orderId = orderId;
+		this.memberId = memberId;
+		this.orderStatus = orderStatus;
+		this.totalAmount = totalAmount;
+		this.totalGrossProfit = totalGrossProfit;
+		this.pointDiscount = pointDiscount;
+		this.couponDiscount = couponDiscount;
+		this.paidAmount = paidAmount;
+		this.paymentType = paymentType;
+		this.paymentStatus = paymentStatus;
+		this.billStatus = billStatus;
 		this.recipient = recipient;
-		this.phone_num = phone_num;
-		this.delivery_address = delivery_address;
+		this.phoneNum = phoneNum;
+		this.deliveryAddress = deliveryAddress;
 	}
 
 
-	public String getOrder_id() {
-		return order_id;
+	public String getOrderId() {
+		return orderId;
 	}
 
-	public void setOrder_id(String order_id) {
-		this.order_id = order_id;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
-	public String getMember_id() {
-		return member_id;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
-	public Timestamp getOrder_Create_Time() {
-		return order_Create_Time;
+	public Timestamp getOrderCreateTime() {
+		return orderCreateTime;
 	}
 
-	public void setOrder_Create_Time(Timestamp order_Create_Time) {
-		this.order_Create_Time = order_Create_Time;
+	public void setOrderCreateTime(Timestamp orderCreateTime) {
+		this.orderCreateTime = orderCreateTime;
 	}
 
-	public String getOrder_status() {
-		return order_status;
+	public String getOrderStatus() {
+		return orderStatus;
 	}
 
-	public void setOrder_status(String order_status) {
-		this.order_status = order_status;
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 
-	public Integer getTotal_amount() {
-		return total_amount;
+	public Integer getTotalAmount() {
+		return totalAmount;
 	}
 
-	public void setTotal_amount(Integer total_amount) {
-		this.total_amount = total_amount;
+	public void setTotalAmount(Integer totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
-	public Integer getTotal_gross_profit() {
-		return total_gross_profit;
+	public Integer getTotalGrossProfit() {
+		return totalGrossProfit;
 	}
 
-	public void setTotal_gross_profit(Integer total_gross_profit) {
-		this.total_gross_profit = total_gross_profit;
+	public void setTotalGrossProfit(Integer totalGrossProfit) {
+		this.totalGrossProfit = totalGrossProfit;
 	}
 
-	public Integer getPoint_discount() {
-		return point_discount;
+	public Integer getPointDiscount() {
+		return pointDiscount;
 	}
 
-	public void setPoint_discount(Integer point_discount) {
-		this.point_discount = point_discount;
+	public void setPointDiscount(Integer pointDiscount) {
+		this.pointDiscount = pointDiscount;
 	}
 
-	public Integer getCoupon_discount() {
-		return coupon_discount;
+	public Integer getCouponDiscount() {
+		return couponDiscount;
 	}
 
-	public void setCoupon_discount(Integer coupon_discount) {
-		this.coupon_discount = coupon_discount;
+	public void setCouponDiscount(Integer couponDiscount) {
+		this.couponDiscount = couponDiscount;
 	}
 
-	public Integer getPaid_amount() {
-		return paid_amount;
+	public Integer getPaidAmount() {
+		return paidAmount;
 	}
 
-	public void setPaid_amount(Integer paid_amount) {
-		this.paid_amount = paid_amount;
+	public void setPaidAmount(Integer paidAmount) {
+		this.paidAmount = paidAmount;
 	}
 
-	public String getPayment_type() {
-		return payment_type;
+	public String getPaymentType() {
+		return paymentType;
 	}
 
-	public void setPayment_type(String payment_type) {
-		this.payment_type = payment_type;
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
 	}
 
-	public String getPayment_status() {
-		return payment_status;
+	public String getPaymentStatus() {
+		return paymentStatus;
 	}
 
-	public void setPayment_status(String payment_status) {
-		this.payment_status = payment_status;
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
 	}
 
-	public Timestamp getPayment_time() {
-		return payment_time;
+	public Timestamp getPaymentTime() {
+		return paymentTime;
 	}
 
-	public void setPayment_time(Timestamp payment_time) {
-		this.payment_time = payment_time;
+	public void setPaymentTime(Timestamp paymentTime) {
+		this.paymentTime = paymentTime;
 	}
 
-	public String getBill_status() {
-		return bill_status;
+	public String getBillStatus() {
+		return billStatus;
 	}
 
-	public void setBill_status(String bill_status) {
-		this.bill_status = bill_status;
+	public void setBillStatus(String billStatus) {
+		this.billStatus = billStatus;
 	}
 
-	public Date getBill_date() {
-		return bill_date;
+	public Date getBillDate() {
+		return billDate;
 	}
 
-	public void setBill_date(Date bill_date) {
-		this.bill_date = bill_date;
+	public void setBillDate(Date billDate) {
+		this.billDate = billDate;
 	}
 
-	public String getShipment_type() {
-		return shipment_type;
+	public String getShipmentType() {
+		return shipmentType;
 	}
 
-	public void setShipment_type(String shipment_type) {
-		this.shipment_type = shipment_type;
+	public void setShipmentType(String shipmentType) {
+		this.shipmentType = shipmentType;
 	}
 
 	public String getRecipient() {
@@ -210,26 +210,26 @@ public class MainOrder implements java.io.Serializable {
 		this.recipient = recipient;
 	}
 
-	public String getPhone_num() {
-		return phone_num;
+	public String getPhoneNum() {
+		return phoneNum;
 	}
 
-	public void setPhone_num(String phone_num) {
-		this.phone_num = phone_num;
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
 	}
 
-	public String getDelivery_address() {
-		return delivery_address;
+	public String getDeliveryAddress() {
+		return deliveryAddress;
 	}
 
-	public void setDelivery_address(String delivery_address) {
-		this.delivery_address = delivery_address;
+	public void setDeliveryAddress(String deliveryAddress) {
+		this.deliveryAddress = deliveryAddress;
 	}
 
 	@Override
 	public int hashCode() {
 
-		return order_id.hashCode();
+		return orderId.hashCode();
 
 	}
 
@@ -242,18 +242,18 @@ public class MainOrder implements java.io.Serializable {
 			return false;
 		}
 		MainOrder other = (MainOrder) obj;
-		return Objects.equals(order_id, other.order_id);
+		return Objects.equals(orderId, other.orderId);
 	}
 
 	@Override
 	public String toString() {
-		String print = "order_id:" + order_id + "member_id:" + member_id + "order_Create_Time:" + order_Create_Time
-				+ "order_status:" + order_status + "total_amount:" + total_amount + "total_gross_profit:"
-				+ total_gross_profit + "point_discount:" + point_discount + "coupon_discount:" + coupon_discount
-				+ "paid_amount:" + paid_amount + "payment_type:" + payment_type + "payment_status:" + payment_status
-				+ "payment_time:" + payment_time + "bill_status:" + bill_status + "bill_date:" + bill_date
-				+ "shipment_type:" + shipment_type + "recipient:" + recipient + "phone_num:" + phone_num
-				+ "delivery_address:" + delivery_address;
+		String print = "orderId:" + orderId + "memberId:" + memberId + "orderCreateTime:" + orderCreateTime
+				+ "orderStatus:" + orderStatus + "totalAmount:" + totalAmount + "totalGrossProfit:"
+				+ totalGrossProfit + "pointDiscount:" + pointDiscount + "couponDiscount:" + couponDiscount
+				+ "paidAmount:" + paidAmount + "paymentType:" + paymentType + "paymentStatus:" + paymentStatus
+				+ "paymentTime:" + paymentTime + "billStatus:" + billStatus + "billDate:" + billDate
+				+ "shipmentType:" + shipmentType + "recipient:" + recipient + "phoneNum:" + phoneNum
+				+ "deliveryAddress:" + deliveryAddress;
 		return print;
 
 	}

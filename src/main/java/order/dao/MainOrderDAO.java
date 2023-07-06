@@ -3,24 +3,26 @@ package order.dao;
 import java.util.List;
 import java.util.Map;
 
+import order.entity.MainOrder;
+
 public interface MainOrderDAO {
 
-	public void insert(MainOrderDAO main_orderVO);
+	public void insert(MainOrder MainOrder);
 
-	public void updatePayment_time(MainOrderDAO main_orderVO);
+	public void updatePaymentTime(MainOrder MainOrder);
 	
-	public void updatePayment_status(MainOrderDAO main_orderVO);
+	public void updatePaymentStatus(MainOrder MainOrder);
 	
-	public void updateOrder_status(MainOrderDAO main_orderVO);
+	public void updateOrderStatus(MainOrder MainOrder);
 	
-	public void updateBill_status(MainOrderDAO main_orderVO);
+	public void updateBillStatus(MainOrder MainOrder);
 
-	public void delete(String order_id);
+	public void delete(String orderId);
 
-	public MainOrderDAO getByPrimaryKey(String order_id);
+	public MainOrder getByPrimaryKey(String orderId);
 
-	public List<MainOrderDAO> getAll();
+	public List<MainOrder> getAll();
 
-	public List<MainOrderDAO> getAll(Map<String, String[]> map);
+	public List<MainOrder> getAll(Map<String, String[]> map);
 
 }
