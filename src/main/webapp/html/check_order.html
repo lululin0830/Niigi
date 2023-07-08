@@ -30,18 +30,19 @@
         }
 
         aside.member_aside {
-            width: 195px;
+            /* width: 195px; */
             height: 900px;
             display: inline-block;
             vertical-align: top;
-            margin-right: 25px;
+            /* margin-right: 25px; */
         }
 
         main.member_check_order {
             /* background-color: #EEEEEE; */
-            width: 980px;
+            /* width: 980px; */
             display: inline-block;
             vertical-align: top;
+            padding-left: 25px;
         }
 
         div.main_content_header>img,
@@ -172,7 +173,7 @@
             margin: 15px auto auto auto;
         }
 
-        .navs-top-home_top>.col-xl-2 {
+        .navs-top-home_top>.col-sm-2 {
             vertical-align: top;
             margin-top: 24px;
         }
@@ -188,10 +189,6 @@
             vertical-align: bottom;
             padding: 0;
             width: fit-content;
-        }
-
-        .row {
-            align-items: flex-end;
         }
 
         tbody,
@@ -231,13 +228,19 @@
             border-top: 0px;
         }
 
-        ul.order_list {
+        ul.order-list {
             list-style: none;
-            padding: 0 10px;
+            padding: 0.5rem;
+        }
+
+        ul.sub-order-list {
+            list-style: none;
+            padding: 0 1.5rem;
+            background-color: none;
         }
 
 
-        .sub_order>div {
+        .sub-order>div {
             display: inline-block;
             vertical-align: middle;
         }
@@ -249,19 +252,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 25px;
+            /* margin-right: 1.5rem; */
         }
 
         img.order_item_priview {
             height: 100%;
         }
 
-        div.navs-top-home_content_btn {
-            width: fit-content;
-            margin: auto 10px auto auto;
+        div.navs-top-home-content {
+            background-color: white;
         }
 
-        div.navs-top-home_content hr {
+        div.navs-top-home-content-btn {
+            width: fit-content;
+            position: relative;
+            right: 0;
+        }
+
+        div.navs-top-home-content hr {
             border: 1px solid #EEEEEE;
             margin: 18px 0;
             opacity: 1;
@@ -271,61 +279,66 @@
 </head>
 
 <body>
-    <!-- --------------------------------以下是Header 勿動！！！！-------------------------------- -->
+    <!-- -------------------------------- 以下是Header 勿動！！！！-------------------------------- -->
     <header id="main-header" class="header">
 
-        <div class="wrap-expand">
+        <div class="container-sm">
 
-            <div class="header_top">
+            <div class="header-top row">
 
-                <a class="header_logo" href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
-                <form action="" method="get" class="header_search_form">
-                    <input type="text" name="search" class="header_search_input" placeholder="Search" maxlength="50"
-                        value="">
-                    <div class="Search_hot">
-                        <a class="trend_link" href="">熱搜關鍵字</a>
-                        <a class="trend_link" href="">熱搜關鍵字</a>
-                        <a class="trend_link" href="">熱搜關鍵字</a>
+                <div class="col-sm-2">
+                    <a class="header-logo" href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
+                </div>
+
+                <div class="col-sm-6">
+                    <form action="" method="get" class="header-search row">
+                        <input type="text" name="search" class="header-search-input col-sm-10" placeholder="Search"
+                            maxlength="50" value="">
+
+                        <button type="submit" class="header-search-submit col-sm-1"><img
+                                src="../image/search.svg"></button>
+                    </form>
+
+                    <div class="Search-hot ">
+                        <a class="trend_link" id="trend_link1" href="">熱搜關鍵字1</a>
+                        <a class="trend_link" id="trend_link2" href="">熱搜關鍵字</a>
                     </div>
 
-                    <button type="submit" class="header_search_submit"><img src="../image/search.svg"></button>
-                </form>
+                </div>
 
-                <nav class="fixed-nav">
-                    <div class="fixed-nav_list login">
-                        <a href="" class="SCM-Center">
+                <nav class="fixed-nav col-sm-4">
+
+                    <div class="fixed-nav-list login row">
+                        <a href="" class="SCM-Center col">
                             <div class="SCM_icon">
-                                <!-- <img src="" alt=""> -->
                                 <button class="btn_SCM-Center">商家中心</button>
                             </div>
                         </a>
 
-                        <a href="" class="User-Center">
+                        <a href="" class="User-Center col">
                             <div class="User_icon">
                                 <img src="../image/Profile.svg" alt="">
-
                             </div>
                         </a>
 
-                        <a href="" class="Favorite">
+                        <a href="" class="Favorite col">
                             <div class="header_icon">
                                 <img src="../image/heart.svg" alt="">
-                                <span class="count">0</span>
+                                <span class="count -active">0</span>
                             </div>
                         </a>
 
-                        <a href="" class="Shopping-Cart">
+                        <a href="" class="Shopping-Cart col">
                             <div class="header_icon">
                                 <img src="../image/Buy.svg" alt="">
-                                <span class="count">0</span>
+                                <span class="count -active">0</span>
                             </div>
                         </a>
 
-
-                        <a href="" class="Notification">
+                        <a href="" class="Notification col">
                             <div class="header_icon">
                                 <img src="../image/Notification.svg" alt="">
-                                <span class="count">0</span>
+                                <span class="count -active">0</span>
                             </div>
                         </a>
 
@@ -335,237 +348,236 @@
             </div>
 
         </div>
-        <div class="wrap-expand">
-            <nav id="main-navigation" class="main-navigation">
 
-                <div class="nav-main">
-                    <ul class="main_nav"> <!--主選單-->
-                        <li
-                            class="navigation_nav-title navigation_nav-title--highlight navigation_nav-title--hover-hide navigation_nav-title--new-dot">
-                            <div class="navigation_title navigation_title--bold navigation_title--salmon">
-                                <span class="navigation_title-inner">主題活動</span>
-                            </div>
+    </header>
 
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
+    <!-- -------------------------------- 以下是商品分類導覽列 -------------------------------- -->
+    <nav id="main-navigation" class="main-navigation">
+        <ul class="main-nav"> <!--主選單-->
+            <li
+                class="navigation-nav-title navigation_nav-title--highlight navigation_nav-title--hover-hide navigation_nav-title--new-dot">
+                <div class="navigation_title navigation_title--bold navigation_title--salmon">
+                    <span class="navigation_title-inner">主題活動</span>
+                </div>
 
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
 
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">3C周邊</span>
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
                             </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
                         </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">家用電器</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">美妝個清</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">流行服飾</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">鞋包配飾</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">母嬰用品</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">日用生活</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">圖書文具</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">旅遊戶外</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-
 
                     </ul>
                 </div>
+            </li>
 
-            </nav>
-        </div>
-    </header>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">3C周邊</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">家用電器</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">美妝個清</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">流行服飾</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">鞋包配飾</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">母嬰用品</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">日用生活</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">圖書文具</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">旅遊戶外</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
 
     <main class="main_content">
-        <div class="main_content">
-            <aside class="member_aside">
+
+        <div class="main_content container-sm">
+
+            <aside class="member_aside col-sm-2">
 
             </aside>
-            <main class="member_check_order">
+            <main class="member_check_order col-sm-10">
                 <div class="main_content_header">
                     <img calss="main_content_icon" src="../image/Document.svg">
                     <h1 class="main_content_title">我的訂單</h1>
@@ -573,7 +585,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-sm-12">
                         <div class="nav-align-top mb-4">
                             <ul class="nav nav-tabs" role="tablist"> <!-- 分頁清單 -->
                                 <li class="nav-item">
@@ -613,262 +625,119 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
                                 <!-- 分頁內容寫這 -->
-                                <div class="navs-top-home_top">
-                                    <div class="col-xl-2">
-                                        <h4 class="order_date">2023-06-30</h4>
-                                    </div>
-                                    <div class="col-xl-7">
-                                        <h4 class="order_id">訂單編號：<span>20230630000000001</span></h4>
-                                        <h4 class="order_amount">訂購金額：<span>100,000,000</span><span
-                                                style="font-size: 14px"> (已折抵)</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-xl-3">
-
-                                        <div class="navs-top-home_top_btn">
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary btn-XL" data-bs-toggle="modal"
-                                                data-bs-target="#checkoutModal">
-                                                去付款
-                                            </button>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title col" id="checkoutModalLabel1">
-                                                                去付款</h4>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <form action="" method="post"> <!--form的內容待補-->
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <div class="col mb-3">
-                                                                        <input type="text" id="cardNO1"
-                                                                            class="form-control" placeholder="****"
-                                                                            maxlength="4" minlength="4" />
-                                                                    </div>
-                                                                    <div class="col-xl-1 mb-3 divider"
-                                                                        style="font-size: 24px">-
-                                                                    </div>
-                                                                    <div class="col mb-3">
-                                                                        <input type="text" id="cardNO2"
-                                                                            class="form-control" placeholder="****"
-                                                                            maxlength="4" minlength="4" />
-                                                                    </div>
-                                                                    <div class="col-xl-1 mb-3 divider"
-                                                                        style="font-size: 24px">-
-                                                                    </div>
-                                                                    <div class="col mb-3">
-                                                                        <input type="text" id="cardNO3"
-                                                                            class="form-control" placeholder="****"
-                                                                            maxlength="4" minlength="4" />
-                                                                    </div>
-                                                                    <div class="col-xl-1 mb-3 divider"
-                                                                        style="font-size: 24px">-
-                                                                    </div>
-                                                                    <div class="col mb-3">
-                                                                        <input type="text" id="cardNO4"
-                                                                            class="form-control" placeholder="****"
-                                                                            maxlength="4" minlength="4" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row g-2">
-                                                                    <div class="col mb-3">
-                                                                        <label for="emailBasic"
-                                                                            class="form-label">Email</label>
-                                                                        <input type="text" id="emailBasic"
-                                                                            class="form-control"
-                                                                            placeholder="MM / YY" />
-                                                                    </div>
-                                                                    <div class="col mb-3">
-                                                                        <label for="dobBasic"
-                                                                            class="form-label">DOB</label>
-                                                                        <input type="text" id="dobBasic"
-                                                                            class="form-control"
-                                                                            placeholder="CVV / CVC" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row g-1">
-                                                                    <div class="col mb-3">
-                                                                        <label for="emailBasic"
-                                                                            class="form-label">Email</label>
-                                                                        <input type="text" id="emailBasic"
-                                                                            class="form-control" placeholder="持卡人姓名"
-                                                                            maxlength="10" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row g-2">
-                                                                    <div class="col mb-0 saveCredit">
-
-                                                                        <input type="checkbox" name="saveCredit[]"
-                                                                            value="1" id="saveCredit" checked />
-                                                                        <label for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-outline-secondary"
-                                                                data-bs-dismiss="modal">
-                                                                取消
-                                                            </button>
-                                                            <button type="submit" class="btn btn-primary">付款</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                <ul class="order-list">
+                                    <li class="order">
+                                        <div class="navs-top-home_top">
+                                            <div class="col-sm-2">
+                                                <h4 class="order_date">2023-06-30</h4>
                                             </div>
-                                        </div>
-
-
-                                        <div class="navs-top-home_top_btn">
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary btn-XL" data-bs-toggle="modal"
-                                                data-bs-target="#cancelOrderModal">
-                                                取消訂單
-                                            </button>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="cancelOrderModal" tabindex="-1"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="row">
-                                                                <h3 style="text-align: center;">取消訂單</h3>
-                                                                <h3 style="text-align: center;">確定要取消訂單嗎？</h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-outline-secondary"
-                                                                data-bs-dismiss="modal">
-                                                                取消
-                                                            </button>
-                                                            <button type="submit" class="btn btn-primary">確定</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="col-sm-7">
+                                                <h4 class="order_id">訂單編號：<span>20230630000000001</span></h4>
+                                                <h4 class="order_amount">訂購金額：<span>100,000,000</span><span
+                                                        style="font-size: 14px"> (已折抵)</span>
+                                                </h4>
                                             </div>
-                                        </div>
+                                            <div class="col-sm-3">
 
-
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <div class="navs-top-home_content">
-                                    <ul class="order_list">
-                                        <li class="sub_order">
-                                            <div class="col">
-                                                <div class="order_item_priview">
-                                                    <img class="order_item_priview" src="../image/product.svg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-7">
-                                                <h4 class="shop_name">店家名稱：<span>20230630000000001</span></h4>
-                                                <h4 class="order_id">訂單編號：<span>20230630000000001-001</span></h4>
-                                                <h4 class="order_amount">訂購金額：<span>100,000,000</span></h4>
-                                            </div>
-                                            <div class="col-xl-3">
-                                                <div class="navs-top-home_content_btn">
+                                                <div class="navs-top-home_top_btn">
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-primary btn-XL"
-                                                        data-bs-toggle="modal" data-bs-target="#orderDetilModal">
-                                                        查看訂單明細
+                                                        data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                                                        去付款
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade modal-lg" id="orderDetilModal" tabindex="-1"
+                                                    <div class="modal fade" id="checkoutModal" tabindex="-1"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h4 class="modal-title col"
                                                                         id="checkoutModalLabel1">
-                                                                        查看訂單明細</h4>
+                                                                        去付款</h4>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal"
                                                                         aria-label="Close"></button>
                                                                 </div>
+                                                                <form action="" method="post"> <!--form的內容待補-->
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO1"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO2"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO3"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO4"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="MM / YY" />
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <label for="dobBasic"
+                                                                                    class="form-label">DOB</label>
+                                                                                <input type="text" id="dobBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="CVV / CVC" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-1">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="持卡人姓名"
+                                                                                    maxlength="10" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-0 saveCredit">
 
-                                                                <div class="modal-body">
-                                                                    <div class="row">
-                                                                        <div class="col mb-3">
-                                                                            <input type="text" id="cardNO1"
-                                                                                class="form-control" placeholder="****"
-                                                                                maxlength="4" minlength="4" />
-                                                                        </div>
-                                                                        <div class="col-xl-1 mb-3 divider"
-                                                                            style="font-size: 24px">-
-                                                                        </div>
-                                                                        <div class="col mb-3">
-                                                                            <input type="text" id="cardNO2"
-                                                                                class="form-control" placeholder="****"
-                                                                                maxlength="4" minlength="4" />
-                                                                        </div>
-                                                                        <div class="col-xl-1 mb-3 divider"
-                                                                            style="font-size: 24px">-
-                                                                        </div>
-                                                                        <div class="col mb-3">
-                                                                            <input type="text" id="cardNO3"
-                                                                                class="form-control" placeholder="****"
-                                                                                maxlength="4" minlength="4" />
-                                                                        </div>
-                                                                        <div class="col-xl-1 mb-3 divider"
-                                                                            style="font-size: 24px">-
-                                                                        </div>
-                                                                        <div class="col mb-3">
-                                                                            <input type="text" id="cardNO4"
-                                                                                class="form-control" placeholder="****"
-                                                                                maxlength="4" minlength="4" />
+                                                                                <input type="checkbox"
+                                                                                    name="saveCredit[]" value="1"
+                                                                                    id="saveCredit" checked />
+                                                                                <label
+                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
+
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row g-2">
-                                                                        <div class="col mb-3">
-                                                                            <label for="emailBasic"
-                                                                                class="form-label">Email</label>
-                                                                            <input type="text" id="emailBasic"
-                                                                                class="form-control"
-                                                                                placeholder="MM / YY" />
-                                                                        </div>
-                                                                        <div class="col mb-3">
-                                                                            <label for="dobBasic"
-                                                                                class="form-label">DOB</label>
-                                                                            <input type="text" id="dobBasic"
-                                                                                class="form-control"
-                                                                                placeholder="CVV / CVC" />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row g-1">
-                                                                        <div class="col mb-3">
-                                                                            <label for="emailBasic"
-                                                                                class="form-label">Email</label>
-                                                                            <input type="text" id="emailBasic"
-                                                                                class="form-control" placeholder="持卡人姓名"
-                                                                                maxlength="10" />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row g-2">
-                                                                        <div class="col mb-0 saveCredit">
-
-                                                                            <input type="checkbox" name="saveCredit[]"
-                                                                                value="1" id="saveCredit" checked />
-                                                                            <label
-                                                                                for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
+                                                                </form>
 
                                                                 <div class="modal-footer">
                                                                     <button type="button"
@@ -883,12 +752,483 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+                                                <div class="navs-top-home_top_btn">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-primary btn-XL"
+                                                        data-bs-toggle="modal" data-bs-target="#cancelOrderModal">
+                                                        取消訂單
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="cancelOrderModal" tabindex="-1"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+                                                                        <h3 style="text-align: center;">取消訂單</h3>
+                                                                        <h3 style="text-align: center;">確定要取消訂單嗎？</h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary"
+                                                                        data-bs-dismiss="modal">
+                                                                        取消
+                                                                    </button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">確定</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                             </div>
                                             <hr>
-                                        </li>
-                                    </ul>
+                                        </div>
 
-                                </div>
+                                        <div class="navs-top-home-content">
+                                            <ul class="sub-order-list">
+                                                <li class="sub-order">
+                                                    <div class="col-sm-2">
+                                                        <div class="order_item_priview">
+                                                            <img class="order_item_priview" src="../image/product.svg"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-7 ps-3">
+                                                        <h4 class="shop_name">店家名稱：<span>20230630000000001</span></h4>
+                                                        <h4 class="order_id">訂單編號：<span>20230630000000001-001</span>
+                                                        </h4>
+                                                        <h4 class="order_amount">訂購金額：<span>100,000,000</span></h4>
+                                                    </div>
+                                                    <div class="col-sm-3 position-relative ">
+
+                                                        <!-- Button trigger modal -->
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-XL position-absolute end-0"
+                                                            data-bs-toggle="modal" data-bs-target="#orderDetilModal">
+                                                            查看訂單明細
+                                                        </button>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade modal-lg" id="orderDetilModal"
+                                                            tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title col"
+                                                                            id="checkoutModalLabel1">
+                                                                            查看訂單明細</h4>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO1"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO2"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO3"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO4"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="MM / YY" />
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <label for="dobBasic"
+                                                                                    class="form-label">DOB</label>
+                                                                                <input type="text" id="dobBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="CVV / CVC" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-1">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="持卡人姓名"
+                                                                                    maxlength="10" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-0 saveCredit">
+
+                                                                                <input type="checkbox"
+                                                                                    name="saveCredit[]" value="1"
+                                                                                    id="saveCredit" checked />
+                                                                                <label
+                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-outline-secondary"
+                                                                            data-bs-dismiss="modal">
+                                                                            取消
+                                                                        </button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">付款</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </li>
+                                    <li class="order">
+                                        <div class="navs-top-home_top">
+                                            <div class="col-sm-2">
+                                                <h4 class="order_date">2023-06-30</h4>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <h4 class="order_id">訂單編號：<span>20230630000000001</span></h4>
+                                                <h4 class="order_amount">訂購金額：<span>100,000,000</span><span
+                                                        style="font-size: 14px"> (已折抵)</span>
+                                                </h4>
+                                            </div>
+                                            <div class="col-sm-3">
+
+                                                <div class="navs-top-home_top_btn">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-primary btn-XL"
+                                                        data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                                                        去付款
+                                                    </button>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="checkoutModal" tabindex="-1"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title col"
+                                                                        id="checkoutModalLabel1">
+                                                                        去付款</h4>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <form action="" method="post"> <!--form的內容待補-->
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO1"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO2"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO3"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO4"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="MM / YY" />
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <label for="dobBasic"
+                                                                                    class="form-label">DOB</label>
+                                                                                <input type="text" id="dobBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="CVV / CVC" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-1">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="持卡人姓名"
+                                                                                    maxlength="10" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-0 saveCredit">
+
+                                                                                <input type="checkbox"
+                                                                                    name="saveCredit[]" value="1"
+                                                                                    id="saveCredit" checked />
+                                                                                <label
+                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary"
+                                                                        data-bs-dismiss="modal">
+                                                                        取消
+                                                                    </button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">付款</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="navs-top-home_top_btn">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-primary btn-XL"
+                                                        data-bs-toggle="modal" data-bs-target="#cancelOrderModal">
+                                                        取消訂單
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="cancelOrderModal" tabindex="-1"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+                                                                        <h3 style="text-align: center;">取消訂單</h3>
+                                                                        <h3 style="text-align: center;">確定要取消訂單嗎？</h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary"
+                                                                        data-bs-dismiss="modal">
+                                                                        取消
+                                                                    </button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">確定</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <hr>
+                                        </div>
+
+                                        <div class="navs-top-home-content">
+                                            <ul class="sub-order-list">
+                                                <li class="sub-order">
+                                                    <div class="col-sm-2">
+                                                        <div class="order_item_priview">
+                                                            <img class="order_item_priview" src="../image/product.svg"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-7 ps-3">
+                                                        <h4 class="shop_name">店家名稱：<span>20230630000000001</span></h4>
+                                                        <h4 class="order_id">訂單編號：<span>20230630000000001-001</span>
+                                                        </h4>
+                                                        <h4 class="order_amount">訂購金額：<span>100,000,000</span></h4>
+                                                    </div>
+                                                    <div class="col-sm-3 position-relative ">
+
+                                                        <!-- Button trigger modal -->
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-XL position-absolute end-0"
+                                                            data-bs-toggle="modal" data-bs-target="#orderDetilModal">
+                                                            查看訂單明細
+                                                        </button>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade modal-lg" id="orderDetilModal"
+                                                            tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title col"
+                                                                            id="checkoutModalLabel1">
+                                                                            查看訂單明細</h4>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO1"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO2"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO3"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                            <div class="col-sm-1 mb-3 divider"
+                                                                                style="font-size: 24px">-
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <input type="text" id="cardNO4"
+                                                                                    class="form-control"
+                                                                                    placeholder="****" maxlength="4"
+                                                                                    minlength="4" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="MM / YY" />
+                                                                            </div>
+                                                                            <div class="col mb-3">
+                                                                                <label for="dobBasic"
+                                                                                    class="form-label">DOB</label>
+                                                                                <input type="text" id="dobBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="CVV / CVC" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-1">
+                                                                            <div class="col mb-3">
+                                                                                <label for="emailBasic"
+                                                                                    class="form-label">Email</label>
+                                                                                <input type="text" id="emailBasic"
+                                                                                    class="form-control"
+                                                                                    placeholder="持卡人姓名"
+                                                                                    maxlength="10" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row g-2">
+                                                                            <div class="col mb-0 saveCredit">
+
+                                                                                <input type="checkbox"
+                                                                                    name="saveCredit[]" value="1"
+                                                                                    id="saveCredit" checked />
+                                                                                <label
+                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-outline-secondary"
+                                                                            data-bs-dismiss="modal">
+                                                                            取消
+                                                                        </button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">付款</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </li>
+                                </ul>
 
                             </div>
                             <div class="tab-pane fade" id="navs-top-inprogress" role="tabpanel">
@@ -1000,11 +1340,11 @@
                         </div>
 
                     </div>
+
                 </div>
+
         </div>
-        </div>
-    </main>
-    </div>
+
     </main>
 
 
