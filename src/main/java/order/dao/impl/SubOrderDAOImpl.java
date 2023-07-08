@@ -2,18 +2,15 @@ package order.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import order.dao.SubOrderDAO;
 import order.entity.SubOrder;
-
 import java.sql.*;
 
 public class SubOrderDAOImpl implements SubOrderDAO{
 	String driver = "com.mysql.cj.jdbc.Driver";
-	String url = "jdbc:mysql://localhost:3306/test01?serverTimezone=Asia/Taipei";
+	String url = "jdbc:mysql://localhost:3306/GP?serverTimezone=Asia/Taipei";
 	String user = "root";
 	String password = "password";	
-	
 	private static final String INSERT_STMT = 				
 			"""			
 			INSERT INTO SubOrder (			
@@ -457,23 +454,23 @@ public class SubOrderDAOImpl implements SubOrderDAO{
 			while (rs.next()) {
 				// empVo 也稱為 Domain objects
 				queryResult = new SubOrder();
-				queryResult.setSubOrderId(rs.getString("sub_order_id"));
-				queryResult.setOrderId(rs.getString("order_id"));
-				queryResult.setSupplierId(rs.getString("supplier_id"));
-				queryResult.setMemberId(rs.getString("member_id"));
-				queryResult.setOrderCreateTime(rs.getTimestamp("order_create_time"));
-				queryResult.setOrderCloseTime(rs.getTimestamp("Order_close_time"));
-				queryResult.setSubOrderStatus(rs.getString("Sub_order_status"));
-				queryResult.setSubPaidAmount(rs.getInt("Sub_paid_amount"));
-				queryResult.setSubPointsDiscount(rs.getInt("Sub_points_discount"));
-				queryResult.setSubCouponDiscount(rs.getInt("Sub_coupon_discount"));
-				queryResult.setGrossProfit(rs.getInt("Gross_profit"));
-				queryResult.setPointsReward(rs.getInt("Points_reward"));
-				queryResult.setGrantStatus(rs.getString("Grant_status"));
-				queryResult.setGrantDate(rs.getDate("Grant_date"));
+				queryResult.setSubOrderId(rs.getString("subOrderId"));
+				queryResult.setOrderId(rs.getString("orderId"));
+				queryResult.setSupplierId(rs.getString("supplierId"));
+				queryResult.setMemberId(rs.getString("memberId"));
+				queryResult.setOrderCreateTime(rs.getTimestamp("orderCreateTime"));
+				queryResult.setOrderCloseTime(rs.getTimestamp("OrderCloseTime"));
+				queryResult.setSubOrderStatus(rs.getString("SubOrderStatus"));
+				queryResult.setSubPaidAmount(rs.getInt("SubPaidAmount"));
+				queryResult.setSubPointsDiscount(rs.getInt("SubPointsDiscount"));
+				queryResult.setSubCouponDiscount(rs.getInt("SubCouponDiscount"));
+				queryResult.setGrossProfit(rs.getInt("GrossProfit"));
+				queryResult.setPointsReward(rs.getInt("PointsReward"));
+				queryResult.setGrantStatus(rs.getString("GrantStatus"));
+				queryResult.setGrantDate(rs.getDate("GrantDate"));
 				queryResult.setRecipient(rs.getString("Recipient"));
-				queryResult.setPhoneNum(rs.getString("Phone_num"));
-				queryResult.setDeliveryAddress(rs.getString("Delivery_address"));
+				queryResult.setPhoneNum(rs.getString("PhoneNum"));
+				queryResult.setDeliveryAddress(rs.getString("DeliveryAddress"));
 				
 			}
 
