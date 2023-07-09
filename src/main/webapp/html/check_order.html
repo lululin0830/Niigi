@@ -8,190 +8,71 @@
 
     <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/index.header.css"> <!-- header的CSS 勿刪-->
     <link rel="stylesheet" href="../css/index.footer.css"> <!-- footer的CSS 勿刪-->
+    <link rel="stylesheet" href="../css/customer.aside.css">
 
 
     <style>
-        main {
-            min-height: max(800px, calc(100vh - 150px));
-            height: 100%;
+        main.main_content {
+            height: 100;
             background-color: #ffffff;
-            /* overflow: visible; */
-            display: flex;
-            flex-direction: column;
         }
 
         div.main_content {
-            width: 1200px;
-            margin: 0 auto;
             font-size: 0;
         }
 
-        aside.member_aside {
-            /* width: 195px; */
-            height: 900px;
-            display: inline-block;
-            vertical-align: top;
-            /* margin-right: 25px; */
-            font-size: 16px;
-        }
-
-        aside.member_aside nav.nav1 ul.nav1_list {
-            /* border: 1px solid red; */
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        aside.member_aside nav.nav1 ul.nav1_list>h3 {
-            border: 1px solid white;
-            display: block;
-            text-decoration: none;
-            text-align: center;
-            padding: 5px 0;
-        }
-
-        aside.member_aside nav.nav1 ul.nav1_list>li a {
-            border: 1px solid white;
-            display: block;
-            text-decoration: none;
-            text-align: left;
-            padding: 5px 0;
-            color: silver;
-        }
-
-        aside.member_aside nav.nav1 ul.nav1_list>li a img {
-            margin-right: 20px;
-        }
-
-        aside.member_aside nav.nav1 ul.nav1_list img {
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .member_abc {
-            display: flex;
-            align-items: center;
-        }
-
-        .member_pictrue {
-            float: left;
-            margin-right: 10px;
-        }
-
-        .member_account {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            /* font-size: 16px; */
-            font-size: var(--font-size);
-        }
-
-        main.member_check_order {
-            /* background-color: #EEEEEE; */
-            /* width: 980px; */
+        /* main content */
+        main.member-check-order {
             display: inline-block;
             vertical-align: top;
             padding-left: 25px;
         }
 
-        div.main_content_header>img,
-        div.main_content_header>h1 {
-            display: inline-block;
-            vertical-align: bottom;
-            margin: 45px 28px 0 0;
+        div.main-content-icon {
+            width: 6rem;
         }
 
-        hr.main_content_divider {
+        div.main-content-header img,
+        div.main-content-header>h1 {
+            display: inline-block;
+            vertical-align: bottom;
+            margin: 4.5rem 0 0 0;
+        }
+
+        hr.main-content-divider {
             width: 100%;
             border: 1px solid #EEEEEE;
             margin: 18px 0 28px 0;
             opacity: 1;
         }
 
-        /* button */
-
-        .btn {
-            --bs-btn-border-width: none;
-            height: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #606060;
-        }
-
-        button.btn-primary {
-            height: 30px;
-
-            background-color: rgba(183, 221, 229, 0.90);
-        }
-
-        button.btn-primary:hover {
-            color: var(--bs-btn-hover-color);
-            background-color: #6DC2D2;
-            border-color: none;
-        }
-
-        .btn-check:checked+.btn,
-        .btn.active,
-        .btn.show,
-        .btn:first-child:active,
-        :not(.btn-check)+.btn:active {
-            color: var(--bs-btn-active-color);
-            background-color: #FDC761;
-            border-color: none;
-        }
-
-        button.btn-XXXL {
-            width: 240px;
-        }
-
-        button.btn-XXL {
-            width: 210px;
-        }
-
-        button.btn-XL {
-            width: 180px;
-        }
-
-        button.btn-L {
-            width: 150px;
-        }
-
-        button.btn-M {
-            width: 120px;
-        }
-
-        button.btn-S {
-            width: 90px;
-        }
-
-        button.btn-XS {
-            width: 60px;
-        }
-
         /* Tab */
+        .nav-tabs {
+            --bs-nav-tabs-border-color: #f7f7f7;
+            --bs-nav-tabs-border-width: 2px;
+            --bs-nav-tabs-border-radius: 0.5rem
+        }
+
         .nav-tabs .nav-link {
             margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
             border: var(--bs-nav-tabs-border-width);
             border-top-left-radius: var(--bs-nav-tabs-border-radius);
-            border-top-right-radius: var(--bs-n av-tabs-border-radius);
-            width: 150px;
-            height: 50px;
+            border-top-right-radius: var(--bs-nav-tabs-border-radius);
+            width: 12rem;
+            height: 5rem;
             text-align: center;
             vertical-align: middle;
             font-style: normal;
             font-weight: 600;
-            font-size: 24px;
+            font-size: 2.4rem;
             color: #4C4C4C;
             background-color: #f7f7f7;
             margin-right: 1.5px;
-        }
-
-        .nav-tabs {
-            --bs-nav-tabs-border-color: #f7f7f7;
-            --bs-nav-tabs-border-width: 2px;
         }
 
         .nav-tabs .nav-item.show .nav-link,
@@ -225,9 +106,14 @@
             margin: 15px auto auto auto;
         }
 
+        div.navs-top-home_top_btn:first-child {
+            width: fit-content;
+            margin: 0 auto auto auto;
+        }
+
         .navs-top-home_top>.col-sm-2 {
-            vertical-align: top;
-            margin-top: 24px;
+            vertical-align: text-bottom;
+            margin-bottom: 2.2rem;
         }
 
         div.navs-top-home_top>hr {
@@ -291,20 +177,15 @@
             background-color: none;
         }
 
-
         .sub-order>div {
             display: inline-block;
             vertical-align: middle;
         }
 
         div.order_item_priview {
-            width: 120px;
-            height: 120px;
+            width: 12rem;
+            height: 12rem;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* margin-right: 1.5rem; */
         }
 
         img.order_item_priview {
@@ -317,8 +198,7 @@
 
         div.navs-top-home-content-btn {
             width: fit-content;
-            position: relative;
-            right: 0;
+            margin: auto 0 auto 15%;
         }
 
         div.navs-top-home-content hr {
@@ -626,12 +506,82 @@
 
         <div class="main_content container-sm">
 
-            <aside class="member_aside col-sm-2">
-                <nav class="nav1">
+            <aside class="member-aside col-sm-2">
+
+                <div class="member-profile row ">
+                    <div class="memberPhoto col-sm-4">
+                        <img class="memberPhoto" src="../image/AE404A5E-7B08-4A2A-B1A1-8D3F8FEE9CB8.png">
+                    </div>
+                    <div class="member-info col-sm-8">
+                        <h4 class="memberAccount">jeffrey47</h4>
+                        <h6 class="memberId">M123456789</h6>
+                    </div>
+                </div>
+                <ul class="nav1_list">
+                    <li>
+                        <h4>MENU</h4>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Chart.svg" alt="">
+                            <img src="../image/Chart-a.svg" alt="">個人中心
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/heart-s.svg" alt="">
+                            <img src="../image/heart-s-a.svg" alt="">收藏夾</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Buy1.svg" alt="">
+                            <img src="../image/Buy1-a.svg" alt="">購物車</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <img src="../image/DocumentAsh.svg" alt="">
+                            <img src="../image/DocumentAsh-a.svg" alt="">我的訂單</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Discount.svg" alt="">
+                            <img src="../image/Discount-a.svg" alt="">會員點數</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Ticket Star.svg" alt="">
+                            <img src="../image/Ticket Star-a.svg" alt="">我的折價券</a>
+                    </li>
+                    <li>
+                        <h4>OTHERS</h4>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Profile1.svg" alt="">
+                            <img src="../image/Profile1-a.svg" alt="">個人資訊</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Setting.svg" alt="">
+                            <img src="../image/Setting-a.svg" alt="">帳號管理</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Info Square.svg" alt="">
+                            <img src="../image/Info Square-a.svg" alt="">取得協助</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../image/Logout.svg" alt="">
+                            <img src="../image/Logout-a.svg" alt="">登出</a>
+                    </li>
+                </ul>
+
+                <!-- <nav class="nav1">
                     <ul class="nav1_list">
                         <div class="member_abc">
                             <div class="member_pictrue">
-                                <img src="../image/photo_2023-03-22_18-13-48.jpg" width="50px" height="50px">
+                                <img src="../image/customer.jpg">
                             </div>
                             <div>
                                 <h4 class="member_account">jeffrey47 </h4>
@@ -650,17 +600,16 @@
                         <li><a href="#"><img src="../image/SettingAsh.svg" alt="">帳號管理</a></li>
                         <li><a href="#"><img src="../image/Info Square.svg" alt="">取得協助</a></li>
                         <li><a href="#"><img src="../image/Logout.svg" alt="">登出</a></li>
-
-
-
                     </ul>
-                </nav>
+                </nav> -->
             </aside>
-            <main class="member_check_order col-sm-10">
-                <div class="main_content_header">
-                    <img calss="main_content_icon" src="../image/Document.svg">
-                    <h1 class="main_content_title">我的訂單</h1>
-                    <hr class="main_content_divider">
+            <main class="member-check-order col-sm-10">
+                <div class="main-content-header row">
+                    <div class="main-content-icon col-sm-1">
+                        <img calss="main-content-icon" src="../image/Document.svg">
+                    </div>
+                    <h1 class="main-content-title col-sm-10">我的訂單</h1>
+                    <hr class="main-content-divider">
                 </div>
 
                 <div class="row">
@@ -717,11 +666,10 @@
                                             <div class="col-sm-7">
                                                 <h4 class="order_id">訂單編號：<span>20230630000000001</span></h4>
                                                 <h4 class="order_amount">訂購金額：<span>100,000,000</span><span
-                                                        style="font-size: 14px"> (已折抵)</span>
+                                                        style="font-size: 1.4rem"> (已折抵)</span>
                                                 </h4>
                                             </div>
                                             <div class="col-sm-3">
-
                                                 <div class="navs-top-home_top_btn">
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-primary btn-XL"
@@ -824,14 +772,13 @@
                                                                         data-bs-dismiss="modal">
                                                                         取消
                                                                     </button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-primary">付款</button>
+                                                                    <button type="submit" class="btn btn-primary">付款
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
 
                                                 <div class="navs-top-home_top_btn">
                                                     <!-- Button trigger modal -->
@@ -869,8 +816,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
                                             </div>
                                             <hr>
                                         </div>
@@ -893,411 +838,115 @@
                                                     <div class="col-sm-3 position-relative ">
 
                                                         <!-- Button trigger modal -->
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-XL position-absolute end-0"
-                                                            data-bs-toggle="modal" data-bs-target="#orderDetilModal">
-                                                            查看訂單明細
-                                                        </button>
-                                                        <!-- Modal -->
-                                                        <div class="modal fade modal-lg" id="orderDetilModal"
-                                                            tabindex="-1" aria-hidden="true">
-                                                            <div class="modal-dialog" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h4 class="modal-title col"
-                                                                            id="checkoutModalLabel1">
-                                                                            查看訂單明細</h4>
-                                                                        <button type="button" class="btn-close"
-                                                                            data-bs-dismiss="modal"
-                                                                            aria-label="Close"></button>
-                                                                    </div>
+                                                        <div class="navs-top-home-content-btn">
+                                                            <button type="button" class="btn btn-primary btn-XL"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#orderDetilModal">
+                                                                查看訂單明細
+                                                            </button>
+                                                            <!-- Modal -->
+                                                            <div class="modal fade modal-lg" id="orderDetilModal"
+                                                                tabindex="-1" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title col"
+                                                                                id="checkoutModalLabel1">
+                                                                                查看訂單明細</h4>
+                                                                            <button type="button" class="btn-close"
+                                                                                data-bs-dismiss="modal"
+                                                                                aria-label="Close"></button>
+                                                                        </div>
 
-                                                                    <div class="modal-body">
-                                                                        <div class="row">
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO1"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
+                                                                        <div class="modal-body">
+                                                                            <div class="row">
+                                                                                <div class="col mb-3">
+                                                                                    <input type="text" id="cardNO1"
+                                                                                        class="form-control"
+                                                                                        placeholder="****" maxlength="4"
+                                                                                        minlength="4" />
+                                                                                </div>
+                                                                                <div class="col-sm-1 mb-3 divider"
+                                                                                    style="font-size: 24px">-
+                                                                                </div>
+                                                                                <div class="col mb-3">
+                                                                                    <input type="text" id="cardNO2"
+                                                                                        class="form-control"
+                                                                                        placeholder="****" maxlength="4"
+                                                                                        minlength="4" />
+                                                                                </div>
+                                                                                <div class="col-sm-1 mb-3 divider"
+                                                                                    style="font-size: 24px">-
+                                                                                </div>
+                                                                                <div class="col mb-3">
+                                                                                    <input type="text" id="cardNO3"
+                                                                                        class="form-control"
+                                                                                        placeholder="****" maxlength="4"
+                                                                                        minlength="4" />
+                                                                                </div>
+                                                                                <div class="col-sm-1 mb-3 divider"
+                                                                                    style="font-size: 24px">-
+                                                                                </div>
+                                                                                <div class="col mb-3">
+                                                                                    <input type="text" id="cardNO4"
+                                                                                        class="form-control"
+                                                                                        placeholder="****" maxlength="4"
+                                                                                        minlength="4" />
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
+                                                                            <div class="row g-2">
+                                                                                <div class="col mb-3">
+                                                                                    <label for="emailBasic"
+                                                                                        class="form-label">Email</label>
+                                                                                    <input type="text" id="emailBasic"
+                                                                                        class="form-control"
+                                                                                        placeholder="MM / YY" />
+                                                                                </div>
+                                                                                <div class="col mb-3">
+                                                                                    <label for="dobBasic"
+                                                                                        class="form-label">DOB</label>
+                                                                                    <input type="text" id="dobBasic"
+                                                                                        class="form-control"
+                                                                                        placeholder="CVV / CVC" />
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO2"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
+                                                                            <div class="row g-1">
+                                                                                <div class="col mb-3">
+                                                                                    <label for="emailBasic"
+                                                                                        class="form-label">Email</label>
+                                                                                    <input type="text" id="emailBasic"
+                                                                                        class="form-control"
+                                                                                        placeholder="持卡人姓名"
+                                                                                        maxlength="10" />
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO3"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO4"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
+                                                                            <div class="row g-2">
+                                                                                <div class="col mb-0 saveCredit">
+
+                                                                                    <input type="checkbox"
+                                                                                        name="saveCredit[]" value="1"
+                                                                                        id="saveCredit" checked />
+                                                                                    <label
+                                                                                        for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
+
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row g-2">
-                                                                            <div class="col mb-3">
-                                                                                <label for="emailBasic"
-                                                                                    class="form-label">Email</label>
-                                                                                <input type="text" id="emailBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="MM / YY" />
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <label for="dobBasic"
-                                                                                    class="form-label">DOB</label>
-                                                                                <input type="text" id="dobBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="CVV / CVC" />
-                                                                            </div>
+
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-secondary"
+                                                                                data-bs-dismiss="modal">
+                                                                                取消
+                                                                            </button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary">付款</button>
                                                                         </div>
-                                                                        <div class="row g-1">
-                                                                            <div class="col mb-3">
-                                                                                <label for="emailBasic"
-                                                                                    class="form-label">Email</label>
-                                                                                <input type="text" id="emailBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="持卡人姓名"
-                                                                                    maxlength="10" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-2">
-                                                                            <div class="col mb-0 saveCredit">
-
-                                                                                <input type="checkbox"
-                                                                                    name="saveCredit[]" value="1"
-                                                                                    id="saveCredit" checked />
-                                                                                <label
-                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <div class="modal-footer">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary"
-                                                                            data-bs-dismiss="modal">
-                                                                            取消
-                                                                        </button>
-                                                                        <button type="submit"
-                                                                            class="btn btn-primary">付款</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
-                                                    </div>
-                                                    <hr>
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                    </li>
-                                    <li class="order">
-                                        <div class="navs-top-home_top">
-                                            <div class="col-sm-2">
-                                                <h4 class="order_date">2023-06-30</h4>
-                                            </div>
-                                            <div class="col-sm-7">
-                                                <h4 class="order_id">訂單編號：<span>20230630000000001</span></h4>
-                                                <h4 class="order_amount">訂購金額：<span>100,000,000</span><span
-                                                        style="font-size: 14px"> (已折抵)</span>
-                                                </h4>
-                                            </div>
-                                            <div class="col-sm-3">
-
-                                                <div class="navs-top-home_top_btn">
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-primary btn-XL"
-                                                        data-bs-toggle="modal" data-bs-target="#checkoutModal">
-                                                        去付款
-                                                    </button>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="checkoutModal" tabindex="-1"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title col"
-                                                                        id="checkoutModalLabel1">
-                                                                        去付款</h4>
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                                </div>
-                                                                <form action="" method="post"> <!--form的內容待補-->
-                                                                    <div class="modal-body">
-                                                                        <div class="row">
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO1"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO2"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO3"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO4"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-2">
-                                                                            <div class="col mb-3">
-                                                                                <label for="emailBasic"
-                                                                                    class="form-label">Email</label>
-                                                                                <input type="text" id="emailBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="MM / YY" />
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <label for="dobBasic"
-                                                                                    class="form-label">DOB</label>
-                                                                                <input type="text" id="dobBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="CVV / CVC" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-1">
-                                                                            <div class="col mb-3">
-                                                                                <label for="emailBasic"
-                                                                                    class="form-label">Email</label>
-                                                                                <input type="text" id="emailBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="持卡人姓名"
-                                                                                    maxlength="10" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-2">
-                                                                            <div class="col mb-0 saveCredit">
-
-                                                                                <input type="checkbox"
-                                                                                    name="saveCredit[]" value="1"
-                                                                                    id="saveCredit" checked />
-                                                                                <label
-                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-
-                                                                <div class="modal-footer">
-                                                                    <button type="button"
-                                                                        class="btn btn-outline-secondary"
-                                                                        data-bs-dismiss="modal">
-                                                                        取消
-                                                                    </button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-primary">付款</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="navs-top-home_top_btn">
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-primary btn-XL"
-                                                        data-bs-toggle="modal" data-bs-target="#cancelOrderModal">
-                                                        取消訂單
-                                                    </button>
-
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="cancelOrderModal" tabindex="-1"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <div class="row">
-                                                                        <h3 style="text-align: center;">取消訂單</h3>
-                                                                        <h3 style="text-align: center;">確定要取消訂單嗎？</h3>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button"
-                                                                        class="btn btn-outline-secondary"
-                                                                        data-bs-dismiss="modal">
-                                                                        取消
-                                                                    </button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-primary">確定</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                            <hr>
-                                        </div>
-
-                                        <div class="navs-top-home-content">
-                                            <ul class="sub-order-list">
-                                                <li class="sub-order">
-                                                    <div class="col-sm-2">
-                                                        <div class="order_item_priview">
-                                                            <img class="order_item_priview" src="../image/product.svg"
-                                                                alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-7 ps-3">
-                                                        <h4 class="shop_name">店家名稱：<span>20230630000000001</span></h4>
-                                                        <h4 class="order_id">訂單編號：<span>20230630000000001-001</span>
-                                                        </h4>
-                                                        <h4 class="order_amount">訂購金額：<span>100,000,000</span></h4>
-                                                    </div>
-                                                    <div class="col-sm-3 position-relative ">
-
-                                                        <!-- Button trigger modal -->
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-XL position-absolute end-0"
-                                                            data-bs-toggle="modal" data-bs-target="#orderDetilModal">
-                                                            查看訂單明細
-                                                        </button>
-                                                        <!-- Modal -->
-                                                        <div class="modal fade modal-lg" id="orderDetilModal"
-                                                            tabindex="-1" aria-hidden="true">
-                                                            <div class="modal-dialog" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h4 class="modal-title col"
-                                                                            id="checkoutModalLabel1">
-                                                                            查看訂單明細</h4>
-                                                                        <button type="button" class="btn-close"
-                                                                            data-bs-dismiss="modal"
-                                                                            aria-label="Close"></button>
-                                                                    </div>
-
-                                                                    <div class="modal-body">
-                                                                        <div class="row">
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO1"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO2"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO3"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                            <div class="col-sm-1 mb-3 divider"
-                                                                                style="font-size: 24px">-
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <input type="text" id="cardNO4"
-                                                                                    class="form-control"
-                                                                                    placeholder="****" maxlength="4"
-                                                                                    minlength="4" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-2">
-                                                                            <div class="col mb-3">
-                                                                                <label for="emailBasic"
-                                                                                    class="form-label">Email</label>
-                                                                                <input type="text" id="emailBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="MM / YY" />
-                                                                            </div>
-                                                                            <div class="col mb-3">
-                                                                                <label for="dobBasic"
-                                                                                    class="form-label">DOB</label>
-                                                                                <input type="text" id="dobBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="CVV / CVC" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-1">
-                                                                            <div class="col mb-3">
-                                                                                <label for="emailBasic"
-                                                                                    class="form-label">Email</label>
-                                                                                <input type="text" id="emailBasic"
-                                                                                    class="form-control"
-                                                                                    placeholder="持卡人姓名"
-                                                                                    maxlength="10" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row g-2">
-                                                                            <div class="col mb-0 saveCredit">
-
-                                                                                <input type="checkbox"
-                                                                                    name="saveCredit[]" value="1"
-                                                                                    id="saveCredit" checked />
-                                                                                <label
-                                                                                    for="saveCredit">我同意儲存本次交易信用卡付款資訊</label>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <div class="modal-footer">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary"
-                                                                            data-bs-dismiss="modal">
-                                                                            取消
-                                                                        </button>
-                                                                        <button type="submit"
-                                                                            class="btn btn-primary">付款</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
 
                                                     </div>
@@ -1421,8 +1070,11 @@
                     </div>
 
                 </div>
+            </main>
 
         </div>
+
+
 
     </main>
 
@@ -1431,47 +1083,45 @@
 
     <!-- --------------------------------以下是Footer 勿動！！！！-------------------------------- -->
     <footer id="main-footer" class="footer">
-        <div class="wrap-expand">
-            <div class="footer-top">
-                <a class="footer_logo" href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
+
+        <div class="container-sm">
+
+            <div class="footer-top row">
+                <a class="footer_logo col-sm-2 " href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
             </div>
 
-            <div class="footer-bottom">
-                <hr class="footer_divider">
-                <nav class="SNS-nav">
+            <hr class="footer_divider">
 
-                    <div class="SNS-nav_list">
+            <div class="footer-bottom row justify-content-end">
 
-                        <a href="" class="Instagram">
-                            <div class="Instagram_icon">
-                                <img src="../image/ant-design_instagram-filled.svg" alt="">
-                            </div>
-                        </a>
+                <nav class="SNS-nav-list ">
 
-                        <a href="" class="Facebook">
-                            <div class="Facebook_icon">
-                                <img src="../image/mdi_facebook.svg" alt="">
-                            </div>
-                        </a>
+                    <a href="" class="Instagram col">
+                        <div class="Instagram_icon">
+                            <img src="../image/ant-design_instagram-filled.svg" alt="">
+                        </div>
+                    </a>
 
-                        <a href="" class="Twitter">
-                            <div class="Twitter_icon">
-                                <img src="../image/ant-design_twitter-circle-filled.svg" alt="">
-                            </div>
-                        </a>
+                    <a href="" class="Facebook col">
+                        <div class="Facebook_icon">
+                            <img src="../image/mdi_facebook.svg" alt="">
+                        </div>
+                    </a>
 
-                    </div>
-
+                    <a href="" class="Twitter col ">
+                        <div class="Twitter_icon">
+                            <img src="../image/ant-design_twitter-circle-filled.svg" alt="">
+                        </div>
+                    </a>
                 </nav>
             </div>
-
         </div>
     </footer>
 
     <script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
     <script>
         // 獲取.member_account元素
-        var memberAccount = document.querySelector('.member_account');
+        var memberAccount = document.querySelector('.memberAccount');
 
         // 獲取.member_account的文字內容
         var textContent = memberAccount.textContent.trim();
