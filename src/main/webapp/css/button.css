@@ -2,15 +2,13 @@
 
  .btn {
      --bs-btn-border-width: none;
-     height: 30px;
-     font-size: 14px;
+     height: 3rem;
+     font-size: 1.4rem;
      font-weight: 600;
      color: #606060;
  }
 
  button.btn-primary {
-     height: 30px;
-
      background-color: rgba(183, 221, 229, 0.90);
  }
 
@@ -31,29 +29,29 @@
  }
 
  button.btn-XXXL {
-     width: 240px;
+     width: 24rem;
  }
 
  button.btn-XXL {
-     width: 210px;
+     width: 21rem;
  }
 
  button.btn-XL {
-     width: 180px;
+     width: 18rem;
  }
 
  button.btn-L {
-     width: 150px;
+     width: 15rem;
  }
 
  button.btn-M {
-     width: 120px;
+     width: 12rem;
  }
 
  button.btn-S {
-     width: 90px;
+     width: 9rem;
  }
 
  button.btn-XS {
-     width: 60px;
+     width: 6rem;
  }
