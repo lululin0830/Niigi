@@ -343,7 +343,7 @@ CREATE TABLE MemberPointsRecord (
 -- 廣告(待補)
 
 -- 排序權重
-CREATE TABLE SortWeights (
+CREATE TABLE SortWeight (
   weightsUpdateTime TIMESTAMP comment '更新時間(主鍵)' PRIMARY KEY,
   dealerUserId INT comment '經手人(使用者編號)(外來鍵)',
   dataPeriod ENUM('0', '7', '30','90' ,'365') not null comment '資料計算期間：0 當日, 7 當週, 30 當月, 90 當季, 365 當年', 
