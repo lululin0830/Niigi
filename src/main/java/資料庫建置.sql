@@ -5,10 +5,10 @@ USE GP;
 
 DROP TABLE IF EXISTS NotificationModel;
 DROP TABLE IF EXISTS SortWeight;
--- 廣告(待補)
--- 廣告版位(待補)
+DROP TABLE IF EXISTS Advertise;
+DROP TABLE IF EXISTS AdSpace;
 DROP TABLE IF EXISTS MemberPointsRecord;
--- 子訂單明細(待補)
+DROP TABLE IF EXISTS SubOrderDetail;
 DROP TABLE IF EXISTS SubOrder;
 DROP TABLE IF EXISTS MainOrder;
 DROP TABLE IF EXISTS MemberCouponList;
@@ -320,8 +320,28 @@ CREATE TABLE `SubOrder` (
   CONSTRAINT FK_SubOrder_memberId foreign key (memberId) references `Member` (memberId)
 );
 
--- 子訂單明細(待補)
-
+-- 子訂單明細
+CREATE TABLE `SubOrderDetail` (
+  `orderDetailId` CHAR(25) comment '訂單明細編號' PRIMARY KEY ,
+  `subOrderId` CHAR(21) NOT NULL comment '子訂單編號' ,
+  `orderId` CHAR(17) NOT NULL comment '訂單編號' ,
+  `productId` INT NOT NULL comment '商品編號' ,
+  `productSpecId` CHAR(11) NOT NULL comment '規格編號' ,
+  `productPrice` INT UNSIGNED NOT NULL comment '商品售價' ,
+  `itemCouponDiscount` INT UNSIGNED DEFAULT 0 NOT NULL comment '商品折價券折抵金額' ,
+  `eventPrice` INT UNSIGNED NOT NULL comment '活動價' ,
+  `ratingStar` INT UNSIGNED comment '商品評價(星星)' ,
+  `comment` VARCHAR(150) comment '商品評價' ,
+  `commentDate` DATE comment '評論日期' ,
+  `refundDeadline` DATE comment '退貨期限' ,
+  `refundReason` ENUM('0','1','2','3') comment '退貨原因' ,
+  `refundRemark` VARCHAR(150) comment '備註' ,
+  `itemStatus` ENUM ('0','1','2') NOT NULL comment '商品狀態' ,
+  CONSTRAINT FK_SubOrderDetail_subOrderId FOREIGN KEY (subOrderId) REFERENCES `SubOrder` (subOrderId),
+  CONSTRAINT FK_SubOrderDetail_orderId FOREIGN KEY (orderId) REFERENCES `MainOrder` (orderId),
+  CONSTRAINT FK_SubOrderDetail_productId FOREIGN KEY (productId) REFERENCES Product (productId),
+  CONSTRAINT FK_SubOrderDetail_productSpecId FOREIGN KEY (productSpecId) REFERENCES `ProductSpec` (productSpecId)
+);
 -- 會員點數紀錄
 CREATE TABLE MemberPointsRecord (
   pointRecordId INT auto_increment not null PRIMARY KEY comment'點數紀錄編號',
@@ -338,9 +358,32 @@ CREATE TABLE MemberPointsRecord (
   constraint FK_MemberPointsRecord_dealerUserId foreign key (dealerUserId) references `User`(userId)
 )auto_increment=1000000001 comment '會員點數紀錄';
 
--- 廣告版位(待補)
-
--- 廣告(待補)
+-- 廣告版位
+CREATE TABLE `AdSpace` (
+  `adSpaceId` CHAR(15) comment '版位編號' PRIMARY KEY,
+  `adSpaceName` CHAR(10) NOT NULL comment '版位名稱',
+  `adPageId` CHAR(10) NOT NULL comment '所屬頁面',
+  CONSTRAINT FK_AdSpace_adPageId FOREIGN KEY (`adPageId`) REFERENCES `FrontendPage` (`pageId`)
+);
+-- 廣告
+CREATE TABLE `Advertise` (
+  `advertiseId` CHAR(17) comment '廣告編號' PRIMARY KEY,
+  `adSupplierId` CHAR(10) comment '承租人(商家編號)',
+  `adSpaceId` CHAR(15) NOT NULL comment '版位編號',
+  `productId` CHAR(8) comment '商品編號',
+  `pageId` CHAR(10) comment '頁面編號',
+  `adStart` DATE comment '廣告起始日',
+  `adEnd` DATE comment '廣告結束日',
+  `cost` INT UNSIGNED comment '廣告費用',
+  `adReviewStatus` ENUM('0','1') comment '審核狀態',
+  `debitDate` DATE comment '預計扣款時間',
+  `debitStatus` ENUM('0', '1', '2', '3') DEFAULT '0' comment '扣款狀態',
+  `adRemark` VARCHAR(150) NOT NULL comment '廣告說明',
+  `adPicture` LONGBLOB comment '廣告圖片',
+  CONSTRAINT FK_Advertise_adSupplierId FOREIGN KEY (`adSupplierId`) REFERENCES `Supplier` (`supplierId`),
+  CONSTRAINT FK_Advertise_adSpaceId FOREIGN KEY (`adSpaceId`) REFERENCES `AdSpace` (`adSpaceId`),
+  CONSTRAINT FK_Advertise_pageId FOREIGN KEY (`pageId`) REFERENCES `FrontendPage` (`pageId`)
+);
 
 -- 排序權重
 CREATE TABLE SortWeight (
@@ -369,3 +412,6 @@ CREATE TABLE `NotificationModel` (
   `notificationContent` VARCHAR(150) not null comment '通知內文',
   PRIMARY KEY (`notificationId`)
 )auto_inCREMENT = 100 comment '通知模板';
+
+
+
