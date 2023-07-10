@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS GP;
 
-USE GP1;
+USE GP;
 
 
 DROP TABLE IF EXISTS NotificationModel;
@@ -38,7 +38,7 @@ CREATE TABLE `Member` (
   memPhoto LONGBLOB comment'會員圖片',
   memPointBalance INT default(0) comment'會員點數餘額',
   memPointMinExp date not null comment'會員點數最短有效期限',
-  creditNum CHAR(16)  not null unique comment'備用信箱帳號',
+  creditNum CHAR(16)  not null unique comment'信用卡卡號',
   creditExp CHAR(4) comment'卡片有效期限',
   cvv CHAR(3) comment '安全碼',
   cardholder VARCHAR(20) comment '持卡人',
@@ -53,17 +53,49 @@ CREATE TABLE `Member` (
   backupStatusOpen ENUM('0','1') default('0') comment'備用信箱開通狀態：0未開通,1開通'
   )comment '會員資料表';
   
+  INSERT INTO `Member` (memberId, memberAcct, `password`, phone, `name`, gender, birthday, memPointBalance, memPointMinExp, creditNum, creditExp, cvv, cardholder, regTime, banStatus, backupEmail, memberAddress, lastRecipient, lastPhoneNum, lastDeliveryAddress, regStatusOpen, backupStatusOpen)
+VALUES
+('M000000001', 'john@example.com', 'password123', '0912-345-678', '張三', '0', '1990-01-01', FLOOR(RAND()*900)+100, '2023-8-31', '1234567812345678', '1025', '123', 'WANG, SIAO-MING', NOW(), '0', 'backup1@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小美', '0987-654-321', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000002', 'mary@example.com', 'password456', '0922-345-678', '李四', '1', '1995-05-15', FLOOR(RAND()*900)+100, '2023-8-14', '2345678923456789', '1025', '456', 'LEE, YUAN-HUA', NOW(), '0', 'backup2@example.com', '104 台北市 中山區 南京東路三段219號5樓', '張小明', '0912-987-654', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000003', 'alice@example.com', 'password789', '0933-345-678', '張無忌', '0', '1988-11-20', FLOOR(RAND()*900)+100, '2023-8-13', '3456789134567891', '0225', '789', 'ZHANG, WUJI', NOW(), '0', 'backup3@example.com', '104 台北市 中山區 南京東路三段219號5樓', '陳小琳', '0988-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000004', 'david@example.com', 'password123456', '0944-345-678', '李小龍', '1', '1975-07-15', FLOOR(RAND()*900)+100, '2023-8-1', '4567891245678912', '0425', '321', 'LI, XIAOLONG', NOW(), '0', 'backup4@example.com', '104 台北市 中山區 南京東路三段219號5樓', '林小美', '0955-987-654', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000005', 'sarah@example.com', 'password987654', '0955-345-678', '王五', '0', '1980-12-25', FLOOR(RAND()*900)+100, '2023-8-20', '5678912356789123', '1025', '987', 'WANG, WU', NOW(), '0', 'backup5@example.com', '104 台北市 中山區 南京東路三段219號5樓', '劉小寶', '0966-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000006', 'jane@example.com', 'password234567', '0966-345-678', '陳芳', '1', '1992-08-10', FLOOR(RAND()*900)+100, '2023-8-22', '6789123467891234', '0728', '234', 'CHEN, FANG', NOW(), '0', 'backup6@example.com', '104 台北市 中山區 南京東路三段219號5樓', '張小華', '0977-987-654', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000007', 'peter@example.com', 'password345678', '0977-345-678', '李大', '0', '1985-06-05', FLOOR(RAND()*900)+100, '2023-8-21', '7891234578912345', '1129', '345', 'LI, DA', NOW(), '0', 'backup7@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小強', '0988-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000008', 'emily@example.com', 'password456789', '0988-345-678', '劉靜', '1', '1998-04-18', FLOOR(RAND()*900)+100, '2023-8-11', '8912345689123456', '1227', '456', 'LIU, JING', NOW(), '0', 'backup8@example.com', '104 台北市 中山區 南京東路三段219號5樓', '陳小華', '0999-987-654', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000009', 'tom@example.com', 'password567890', '0999-345-678', '張小強', '0', '1993-09-30', FLOOR(RAND()*900)+100, '2023-8-31', '9123456791234567', '1227', '567', 'ZHANG, XIAOQIANG', NOW(), '0', 'backup9@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000010', 'jeff@example.com', 'password1234', '0919-345-678', '王寶強', '0', '1993-11-30', FLOOR(RAND()*900)+100, '2023-8-2', '9123456791234321', '1225', '517', 'WANG,BAO-CIANG', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000011', 'jeffrey821537@gmail.com', 'password01', '0988-526-875', '陳柏維', '0', '1995-02-08', FLOOR(RAND()*900)+100, '2023-8-2', '4705380112345678', '1229', '412', 'CHEN PO-WEI', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000012', 'lululin0830@gmail.com', 'password02', '0939-083-001', '林欣儒', '1', '1999-08-30', FLOOR(RAND()*900)+100, '2023-8-2', '4617760212345678', '1027', '321', 'LIN SIN-RU', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000013', 'anthony963741@gmail.com', 'password03', '0921-321-123', '顏伯諺', '0', '1997-04-12', FLOOR(RAND()*900)+100, '2023-8-2', '4617760222345678', '1127', '323', 'YAN BO-YAN', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000014', 'rrr150100@gmail.com', 'password04', '0921-321-123', '王雅玲', '1', '1997-03-12', FLOOR(RAND()*900)+100, '2023-8-2', '4617760222345680', '0927', '124', 'WANG YA-LING', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000015', 'davida56254@gmail.com', 'password05', '0921-123-456', '呂大為', '0', '1997-07-13', FLOOR(RAND()*900)+100, '2023-8-2', '4617760212345679', '1128', '313', 'LU DA-WEI', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
+('M000000016', 'jocker10113@gmail.com', 'password06', '0921-123-678', '廖韋豪', '0', '1999-05-13', FLOOR(RAND()*900)+100, '2023-8-2', '4617760212345681', '1228', '613', 'LIAO WEI-HAO', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1');
+  
   -- 平台使用者
   CREATE TABLE `User` (
   userId INT auto_increment comment'使用者編號' primary key,
   userName VARCHAR(15) not null comment'使用者名稱',
   userAcct VARCHAR(15) not null comment'使用者帳號',
-  `password` VARCHAR(12) not null comment'密碼',
+  `password` VARCHAR(600) not null comment'密碼',
   financialAuthority ENUM('0','1') default('0') comment'財務權限',
   customerServiceAuthority ENUM('0','1') default('0') comment'客服權限',
   marketingAuthority ENUM('0','1') default('0') comment'行銷權限',
   hrAuthority ENUM('0','1')  default('0') comment'人事權限'
 )auto_increment=10001 comment '平台使用者';
+
+INSERT INTO `User` (userName, userAcct, `password`, financialAuthority, customerServiceAuthority, marketingAuthority, hrAuthority)
+VALUES
+('jeffrey', 'jeffrey', 'password01', '1', '1', '1', '1'),
+('lulu', 'lulu', 'password02', '1', '1', '1', '1'),
+('josh', 'josh', 'password03', '1', '1', '1', '1'),
+('david', 'david', 'password04', '1', '1', '1', '1'),
+('joker', 'joker', 'password05', '1', '1', '1', '1'),
+('rrr', 'rrr', 'password06', '1', '1', '1', '1'),
+('John Doe', 'john', 'password123', '1', '0', '0', '0'),
+('Mary Smith', 'mary', 'password456', '0', '1', '0', '0'),
+('David Johnson', 'david', 'password789', '0', '0', '1', '0'),
+('Sarah Brown', 'sarah', 'password123456', '0', '0', '0', '1');
 
 -- 商家資料表
 CREATE TABLE `Supplier` (
