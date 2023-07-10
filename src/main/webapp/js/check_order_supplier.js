@@ -2,7 +2,7 @@
 const init = function () {
 
     const orderData = document.getElementById("suborderlist"); //const = 常數型別
-    const api = "http://localhost:8081/Niigi/SubOrder?getsubOrderId=t3826501846251486-001"
+    const api = "http://localhost:8080/Niigi/SubOrder?getsubOrderId=t3826501846251486-001"
 
     document.getElementById("suborderlist").innerHTML = "";
 
