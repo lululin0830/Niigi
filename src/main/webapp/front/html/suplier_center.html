@@ -284,6 +284,12 @@
             border-top: 0px;
             top: 10px;
         }
+
+        /* new */
+
+        div.order-selector {
+            font-size: 2rem;
+        }
     </style>
 
 </head>
@@ -486,7 +492,7 @@
                         <div class="nav-align-top mb-4">
                             <ul class="nav nav-tabs" role="tablist"> <!-- 分頁清單 -->
                                 <li class="nav-item">
-                                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
+                                    <button type="button" class="nav-link " role="tab" data-bs-toggle="tab"
                                         data-bs-target="#navs-top-home" aria-controls="navs-top-home"
                                         aria-selected="true"><!-- 分頁名稱寫這 -->待處理<span class="count p-1">120</span>
                                     </button>
@@ -498,7 +504,7 @@
                                     </button>
                                 </li>
                                 <li class="nav-item">
-                                    <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
                                         data-bs-target="#navs-top-refund" aria-controls="navs-top-refund"
                                         aria-selected="false"><!-- 分頁名稱寫這 -->待退貨/款<span class="count">120</span>
                                     </button>
@@ -521,59 +527,51 @@
                         </div>
 
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+                            <div class="tab-pane fade " id="navs-top-home" role="tabpanel">
                                 <!-- 分頁內容寫這 -->
 
                                 <section class="section">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Simple Datatable
-                                        </div>
-                                        <div class="card-body">
-                                            <table class="table table-striped" id="table1">
-                                                <thead>
-                                                    <tr>
-                                                        <th><input type="checkbox" name="order-select"
-                                                                class="checkbox m-3" id="">全部選取</th>
-                                                        <th>商品名稱</th>
-                                                        <th>商品規格</th>
-                                                        <th>數量</th>
-                                                        <th>買家實付金額</th>
-                                                        <th>狀態</th>
-                                                        <th>物流方式</th>
-                                                        <th>操作</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Graiden</td>
-                                                        <td>Graiden</td>
-                                                        <td>Graiden</td>
-                                                        <td>Graiden</td>
-                                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                                        <td>076 4820 8838</td>
-                                                        <td>Offenburg</td>
-                                                        <td>
-                                                            <span class="badge bg-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Araiden</td>
-                                                        <td>Graiden</td>
-                                                        <td>Graiden</td>
-                                                        <td>Graiden</td>
-                                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                                        <td>076 4820 8838</td>
-                                                        <td>Offenburg</td>
-                                                        <td>
-                                                            <span class="badge bg-success">Active</span>
-                                                        </td>
-                                                    </tr>
 
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                                    <table class="table table-striped order-inprogress" id="table1">
+                                        <thead>
+                                            <tr>
+                                                <th class="select-all"><input type="checkbox" name="order-select"
+                                                        class="checkbox m-3" id="">全部選取</th>
+                                                <th class="product-name">商品名稱</th>
+                                                <th class="product-spec">商品規格</th>
+                                                <th class="product-count">數量</th>
+                                                <th class="paid-amount">買家實付金額</th>
+                                                <th class="delivery-status">狀態</th>
+                                                <th class="delivery-type">物流方式</th>
+                                                <th class="option"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <ul>
+                                                <li>
+                                                    <div>
+                                                        <p>會員帳號</p>
+                                                    </div>
+                                                    <tr>
+                                                        <td>AAAA</td>
+                                                        <td>Graiden</td>
+                                                        <td>Graiden</td>
+                                                        <td>Graiden</td>
+                                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
+                                                        <td>076 4820 8838</td>
+                                                        <td>Offenburg</td>
+                                                        <td>
+                                                            <span class="badge bg-success">Active</span>
+                                                        </td>
+                                                    </tr>
+                                                </li>
+                                            </ul>
+
+
+
+                                        </tbody>
+                                    </table>
+
 
                                 </section>
                             </div>
@@ -641,19 +639,15 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="navs-top-refund" role="tabpanel">
-                                <p>
-                                    Oat cake chupa chups dragée donut toffee. Sweet cotton candy jelly beans
-                                    macaroon gummies
-                                    cupcake gummi bears cake chocolate.
-                                </p>
-                                <p class="mb-0">
-                                    Cake chocolate bar cotton candy apple pie tootsie roll ice cream apple pie
-                                    brownie cake. Sweet
-                                    roll icing sesame snaps caramels danish toffee. Brownie biscuit dessert dessert.
-                                    Pudding jelly
-                                    jelly-o tart brownie jelly.
-                                </p>
+                            <div class="tab-pane fade show active" id="navs-top-refund" role="tabpanel">
+
+                                <div class="order-selector">
+                                    <label for="create-date-start">立單日期： <input type="date"
+                                            name="create-date-start"></label>
+                                </div>
+
+
+
                             </div>
                             <div class="tab-pane fade" id="navs-top-complete" role="tabpanel">
                                 <p>
