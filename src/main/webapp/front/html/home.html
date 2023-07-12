@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homepage</title>
 
+    <!-- <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/index.header.css"> 
+    <link rel="stylesheet" href="../css/section.css"> -->
+
     <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/core.css"> <!-- 所有頁面共同的CSS 勿刪，勿覆蓋！！！！！-->
+    <link rel="stylesheet" href="../css/font.css"> <!-- 所有頁面共同的CSS 勿刪，勿覆蓋！！！！！-->
+    <link rel="stylesheet" href="../css/button.css"> <!-- 所有按鈕共同的CSS 勿動，勿覆蓋！！！！！ 若沒用到按鈕可移除 -->
     <link rel="stylesheet" href="../css/index.header.css"> <!-- header的CSS 勿刪-->
+    <link rel="stylesheet" href="../css/index.footer.css"> <!-- footer的CSS 勿刪-->
     <link rel="stylesheet" href="../css/section.css">
-    
+
     <style>
         main {
             min-height: max(800px, calc(100vh - 150px));
@@ -22,131 +31,81 @@
 
         }
 
+        .carousel-item {
+            height: 51.2rem;
+        }
+
         .carousel-image {
             background-size: cover;
             background-position: center center;
             height: 100%;
             width: 100%;
         }
-
-        footer#main-footer {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            left: 0px;
-            bottom: 0px;
-            margin: 0;
-            background: linear-gradient(0deg, rgba(238, 238, 238, 0.2), rgba(238, 238, 238, 0.2)), #FFFAF1;
-
-        }
-        .footer-top {
-            position: relative;
-            display: flex;
-            align-content: flex-start;
-            flex-wrap: wrap;
-            height: 140px;
-        }
-
-        .footer-bottom {
-            position: relative;
-            display: flex;
-            align-content: flex-start;
-            flex-wrap: wrap;
-            height: 60px;
-        }
-
-        .footer_logo {
-            position: absolute;
-            left: 5.62%;
-            right: 84.24%;
-            top: 20%;
-        }
-
-        .footer_divider {
-            position: absolute;
-            left: 1.39%;
-            right: 1.39%;
-            top: 0%;
-            border: 1px solid rgba(96, 96, 96, 0.5);
-        }
-
-        .SNS-nav_list {
-            display: flex;
-            justify-content: space-between;
-            flex-grow: 1;
-        }
-        .SNS-nav {
-            font-size: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            width: 120px;
-            height: 30px;
-            position: absolute;
-            left: 86.74%;
-            bottom: 20%;
-        }
     </style>
 
 </head>
 
 <body>
-    <!-- --------------------------------以下是Header 勿動！！！！-------------------------------- -->
+    <!-- -------------------------------- 以下是Header 勿動！！！！-------------------------------- -->
     <header id="main-header" class="header">
 
-        <div class="wrap-expand">
+        <div class="container-sm">
 
-            <div class="header_top">
+            <div class="header-top row">
 
-                <a class="header_logo" href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
-                <form action="" method="get" class="header_search_form">
-                    <input type="input" name="search" class="header_search_input" placeholder="Search" maxlength="50"
-                        value="">
-                    <div class="Search_hot">
-                        <a class="trend_link" href="">熱搜關鍵字</a>
-                        <a class="trend_link" href="">熱搜關鍵字</a>
-                        <a class="trend_link" href="">熱搜關鍵字</a>
+                <div class="col-sm-2">
+                    <a class="header-logo" href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
+                </div>
+
+                <div class="col-sm-6">
+                    <form action="" method="get" class="header-search row">
+                        <input type="text" name="search" class="header-search-input col-sm-10" placeholder="Search"
+                            maxlength="50" value="">
+
+                        <button type="submit" class="header-search-submit col-sm-1"><img
+                                src="../image/search.svg"></button>
+                    </form>
+
+                    <div class="Search-hot ">
+                        <a class="trend_link" id="trend_link1" href="">熱搜關鍵字1</a>
+                        <a class="trend_link" id="trend_link2" href="">熱搜關鍵字</a>
                     </div>
 
-                    <button type="submit" class="header_search_submit"><img src="../image/search.svg"></button>
-                </form>
+                </div>
 
-                <nav class="fixed-nav">
-                    <div class="fixed-nav_list login">
-                        <a href="" class="SCM-Center">
+                <nav class="fixed-nav col-sm-4">
+
+                    <div class="fixed-nav-list login row">
+                        <a href="" class="SCM-Center col">
                             <div class="SCM_icon">
-                                <!-- <img src="" alt=""> -->
                                 <button class="btn_SCM-Center">商家中心</button>
                             </div>
                         </a>
 
-                        <a href="" class="User-Center">
+                        <a href="" class="User-Center col">
                             <div class="User_icon">
                                 <img src="../image/Profile.svg" alt="">
-
                             </div>
                         </a>
 
-                        <a href="" class="Favorite">
+                        <a href="" class="Favorite col">
                             <div class="header_icon">
                                 <img src="../image/heart.svg" alt="">
-                                <span class="count">0</span>
+                                <span class="count -active">0</span>
                             </div>
                         </a>
 
-                        <a href="" class="Shopping-Cart">
+                        <a href="" class="Shopping-Cart col">
                             <div class="header_icon">
                                 <img src="../image/Buy.svg" alt="">
-                                <span class="count">0</span>
+                                <span class="count -active">0</span>
                             </div>
                         </a>
 
-
-                        <a href="" class="Notification">
+                        <a href="" class="Notification col">
                             <div class="header_icon">
                                 <img src="../image/Notification.svg" alt="">
-                                <span class="count">0</span>
+                                <span class="count -active">0</span>
                             </div>
                         </a>
 
@@ -156,230 +115,227 @@
             </div>
 
         </div>
-        <div class="wrap-expand">
-            <nav id="main-navigation" class="main-navigation">
 
-                <div class="nav-main">
-                    <ul class="nav"> <!--主選單-->
-                        <li
-                            class="navigation_nav-title navigation_nav-title--highlight navigation_nav-title--hover-hide navigation_nav-title--new-dot">
-                            <div class="navigation_title navigation_title--bold navigation_title--salmon">
-                                <span class="navigation_title-inner">主題活動</span>
-                            </div>
+    </header>
 
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
+    <!-- -------------------------------- 以下是商品分類導覽列 -------------------------------- -->
+    <nav id="main-navigation" class="main-navigation">
+        <ul class="main-nav"> <!--主選單-->
+            <li
+                class="navigation-nav-title navigation_nav-title--highlight navigation_nav-title--hover-hide navigation_nav-title--new-dot">
+                <div class="navigation_title navigation_title--bold navigation_title--salmon">
+                    <span class="navigation_title-inner">主題活動</span>
+                </div>
 
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
 
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">3C周邊</span>
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
                             </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
                         </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">家用電器</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">美妝個清</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">流行服飾</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">鞋包配飾</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">母嬰用品</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">日用生活</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">圖書文具</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="navigation_nav-title navigation_nav-title--hover-hide">
-
-                            <a class="navigation_title navigation_title--link" href="">
-                                <span class="navigation_title-inner">旅遊戶外</span>
-                            </a>
-
-                            <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
-                                <a class="" href="" title="">
-                                    <span class="link-text">AAA</span> <!--中分類-->
-                                </a>
-
-                                <ul> <!--小分類-->
-                                    <li>
-                                        <a class="" href="" title="">
-                                            <span class="link-text">aaa</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-
 
                     </ul>
                 </div>
+            </li>
 
-            </nav>
-        </div>
-    </header>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">3C周邊</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">家用電器</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">美妝個清</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">流行服飾</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">鞋包配飾</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">母嬰用品</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">日用生活</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">圖書文具</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="navigation-nav-title navigation_nav-title--hover-hide">
+
+                <a class="navigation_title navigation_title--link" href="">
+                    <span class="navigation_title-inner">旅遊戶外</span>
+                </a>
+
+                <div class="navigation__dropdown dropdown-campaign"> <!--下拉式選單-->
+                    <a class="" href="" title="">
+                        <span class="link-text">AAA</span> <!--中分類-->
+                    </a>
+
+                    <ul> <!--小分類-->
+                        <li>
+                            <a class="" href="" title="">
+                                <span class="link-text">aaa</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
 
     <main>
         <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
@@ -465,8 +421,8 @@
                 </div>
                 <div class="p-top-recommend__slider swiper">
                     <ul class="p-top-recommend__list swiper-wrapper">
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX"> <!--  -->
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -478,21 +434,23 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                            </a>
+                        </li>
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -504,21 +462,23 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                            </a>
+                        </li>
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -530,21 +490,23 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                            </a>
+                        </li>
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -556,22 +518,25 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="p-top-recommend__more"><a href="/item/" class="m-btn"><span class="txt">查看所有商品</span></a></div>
+                <div class="p-top-recommend__more"><a href="/item/" class="m-btn"><span class="txt">查看所有商品</span></a>
+                </div>
             </div>
         </section>
         <section class="p-top-section p-top-recommend">
@@ -585,8 +550,8 @@
                 </div>
                 <div class="p-top-recommend__slider swiper">
                     <ul class="p-top-recommend__list swiper-wrapper">
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -598,21 +563,23 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                            </a>
+                        </li>
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -624,21 +591,23 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                            </a>
+                        </li>
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -650,21 +619,23 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
-                            <li class="item swiper-slide ">
-                                <a href="" class="item__link">
+                            </a>
+                        </li>
+                        <li class="item swiper-slide ">
+                            <a href="" class="item__link">
                                 <div class="item__img">
                                     <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
                                     <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
@@ -676,62 +647,63 @@
                                             <span>$3,240</span>
                                         </p>
                                     </div>
-                                    <div id="productStockShow8" data="8" >
-                                            <span class="sale_price">
-                                                    <div class="ec-numberInput joolen-low-stock-notification-list" style="display:none">
-                                                        <div class="text-danger joolen-low-stock-notification-list-message"></div>
-                                                    </div>
-                                            </span>
+                                    <div id="productStockShow8" data="8">
+                                        <span class="sale_price">
+                                            <div class="ec-numberInput joolen-low-stock-notification-list"
+                                                style="display:none">
+                                                <div class="text-danger joolen-low-stock-notification-list-message">
+                                                </div>
+                                            </div>
+                                        </span>
                                     </div>
                                     <ul class="item__cat">
                                         <li>蘋果爹商店</li>
                                     </ul>
                                 </div>
-                                </a>
-                            </li>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="p-top-recommend__more"><a href="/item/" class="m-btn"><span class="txt">查看所有商品</span></a></div>
+                <div class="p-top-recommend__more"><a href="/item/" class="m-btn"><span class="txt">查看所有商品</span></a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- --------------------------------以下是Footer 勿動！！！！-------------------------------- -->
+    <!-- --------------------------------以下是Footer 勿動！！-------------------------------- -->
     <footer id="main-footer" class="footer">
-        <div class="wrap-expand">
-            <div class="footer-top">
-                <a class="footer_logo" href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
+
+        <div class="container-sm">
+
+            <div class="footer-top row">
+                <a class="footer_logo col-sm-2 " href="/"><img class="logo" src="../image/logo.svg" alt=""></a>
             </div>
 
-            <div class="footer-bottom">
-                <hr class="footer_divider">
-                <nav class="SNS-nav">
+            <hr class="footer_divider">
 
-                    <div class="SNS-nav_list">
+            <div class="footer-bottom row justify-content-end">
 
-                        <a href="" class="Instagram">
-                            <div class="Instagram_icon">
-                                <img src="../image/ant-design_instagram-filled.svg" alt="">
-                            </div>
-                        </a>
+                <nav class="SNS-nav-list ">
 
-                        <a href="" class="Facebook">
-                            <div class="Facebook_icon">
-                                <img src="../image/mdi_facebook.svg" alt="">
-                            </div>
-                        </a>
+                    <a href="" class="Instagram col">
+                        <div class="Instagram_icon">
+                            <img src="../image/ant-design_instagram-filled.svg" alt="">
+                        </div>
+                    </a>
 
-                        <a href="" class="Twitter">
-                            <div class="Twitter_icon">
-                                <img src="../image/ant-design_twitter-circle-filled.svg" alt="">
-                            </div>
-                        </a>
+                    <a href="" class="Facebook col">
+                        <div class="Facebook_icon">
+                            <img src="../image/mdi_facebook.svg" alt="">
+                        </div>
+                    </a>
 
-                    </div>
-
+                    <a href="" class="Twitter col ">
+                        <div class="Twitter_icon">
+                            <img src="../image/ant-design_twitter-circle-filled.svg" alt="">
+                        </div>
+                    </a>
                 </nav>
             </div>
-
         </div>
     </footer>
 

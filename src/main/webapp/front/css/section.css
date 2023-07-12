@@ -1,4 +1,4 @@
-body {
+/* body {
   color: #000;
   font-family: "fot-tsukuardgothic-std","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
   font-size: 14px;
@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(0,0,0,0)
-}
+} */
 
 html.nav-open body {
   overflow: hidden
@@ -16,8 +16,8 @@ html.nav-open body {
 
 
 a {
-  transition: all .3s cubic-bezier(.25,.46,.45,.94) 0s;
-  transition-property: border,background,color;
+  transition: all .3s cubic-bezier(.25, .46, .45, .94) 0s;
+  transition-property: border, background, color;
   color: #000;
   outline: none
 }
@@ -46,8 +46,9 @@ a {
   box-sizing: content-box
 }
 
-.swiper-android .swiper-slide,.swiper-wrapper {
-  transform: translate3d(0,0,0)
+.swiper-android .swiper-slide,
+.swiper-wrapper {
+  transform: translate3d(0, 0, 0)
 }
 
 .swiper-pointer-events {
@@ -69,13 +70,14 @@ a {
   visibility: hidden
 }
 
-.swiper-autoheight,.swiper-autoheight .swiper-slide {
+.swiper-autoheight,
+.swiper-autoheight .swiper-slide {
   height: auto
 }
 
 .swiper-autoheight .swiper-wrapper {
   align-items: flex-start;
-  transition-property: transform,height
+  transition-property: transform, height
 }
 
 .swiper-backface-hidden .swiper-slide {
@@ -104,7 +106,8 @@ a {
   margin-top: 0
 }
 
-.p-section__ttl+.p-section__text,.p-section__ttl+.p-section__list {
+.p-section__ttl+.p-section__text,
+.p-section__ttl+.p-section__list {
   margin-top: -.8rem
 }
 
@@ -123,7 +126,8 @@ a {
   margin-top: 0
 }
 
-.p-section__sttl+.p-section__text,.p-section__sttl+.p-section__list {
+.p-section__sttl+.p-section__text,
+.p-section__sttl+.p-section__list {
   margin-top: -.8rem
 }
 
@@ -139,7 +143,8 @@ a {
   margin-top: 0
 }
 
-.p-section__pttl+.p-section__text,.p-section__pttl+.p-section__list {
+.p-section__pttl+.p-section__text,
+.p-section__pttl+.p-section__list {
   margin-top: -.8rem
 }
 
@@ -219,9 +224,9 @@ html.notouch .p-section__text a:hover {
 }
 
 
-.p-top-section {
+/* .p-top-section {
   margin-top: 14.7rem
-}
+} */
 
 .p-top-section__body {
   max-width: 120rem;
@@ -233,7 +238,7 @@ html.notouch .p-section__text a:hover {
 
 .p-top-section__ttl {
   font-size: 2.4rem;
-  font-family: "Roboto","fot-tsukuardgothic-std","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-family: "Roboto", "fot-tsukuardgothic-std", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-weight: 700;
   letter-spacing: .08em;
   line-height: 1.334;
@@ -261,7 +266,7 @@ html.notouch .p-section__text a:hover {
 }
 
 .p-top-recommend__btns .arw-btn {
-  transition: background .3s cubic-bezier(.25,.46,.45,.94) 0s;
+  transition: background .3s cubic-bezier(.25, .46, .45, .94) 0s;
   position: relative;
   width: 2.5rem;
   height: 2.5rem;
@@ -271,7 +276,7 @@ html.notouch .p-section__text a:hover {
 }
 
 .p-top-recommend__btns .arw-btn:before {
-  transition: background-image .3s cubic-bezier(.25,.46,.45,.94) 0s;
+  transition: background-image .3s cubic-bezier(.25, .46, .45, .94) 0s;
   position: absolute;
   inset: 0;
   display: block;
@@ -331,7 +336,8 @@ html.notouch .p-top-recommend__btns .next:hover:before {
   padding-right: 0
 }
 
-.p-top-recommend__list .item.new:before,.p-top-recommend__list .item.sale:before {
+.p-top-recommend__list .item.new:before,
+.p-top-recommend__list .item.sale:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -339,7 +345,7 @@ html.notouch .p-top-recommend__btns .next:hover:before {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: .08em;
-  font-family: "Roboto","fot-tsukuardgothic-std","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-family: "Roboto", "fot-tsukuardgothic-std", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.3;
   color: #fff;
   background: #b90000;
@@ -371,7 +377,7 @@ html.notouch .p-top-recommend__btns .next:hover:before {
   letter-spacing: .04em;
   line-height: 1;
   color: #fff;
-  background: rgba(244,244,244,.8)
+  background: rgba(244, 244, 244, .8)
 }
 
 .p-top-recommend__list .item__link {
@@ -403,7 +409,7 @@ html.notouch .p-top-recommend__btns .next:hover:before {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  font-family: "Roboto","fot-tsukuardgothic-std","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-family: "Roboto", "fot-tsukuardgothic-std", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-weight: 700;
   line-height: 1.334;
   margin-top: 1.4rem
@@ -441,21 +447,24 @@ html.notouch .p-top-recommend__btns .next:hover:before {
   margin-top: 4rem
 }
 
-.p-top-recommend__list .item__img img,.p-items__list .item__img img {
+.p-top-recommend__list .item__img img,
+.p-items__list .item__img img {
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out
 }
 
-.p-top-recommend__list .item__img img:nth-of-type(2),.p-items__list .item__img img:nth-of-type(2) {
+.p-top-recommend__list .item__img img:nth-of-type(2),
+.p-items__list .item__img img:nth-of-type(2) {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0
 }
 
-.p-top-recommend__list .item__img:hover img:nth-of-type(2),.p-items__list .item__img:hover img:nth-of-type(2) {
-  -webkit-transform: translate(0,0) scale(1.03);
-  transform: translate(0,0) scale(1.03);
+.p-top-recommend__list .item__img:hover img:nth-of-type(2),
+.p-items__list .item__img:hover img:nth-of-type(2) {
+  -webkit-transform: translate(0, 0) scale(1.03);
+  transform: translate(0, 0) scale(1.03);
   opacity: 1
 }
 
@@ -477,7 +486,8 @@ html.notouch .p-top-recommend__btns .next:hover:before {
 }
 
 
-html.notouch .p-items__list .item__link.one-image:hover,html.notouch .p-top-recommend__list .item__link.one-image:hover {
+html.notouch .p-items__list .item__link.one-image:hover,
+html.notouch .p-top-recommend__list .item__link.one-image:hover {
   opacity: 1
 }
 
