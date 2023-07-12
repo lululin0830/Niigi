@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "SubOrderDetail")
 public class SubOrderDetail implements Serializable{
 
 	/*
@@ -30,6 +34,10 @@ public class SubOrderDetail implements Serializable{
 	private String refundRemark;
 	private String itemStatus;
 	
+	
+	public SubOrderDetail() {
+		
+	}
 	
 	public String getOrderDetailId() {
 		return orderDetailId;

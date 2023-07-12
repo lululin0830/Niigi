@@ -13,6 +13,9 @@
 		<property name="hibernate.format_sql">true</property>
 		<property name="hibernate.highlight_sql">true</property>
 		
-		
+		<!-- Mapping 範例 <mapping class="web.member.pojo.Member" /> -->
+		<mapping class="order.entity.MainOrder"/>
+		<mapping class="order.entity.SubOrder"/>
+		<mapping class="order.entity.SubOrderDetail"/>
 	</session-factory>
 </hibernate-configuration>
