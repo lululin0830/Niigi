@@ -4,6 +4,10 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class MainOrder implements java.io.Serializable {
 
 	/**
@@ -12,6 +16,7 @@ public class MainOrder implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 2442580178437547429L;
 
+	@Id
 	private String orderId;
 	private String memberId;
 	private Timestamp orderCreateTime;
