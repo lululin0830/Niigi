@@ -5,19 +5,21 @@ import java.util.List;
 
 import order.dao.SubOrderDetailDAO;
 import order.entity.SubOrderDetail;
+import org.hibernate.Session;
 
 public class SubOrderDetailDAOImpl implements SubOrderDetailDAO{
 
 	@Override
 	public Boolean insert(SubOrderDetail entity) {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO Auto-generated method stub		
+		getSession().persist(entity);
+		return true;
 	}
 
 	@Override
 	public SubOrderDetail getByPrimarryKey(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return getSession().get(SubOrderDetail.class, id);
 	}
 
 	@Override
