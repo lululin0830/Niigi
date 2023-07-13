@@ -1,12 +1,12 @@
 package order.dao;
 
 import java.sql.Date;
+
+import core.dao.CoreDAO;
 import order.entity.SubOrderDetail;
 
 
-public interface SubOrderDetailDAO {
-	
-	public void insert(SubOrderDetail SubOrderDetail);
+public interface SubOrderDetailDAO extends CoreDAO<SubOrderDetail, String>{
 	
 	//更新評價
 	public void upadte_rate(SubOrderDetail SubOrderDetail); 	
@@ -22,8 +22,5 @@ public interface SubOrderDetailDAO {
 		
 	public void delete(SubOrderDetail SubOrderDetail);
 	
-	public void getAll(SubOrderDetail SubOrderDetail);
 	
-	//以PK查詢(PK:訂單明細編號)
-	public void getByPrimaryKey(String orderDetailId);
 }
