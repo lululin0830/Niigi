@@ -185,9 +185,9 @@ CREATE TABLE `Blacklist` (
 
 -- 商品分類
 CREATE TABLE Categorie (
-  categorieId CHAR(9) not null comment '商品分類編號' PRIMARY KEY,
+  categorieId CHAR(10) not null comment '商品分類編號' PRIMARY KEY,
   categorieName VARCHAR(10) not null comment '商品分類名稱',
-  mainCategorie  CHAR(9) comment '所屬商品分類',
+  mainCategorie  CHAR(10) comment '所屬商品分類',
   constraint FK_Categorie_mainCategorie foreign key (mainCategorie) references Categorie (categorieId)
 ) comment '商品分類';
 
@@ -305,7 +305,7 @@ CREATE TABLE FrontendPage (
 CREATE TABLE Product (
   productId INT auto_increment comment '商品編號(主鍵)' PRIMARY KEY,
   registerSupplier CHAR(10) not null comment '所屬商家(外來鍵)',
-  categorieId CHAR(9) not null comment '商品分類編號(外來鍵)',
+  categorieId CHAR(10) not null comment '商品分類編號(外來鍵)',
   productName VARCHAR(30) not null comment '商品名稱',
   productPrice INT unsigned not null comment '商品售價',
   productInfo VARCHAR(200) not null comment '商品說明',
