@@ -22,7 +22,8 @@ DROP TABLE IF EXISTS FrontendPage;
 DROP TABLE IF EXISTS Categorie;
 DROP TABLE IF EXISTS Blacklist;
 DROP TABLE IF EXISTS AccountSuspendRecord;
-DROP TABLE IF EXISTS Supplier;
+DROP TABLE IF EXISTS SupplierMember;
+DROP TABLE IF EXISTS `Supplier`;
 DROP TABLE IF EXISTS `User`;
 DROP TABLE IF EXISTS `Member`;
 
@@ -99,33 +100,63 @@ VALUES
 
 -- 商家資料表
 CREATE TABLE `Supplier` (
-  `supplierId` CHAR(10) comment '商家編號',
-  `supplierMemberAcct` VARCHAR(50) NOT NULL comment '商家帳號',
-  `businessId` CHAR(8) comment '統一編號',
-  `ownerId` CHAR(10) NOT NULL comment '負責人身份證字號',
-  `supplierAddress` VARCHAR(200) NOT NULL comment '負責人戶籍地址',
-  `bankCode` CHAR(3) NULL comment '銀行代碼',
-  `bankAcct` CHAR(14) NOT NULL comment '銀行帳戶',
-  `shopName` VARCHAR(50) comment '商店名稱',
-  `shopInfo` VARCHAR(200) comment '商店說明',
-  `logo` LONGBLOB comment '商店LOGO',
-  `shopBackground` LONGBLOB comment '商店背景圖片',
-  `supplierBanStatus` ENUM('0','1','3','7','30')  NOT NULL comment '商家狀態', -- 0正常,1永久停權,3停權3天,7停權7天,30停權30天
-  `shopVacation` ENUM("0","1")  NOT NULL comment '商家休假',
-  `vacationStart` DATE comment '休假起始日',
-  `vacationEnd` DATE comment '休假結束日',
-  `pauseOrderAcceptance` ENUM("0","1") NOT NULL comment '暫停接單',
-  `pauseShipping` ENUM("0","1") NOT NULL comment '暫停出貨',
-  `pauseNotification` ENUM("0","1") NOT NULL comment '暫停通知',
-  `approvalStatus` ENUM("0","1") NOT NULL comment '審核狀態',
-  `approvalRemark` VARCHAR(150) comment '審核備註',
-  `enableTime` TIMESTAMP NOT NULL comment '開通時間',
-  `grossProfitRatio` DECIMAL(3,2) NOT NULL comment '毛利率',
-  `pointRewardsRatio` DECIMAL(4,3) NOT NULL comment '會員點數回饋比例',
+  `supplierId` CHAR(10) COMMENT '商家編號',
+  `supplierMemberAcct` VARCHAR(50) NOT NULL COMMENT '商家帳號',
+  `businessId` CHAR(8) COMMENT '統一編號',
+  `ownerId` CHAR(10) NOT NULL COMMENT '負責人身份證字號',
+  `supplierAddress` VARCHAR(200) NOT NULL COMMENT '負責人戶籍地址',
+  `bankCode` CHAR(3) NULL COMMENT '銀行代碼',
+  `bankAcct` CHAR(14) NOT NULL COMMENT '銀行帳戶',
+  `shopName` VARCHAR(50) COMMENT '商店名稱',
+  `shopInfo` VARCHAR(200) COMMENT '商店說明',
+  `logo` LONGBLOB COMMENT '商店LOGO',
+  `shopBackground` LONGBLOB COMMENT '商店背景圖片',
+  `supplierBanStatus` ENUM('0', '1', '3', '7', '30') default('0') COMMENT '商家狀態：0正常,1永久停權,3停權3天,7停權7天,30停權30天', 
+  `shopVacation` ENUM('0', '1') default('0') COMMENT '商家休假',
+  `vacationStart` DATE COMMENT '休假起始日',
+  `vacationEnd` DATE COMMENT '休假結束日',
+  `pauseOrderAcceptance` ENUM('0', '1') default('0') COMMENT '暫停接單：0正常,1暫停',
+  `pauseShipping` ENUM('0', '1') default('0') COMMENT '暫停出貨：0正常,1暫停',
+  `pauseNotification` ENUM('0', '1') default('0') COMMENT '暫停通知： 0正常,1暫停',
+  `approvalStatus` ENUM('0', '1') default('0') COMMENT '審核狀態：0通過,1不通過',
+  `approvalRemark` VARCHAR(150) COMMENT '審核備註',
+  `enableTime` TIMESTAMP default(NOW()) COMMENT '開通時間',
+  `grossProfitRatio` DECIMAL(3, 2) default(0.15) COMMENT '毛利率',
+  `pointRewardsRatio` DECIMAL(4, 3) default(0.005) COMMENT '會員點數回饋比例',
   PRIMARY KEY (`supplierId`),
-  UNIQUE KEY `UKsupplierMemberAcct` (`supplierMemberAcct`),
-  UNIQUE KEY `UKbusinessId` (`businessId`)
-) comment '商家資料表';
+  UNIQUE KEY `UK_Supplier_supplierMemberAcct` (`supplierMemberAcct`),
+  UNIQUE KEY `UK_Supplier_businessId` (`businessId`)
+) COMMENT '商家資料表';
+
+
+INSERT INTO `Supplier` (supplierId, supplierMemberAcct, businessId, ownerId, supplierAddress, bankCode, bankAcct, shopName, shopInfo, logo, shopBackground,approvalStatus, approvalRemark, enableTime)
+VALUES
+('S000000001', 'lululin0830@gmail.com', '12868358', 'A222212345', '104 台北市 中山區 南京東路三段219號5樓', '004', '142004254382', 'THE BEST', 'High Quality', NULL, NULL,'0', NULL, '2023-05-05 00:00:00'),
+('S000000002', 'anthony963741@gmail.com', '24708053', 'A123456789', '104 台北市 中山區 南京東路三段219號5樓', '833', '87273837489506', '好好買', '應有盡有', NULL, NULL,'0', NULL, '2023-05-05 00:00:00'),
+('S000000003', 'davida56254@gmail.com', NULL , 'U22386098', '709 臺南市安南區館安一路28號', '566', '39586094886748', '買多多', 'VERY GOOD', NULL, NULL,'0', NULL, '2023-06-05 00:00:00'),
+('S000000004', 'jane@example.com', '02935677', 'D221184906', '974 花蓮縣壽豐鄉豐富街32號', '456', '34356654908', '露得輕', '露營用品專賣', NULL, NULL,'0', NULL, '2023-06-05 00:00:00'),
+('S000000005', 'david@example.com', '67345723', 'Q124857667', '325 桃園市龍潭區向陽二街20號', '346', '726458699345', 'DREAMER', 'SLEEPING...', NULL, NULL,'0', NULL, '2023-06-05 00:00:00'),
+('S000000006', 'jeff@example.com', '23454398', 'Y126654098', '905 屏東縣里港鄉茄苳路3號', '012', '37775883998760', 'WHY東西', 'BAD', NULL, NULL,'0', NULL, '2023-07-05 00:00:00'),
+('S000000007', 'mary@example.com', '65748339', 'F220495193', '522 彰化縣田尾鄉新生路14號', '002', '395857764849', 'CHOO', '優質母嬰用品',  NULL, NULL,'0', NULL, '2023-07-05 00:00:00'),
+('S000000008', 'sarah@example.com', '63544001', 'W123374960', '237 新北市三峽區學府路3號', '083', '377850069372', '今拾糖', '進口糖果餅乾',  NULL, NULL,'0', NULL, '2023-07-05 00:00:00'),
+('S000000009', 'emily@example.com', NULL, 'S228576698', '335 桃園市大溪區打鐵寮路19號', '523', '3857768874532', 'LET ME IN', 'NOOOOO', NULL, NULL,'0', NULL, '2023-05-05 00:00:00'),
+('S000000010', 'alice@example.com', '88475682', 'O126684735', '401 臺中市東區富榮街15號', '004', '46598698385856', 'HANG FIVE', '平價服飾', NULL, NULL,'0', NULL, '2023-05-05 00:00:00');
+
+-- 商家成員
+CREATE TABLE `SupplierMember` (
+  `supplierId` CHAR(10) comment '商家編號',
+  `memberId` CHAR(10) comment'會員編號',
+  `financialAuthority` ENUM('0','1') comment'財務權限',
+  `logisticsAuthority` ENUM('0','1') comment'後勤權限',
+  `marketingAuthority` ENUM('0','1') comment'行銷權限',
+  `hrAuthority` ENUM('0','1') comment'人事權限',
+  `supplierOwner` ENUM('0','1') comment'帳戶擁有者',
+  `joinDate` DATE DEFAULT (NOW()) comment'加入時間',
+  PRIMARY KEY (`memberId`, `supplierId`),
+  CONSTRAINT FK_SupplierMember_supplierId FOREIGN KEY (`supplierId`) REFERENCES `Supplier` (`supplierId`),
+  CONSTRAINT FK_SupplierMember_memberId FOREIGN KEY (`memberId`) REFERENCES `Member` (`memberId`)
+);
+
 
 -- 用戶停權紀錄(商家停權為停止擁有者的權限)
 CREATE TABLE AccountSuspendRecord (
@@ -387,7 +418,7 @@ CREATE TABLE `Advertise` (
 
 -- 排序權重
 CREATE TABLE SortWeight (
-  weightsUpdateTime TIMESTAMP comment '更新時間(主鍵)' PRIMARY KEY,
+  weightsUpdateTime TIMESTAMP default(NOW()) comment '更新時間(主鍵)' PRIMARY KEY,
   dealerUserId INT comment '經手人(使用者編號)(外來鍵)',
   dataPeriod ENUM('0', '7', '30','90' ,'365') not null comment '資料計算期間：0 當日, 7 當週, 30 當月, 90 當季, 365 當年', 
   weights1 ENUM('1', '2', '3','4','5','6') not null comment '權重一：1 點擊量, 2 商品評價, 3 銷售量, 4 銷售額, 5 成交率, 6 上市時間', 
@@ -405,6 +436,9 @@ CREATE TABLE SortWeight (
   constraint FK_SortWeights_dealerUserId foreign key (dealerUserId) references User (userId)
 ) comment '排序權重';
 
+INSERT INTO SortWeight(dealerUserId,dataPeriod,weights1,weights2,weights3,weights4,weights5,weights6)
+VALUES(10001,'7','1','2','3','4','5','6');
+
 -- 通知模板
 CREATE TABLE `NotificationModel` (
   `notificationId` INT auto_increment comment '通知編號',
@@ -412,6 +446,3 @@ CREATE TABLE `NotificationModel` (
   `notificationContent` VARCHAR(150) not null comment '通知內文',
   PRIMARY KEY (`notificationId`)
 )auto_inCREMENT = 100 comment '通知模板';
-
-
-
