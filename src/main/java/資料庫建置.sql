@@ -1,7 +1,5 @@
 CREATE DATABASE IF NOT EXISTS GP;
-
 USE GP;
-
 
 DROP TABLE IF EXISTS NotificationModel;
 DROP TABLE IF EXISTS SortWeight;
@@ -162,11 +160,11 @@ CREATE TABLE AccountSuspendRecord (
   accountSuspendId INT auto_increment PRIMARY KEY comment'停權事件編號',
   memberId CHAR(10) not null comment'用戶編號',
   suspendReason VARCHAR(100) not null comment'停權原因',
-  dealerUserId int not null comment'C經手人(使用者編號)',
+  dealerUserId int not null comment'經手人(使用者編號)',
   suspendStart DATE default(NOW()) comment'停權開始時間',
   suspendEnd DATE not null comment'停權結束時間',
-  suspendDuration ENUM('1','3','7','30') not null comment'停權天數:1永久停權,3是3天停權,7是7天停權,30是30天停權',
-  suspendStatusChange ENUM('1','3','7','30') comment'停權天數:1永久停權,3是3天停權,7是7天停權,30是30天停權',
+  suspendDuration ENUM('1','3','7','30') not null comment'停權天數：1永久停權,3停權3天,7停權7天,30停權30天',
+  suspendStatusChange ENUM('1','3','7','30') comment'停權變更：1永久停權,3停權3天,7停權7天,30停權30天',
   changeUserId int comment'變更人(使用者編號)',
   constraint FK_AccountSuspendRecord_memberId foreign key (memberId) references `Member`(memberId),
   constraint FK_AccountSuspendRecord_dealerUserId foreign key (dealerUserId) references `User`(userId),
