@@ -10,11 +10,11 @@ public interface CoreDAO<E, I> {
 
 	Boolean insert(E entity);
 
-	E getByPrimarryKey(I id);
+	E selectById(I id);
 
 	List<E> getAll();
-	
+
 	default Session getSession() {
-		  return HibernateUtil.getSessionFactory().getCurrentSession();
-		 }
+		return HibernateUtil.getSessionFactory().getCurrentSession();
+	}
 }
