@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class SubOrderDetail implements Serializable{
 	
 	private static final long serialVersionUID = -3459181800840488062L;
 
+	@Id
 	private String orderDetailId;
 	private String subOrderId;
 	private String orderId ;
