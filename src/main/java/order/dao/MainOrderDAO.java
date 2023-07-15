@@ -1,28 +1,14 @@
 package order.dao;
 
 import java.util.List;
-import java.util.Map;
 
+import core.dao.CoreDAO;
 import order.entity.MainOrder;
 
-public interface MainOrderDAO {
+public interface MainOrderDAO extends CoreDAO<MainOrder, String> {
 
-	public void insert(MainOrder MainOrder);
+	public MainOrder update(MainOrder newMainOrder);
 
-	public void updatePaymentTime(MainOrder MainOrder);
-	
-	public void updatePaymentStatus(MainOrder MainOrder);
-	
-	public void updateOrderStatus(MainOrder MainOrder);
-	
-	public void updateBillStatus(MainOrder MainOrder);
-
-	public void delete(String orderId);
-
-	public MainOrder getByPrimaryKey(String orderId);
-
-	public List<MainOrder> getAll();
-
-	public List<MainOrder> getAll(Map<String, String[]> map);
+	public List<MainOrder> selectByMemberID(String memberId);
 
 }
