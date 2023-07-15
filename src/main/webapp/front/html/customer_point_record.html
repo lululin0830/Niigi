@@ -51,56 +51,71 @@
             opacity: 1;
         }
 
-        .box {
-            border: 1px solid gray;
-            padding: 10px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        /* Tab */
+        .nav-tabs .nav-link {
+            margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+            border: var(--bs-nav-tabs-border-width);
+            border-top-left-radius: var(--bs-nav-tabs-border-radius);
+            border-top-right-radius: var(--bs-n av-tabs-border-radius);
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            color: #4C4C4C;
+            background-color: #f7f7f7;
+            margin-right: 1.5px;
         }
 
-        .box2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            /* 設定相對定位 */
+        .nav-tabs {
+            --bs-nav-tabs-border-color: #f7f7f7;
+            --bs-nav-tabs-border-width: 2px;
         }
 
-        .box2 h4 {
-            margin: 0 10px;
-            /* 設定左右間距 */
-            border-right: 1px solid #000;
-            /* 設定右邊線 */
-            position: relative;
-            /* 設定相對定位 */
-            padding-right: 30px;
-            /* 可選：設定右邊線的間距 */
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            color: #4C4C4C;
+            background-color: rgba(183, 221, 229, 0.60);
         }
 
-        .box2 h4:last-child {
-            border-right: none;
-            /* 移除最後一個 h4 的右邊線 */
+        /* Tab content */
+        div.tab-content {
+            color-scheme: light;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            font-size: 0;
+            padding: 1.5rem;
+            flex-shrink: 1;
+            background: #fff;
+            z-index: 1;
+            box-shadow: 0px 6px 7px -1px rgba(67, 89, 113, 0.12);
+            border-radius: 0 0 0.375rem 0.375rem;
+            border-top-right-radius: 0.375rem;
         }
 
-        .badge {
-            position: absolute;
-            /* 設定絕對定位 */
-            top: -10px;
-            /* 距離上方的偏移量 */
-            /* right: 5px; */
-            /* 距離右邊的偏移量 */
-            background-color: lightgray;
-            color: black;
-            border-radius: 50%;
-            padding: 4px;
-            font-size: 12px;
+        table {
+            border-collapse: collapse;
+            text-align: center;
         }
 
-        .btn-primary {
-            color: black;
-            text-decoration: underline;
-            border: none !important;
-            background-color: transparent;
-            padding: 0;
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #b9b9b9;
+        }
+    </style>
+
+    <style>
+        @media (max-width: 1179.98px) {
+            :root {
+                font-size: 8px;
+            }
         }
     </style>
 
@@ -421,7 +436,7 @@
                     <li>
                         <h4>MENU</h4>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#">
                             <img src="../image/Chart.svg" alt="">
                             <img src="../image/Chart-a.svg" alt="">個人中心
@@ -442,7 +457,7 @@
                             <img src="../image/DocumentAsh.svg" alt="">
                             <img src="../image/DocumentAsh-a.svg" alt="">我的訂單</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#">
                             <img src="../image/Discount.svg" alt="">
                             <img src="../image/Discount-a.svg" alt="">會員點數</a>
@@ -481,77 +496,105 @@
 
                 <div class="main-content-header row">
                     <div class="main-content-icon col-sm-1">
-                        <img calss="main-content-icon" src="../image/Chart-L.svg">
+                        <img calss="main-content-icon" src="../image/Discount-L.svg">
                     </div>
-                    <h1 class="main-content-title col-sm-10">個人中心</h1>
+                    <h1 class="main-content-title col-sm-10">會員點數</h1>
                     <hr class="main-content-divider">
                 </div>
                 <!-- -------------------------------- 頁面的內容請從這裡往下寫 -------------------------------- -->
                 <div class="container-sm">
                     <div class="row">
                         <div class="col">
-                            <div class="box">
-                                <div class="box1" style="display: flex; align-items: center;">
-                                    <img class="membership-points" src="../image/DiscountB.svg"
-                                        style="margin-right: 10px;">
-                                    <h3 style="margin: 0;">會員點數</h3>
-                                </div>
-                                <div class="box2" style="display: flex; flex-direction: column; align-items: center;">
-                                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                                        <h2 style="margin-right: 10px;">100000</h2>
-                                        <div style="display: flex; flex-direction: column;">
-                                            <h5 class="text-secondary" style="margin: 0;">NT$100000</h5>
-                                            <h5 class="text-secondary" style="margin: 0;">有效期限:2023-4-19</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn-primary" style="float: right;">查看歷史紀錄</button>
-                                </div>
+                            <h4>點數餘額</h4>
+                            <div style="display: flex; align-items: center; justify-content: center;">
+                                <h2 style="margin-right: 10px;">100000</h2>
+                                <h4>NT$100000</h4>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="box">
-                                <div class="box1" style="display: flex; align-items: center;">
-                                    <img class="exclusive-discount-coupon" src="../image/Ticket StarB.svg"
-                                        style="margin-right: 10px;">
-                                    <h3 style="margin: 0;">專屬折價券</h3>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
-                                    <h2 style="margin: 0;">100</h2>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn-primary">查看全部</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="height: 20px;"></div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="box">
-                                <div class="box1" style="display: flex; align-items: center;">
-                                    <img class="my-order" src="../image/DocumentB.svg" style="margin-right: 10px;">
-                                    <h3 style="margin: 0;">我的訂單</h3>
-                                </div>
-                                <div class="box2">
-                                    <img src="../image/WalletB.svg" alt="">
-                                    <h4>待付款<span class="badge">3</span></h4>
-                                    <img src="../image/SendB.svg" alt="">
-                                    <h4>處理中<span class="badge">3</span></h4>
-                                    <img src="../image/LocationB.svg" alt="">
-                                    <h4>待收貨<span class="badge">3</span></h4>
-                                    <img src="../image/StarB.svg" alt="">
-                                    <h4>待評價<span class="badge">3</span></h4>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn-primary">查看所有訂單</button>
-                                </div>
-                            </div>
+                            <h4>有效期限</h4>
+                            <h2 style="text-align: center;">2023-4-19</h2>
                         </div>
                     </div>
                 </div>
 
+                <hr class="main-content-divider">
+                <div style="height: 20px;"></div>
+                <div style="display: flex; align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <h4>點數紀錄</h4>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="display: flex; align-items: center; margin-right: 10px;">
+                            <label for="start-date" style="margin-right: 10px;">date:</label>
+                            <input type="date" id="start-date" style="width: 120px; height: 30px; font-size: 16px;">
+                        </div>
+                        <span style="font-size: 16px; margin-right: 10px;">~</span>
+                        <div style="display: flex; align-items: center; margin-right: 10px;">
+                            <label for="end-date" style="margin-right: 10px;">date:</label>
+                            <input type="date" id="end-date" style="width: 120px; height: 30px; font-size: 16px;">
+                        </div>
+                        <select style="width: 120px; height: 30px; font-size: 16px; margin-right: 10px;">
+                            <option value="*">全部</option>
+                            <option value="number1">訂單折抵</option>
+                            <option value="number2">購物回饋</option>
+                            <option value="number3">人工補點</option>
+                            <option value="number4">人工扣點</option>
+                        </select>
+                        <button class="btn btn-S btn-primary">搜尋</button>
+                    </div>
+                </div>
+
+
+                <div style="font-size: 16px; padding: 20px 0;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <th>日期</th>
+                            <th>訂單編號</th>
+                            <th>獲得/使用紀錄</th>
+                            <th>獲得點數</th>
+                            <th>使用點數</th>
+                            <th>到期日</th>
+                        </tr>
+                        <tr>
+                            <td>資料 1,1</td>
+                            <td>資料 1,2</td>
+                            <td>資料 1,3</td>
+                            <td>資料 1,4</td>
+                            <td>資料 1,5</td>
+                            <td>資料 1,6</td>
+                        </tr>
+                        <tr>
+                            <td>資料 2,1</td>
+                            <td>資料 2,2</td>
+                            <td>資料 2,3</td>
+                            <td>資料 2,4</td>
+                            <td>資料 2,5</td>
+                            <td>資料 2,6</td>
+                        </tr>
+                        <tr>
+                            <td>資料 3,1</td>
+                            <td>資料 3,2</td>
+                            <td>資料 3,3</td>
+                            <td>資料 3,4</td>
+                            <td>資料 3,5</td>
+                            <td>資料 3,6</td>
+                        </tr>
+                    </table>
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link">首頁</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">下一頁</a>
+                      </li>
+                    </ul>
+                  </nav>
             </main>
         </div>
     </main>
