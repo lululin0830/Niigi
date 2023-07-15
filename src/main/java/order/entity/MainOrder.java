@@ -34,7 +34,7 @@ public class MainOrder implements java.io.Serializable {
 	private String orderStatus;
 	private Integer totalAmount;
 	private Integer totalGrossProfit;
-	private Integer pointDiscount;
+	private Integer pointsDiscount;
 	private Integer couponDiscount;
 	private Integer paidAmount;
 	private String paymentType;

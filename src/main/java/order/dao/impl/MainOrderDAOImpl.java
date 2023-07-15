@@ -57,7 +57,7 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 				queryResult.setOrderStatus(rs.getString(4));
 				queryResult.setTotalAmount(rs.getInt(5));
 				queryResult.setTotalGrossProfit(rs.getInt(6));
-				queryResult.setPointDiscount(rs.getInt(7));
+				queryResult.setPointsDiscount(rs.getInt(7));
 				queryResult.setCouponDiscount(rs.getInt(8));
 				queryResult.setPaidAmount(rs.getInt(9));
 				queryResult.setPaymentType(rs.getString(10));
@@ -146,7 +146,7 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 				queryResult.setOrderStatus(rs.getString(4));
 				queryResult.setTotalAmount(rs.getInt(5));
 				queryResult.setTotalGrossProfit(rs.getInt(6));
-				queryResult.setPointDiscount(rs.getInt(7));
+				queryResult.setPointsDiscount(rs.getInt(7));
 				queryResult.setCouponDiscount(rs.getInt(8));
 				queryResult.setPaidAmount(rs.getInt(9));
 				queryResult.setPaymentType(rs.getString(10));
