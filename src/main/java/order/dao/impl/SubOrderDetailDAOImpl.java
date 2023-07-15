@@ -17,7 +17,7 @@ public class SubOrderDetailDAOImpl implements SubOrderDetailDAO{
 	}
 
 	@Override
-	public SubOrderDetail getByPrimarryKey(String id) {
+	public SubOrderDetail selectById(String id) {
 		// TODO Auto-generated method stub
 		return getSession().get(SubOrderDetail.class, id);
 	}
