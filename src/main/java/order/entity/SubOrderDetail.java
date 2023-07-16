@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -31,14 +32,22 @@ public class SubOrderDetail implements Serializable{
 	private String productId;
 	private String productSpecId;
 	private int productPrice;
+	@Column(insertable = false)
 	private int itemCouponDiscount;
 	private int eventPrice;
-	private int ratingPrice;
+	@Column(insertable = false)
+	private int ratingStar;
+	@Column(insertable = false)
 	private String comment;
+	@Column(insertable = false)
 	private Date commentDate;
+	@Column(insertable = false)
 	private Date refundDeadline;
+	@Column(insertable = false)
 	private Date refundDate;
+	@Column(insertable = false)
 	private String refundReason;
+	@Column(insertable = false)
 	private String refundRemark;
 	private String itemStatus;
 	
@@ -74,7 +83,7 @@ public class SubOrderDetail implements Serializable{
 						"product_price:" + productPrice +
 						"item_coupon_discount:" + itemCouponDiscount +
 						"event_price:" + eventPrice +
-						"rating_price:" + ratingPrice + 
+						"rating_price:" + ratingStar + 
 						"comment:" + comment +
 						"comment_date:" + commentDate +
 						"refund_deadline:" + refundDeadline +

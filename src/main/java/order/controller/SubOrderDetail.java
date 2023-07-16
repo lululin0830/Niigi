@@ -18,7 +18,7 @@ public class SubOrderDetail extends HttpServlet {
 
 	@Override
 	protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+		resp.setHeader("Access-Control-Allow-Origin", "*");
 		resp.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
 		resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
 		resp.setHeader("Access-Control-Allow-Credentials", "true");
@@ -29,7 +29,7 @@ public class SubOrderDetail extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
 		response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 		response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -38,7 +38,7 @@ public class SubOrderDetail extends HttpServlet {
 		Gson gson = new Gson();
 //		String req = gson.fromJson(request.getReader(),String.class);
 
-		String req = (String) request.getAttribute("searchway");
+		String req = (String) request.getParameter("searchway");
 		System.out.println("有了");
 
 //		response.getWriter().append("Served at: ").append(request.getContextPath());

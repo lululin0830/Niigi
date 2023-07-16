@@ -6,6 +6,8 @@ import java.util.Comparator;
 import java.sql.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
+
 public class SubOrder implements java.io.Serializable{
 
 	/**
@@ -18,14 +20,19 @@ public class SubOrder implements java.io.Serializable{
 	private String supplierId;
 	private String memberId;
 	private Timestamp orderCreateTime;
+	@Column(insertable = false)
 	private Timestamp orderCloseTime;
+	@Column(insertable = false)
 	private String subOrderStatus;
 	private Integer subPaidAmount;
+	@Column(insertable = false)
 	private Integer subPointsDiscount;
+	@Column(insertable = false)
 	private Integer subCouponDiscount;
 	private Integer grossProfit;
 	private Integer pointsReward;	
 	private String grantStatus;
+	@Column(insertable = false)
 	private Date grantDate;
 	private String recipient;
 	private String phoneNum;
