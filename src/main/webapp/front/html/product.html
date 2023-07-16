@@ -25,9 +25,6 @@
             flex-direction: column;
 
         }
-
-
-
     </style>
 
 </head>
@@ -327,54 +324,66 @@
     <main>
         <div class="container">
             <div class="row upone">
-                <div class="col-6 one">
+                <div class="col-6 one_img">
                     <div class="box">
                         <div id='show_L'>
-                            <img src="../image/fv_4.jpg" alt="">
+                            <!-- <img src="../image/fv_4.jpg" alt=""> -->
+                            <img class="big_img" src="../image/square.svg" alt="">
                         </div>
                         <div class="all_img">
-                            <img src="../image/fv_1.jpg" alt="">
-                            <img src="../image/fv_2.jpg" alt="">
-                            <img src="../image/fv_3.jpg" alt="">
-                            <img src="../image/fv_4.jpg" alt="">
-                            <img src="../image/fv_4.jpg" alt="">
+                            <img class="small_img" src="../image/square.svg" alt="">
+                            <img class="small_img" src="../image/square.svg" alt="">
+                            <img class="small_img" src="../image/square.svg" alt="">
+                            <img class="small_img" src="../image/square.svg" alt="">
+                            <img class="small_img" src="../image/fv_4.jpg" alt="">
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="col-6 two">
                     <h2>NETTA城市探索一代M號 (11色)</h2>
                     <p class="card-text star one">
+                        <img class="star_product" src="../image/star.svg" alt="">
+                        <img class="star_product" src="../image/star.svg" alt="">
+                        <img class="star_product" src="../image/star.svg" alt="">
+                        <img class="star_product" src="../image/Star_self.svg" alt="">
+                        <img class="star_product" src="../image/Star_zero.svg" alt="">
+                        <!-- <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <span class="starnum">4.5(187)</span>
+                        <i class="far fa-star"></i> -->
+                        <span class="star_avg">4.5</span>
+                        <span class="star_totoal">(187)</span>
                     </p>
                     <p>
                         <span class="priceone">NT$240,000</span>
                         <span class="pricetwo">NT$20,000</span>
                     </p>
                     <p>
-                        <div class="btn-group">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="btn-group">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             請選擇商品規格
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="#">Menu item</a></li>
                             <li><a class="dropdown-item" href="#">Menu item</a></li>
                             <li><a class="dropdown-item" href="#">Menu item</a></li>
-                            </ul>
-                        </div>
-                        <span class="stock">庫存1,000</span>
-                    </p>
-                    <div style="display: flex; align-items: center;">
-                        <span>數量</span>
-                        <a href="#" class="square"><i class="far fa-square-plus fa-2x fa-fw" ></i></a>
-                        <input type="number" id="quantity" name="quantity" class="custom-input" value="1" />
-                        <a href="#" class="square"><i class="far fa-square-minus fa-2x fa-fw"></i></a>
-                         <!-- 需要放入2個button，找lulu拿 -->
+                        </ul>
                     </div>
+                    <span class="stock" style="font-weight:bold;padding: 0 0 0 10px;">庫存1,000</span>
+                    </p>
+                    <div style="display: flex; align-items: center;padding: 10px 0 10px 0;">
+                        <span style="font-size: 16px;">數量</span>
+                        <button type="button" class="col-sm-1 plus" onclick="increaseQuantity()"><img
+                                src="../image/square-plus-regular.svg"></button>
+                        <input type="number" id="quantity" name="quantity" class="custom-input" value="1" />
+                        <button type="button" class="col-sm-1 minus" onclick="decreaseQuantity()"><img
+                                src="../image/square-minus-regular.svg"></button>
+                        <button class="join_car_btn btn btn-primary">加入購物車</button>
+                        <button class="heart_product_btn btn btn-primary">收藏此商品</button>
+                    </div>
+
                     <div class="text store_illustrate">
                         付款後，從備貨到寄出商品為 5 個工作天。（不包含假日）
                         由商家提供統一發票或免用統一發票收據
@@ -383,167 +392,184 @@
                     <hr>
                     <div class="text discount">
                         <h5 style="font-weight: bold;">優惠活動</h5>
-                        <p>活動1</p>
-                        <p>活動2</p>
-                        <p>活動3</p>
+                        <ul class="promo_messages">
+                            <li class="msg">活動1</li>
+                            <li class="msg">活動1</li>
+                            <li class="msg">活動1</li>
+                        </ul>
                     </div>
                     <hr>
                     <div class="text product_illustrate">
-                        商品特色、商品規格.....等說明文字的區塊 
+                        商品特色、商品規格.....等說明文字的區塊
                     </div>
-                        
+
                 </div>
             </div>
             <div class="row downtwo">
                 <!------------------------- 左下-會員評價區 ---------------------------------------->
                 <div class="col-6 one">
                     <h3 style="font-weight: bolder;">商品評價</h3>
-                    <div class="member_evaluate">
-                        <p>
+                    <div class="member_evaluate-container">
+                        <div class="member_evaluate">
+                            <p>
                             <div id="member"><img src="../image/fv_4.jpg" class="member_img"></div>
-                            <span>帳號名稱</span>
-                            <span class="card-text star one">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <span style="font-size: 14px;font-weight: bolder;"">帳號名稱</span>
+                            <span class="card-text star onedown">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/Star_self.svg" alt="">
+                                <img class="star_member" src="../image/Star_zero.svg" alt="">
                             </span>
-                            <span>2023.06.14</span>
-                        </p>
-                        <p>很好看，唯一缺點就是被扣到關稅！但真的很好看超乎預期👍</p>
-                        <hr>
-                    </div>
-                    <div class="member_evaluate">
-                        <p>
+                            <span class="member_time" style="font-size:14px;">2023.06.14</span>
+                            </p>
+                            <p>很好看，唯一缺點就是被扣到關稅！但真的很好看超乎預期👍</p>
+                            <hr>
+                        </div>
+                        <div class="member_evaluate">
+                            <p>
                             <div id="member"><img src="../image/fv_4.jpg" class="member_img"></div>
-                            <span>帳號名稱</span>
-                            <span class="card-text star one">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <span style="font-size: 14px;font-weight: bolder;"">帳號名稱</span>
+                            <span class="card-text star onedown">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/Star_self.svg" alt="">
+                                <img class="star_member" src="../image/Star_zero.svg" alt="">
                             </span>
-                            <span>2023.06.14</span>
-                        </p>
-                        <p>很好看，唯一缺點就是被扣到關稅！但真的很好看超乎預期👍</p>
-                        <hr>
-                    </div>
-                    <div class="member_evaluate">
-                        <p>
+                            <span class="member_time" style="font-size:14px;">2023.06.14</span>
+                            </p>
+                            <p>很好看，唯一缺點就是被扣到關稅！但真的很好看超乎預期👍</p>
+                            <hr>
+                        </div>
+                        <div class="member_evaluate">
+                            <p>
                             <div id="member"><img src="../image/fv_4.jpg" class="member_img"></div>
-                            <span>帳號名稱</span>
-                            <span class="card-text star one">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <span style="font-size: 14px;font-weight: bolder;"">帳號名稱</span>
+                            <span class="card-text star onedown">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/star.svg" alt="">
+                                <img class="star_member" src="../image/Star_self.svg" alt="">
+                                <img class="star_member" src="../image/Star_zero.svg" alt="">
                             </span>
-                            <span>2023.06.14</span>
-                        </p>
-                        <p>很好看，唯一缺點就是被扣到關稅！但真的很好看超乎預期👍</p>
-                        <hr>
+                            <span class="member_time" style="font-size:14px;">2023.06.14</span>
+                            </p>
+                            <p>很好看，唯一缺點就是被扣到關稅！但真的很好看超乎預期👍</p>
+                            <hr>
+                        </div>
+                    
+
                     </div>
+
+                    
+
                 </div>
                 <!------------------------- 右下-商家區 -------------------------------------------->
                 <div class="col-6 two">
-                    <h5 style="font-weight: bolder;">關於商家&nbsp;&nbsp;<span class="enterstore" style="font-size:12px;">進店逛逛</span></h5>
+                    <h5 style="font-weight: bolder;">關於商家&nbsp;&nbsp;<a href=""><span class="enterstore"
+                        style="font-size:12px;">進店逛逛</span></a></h5>
                     <div class="card" style="width: 500px ;height: 320px;margin-right: 120px;">
                         <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-auto">
-                                  <div id="member">
-                                    <img src="../image/fv_4.jpg" class="member_img">
-                                  </div>
+                                    <div id="member">
+                                        <img src="../image/fv_4.jpg" class="member_img">
+                                    </div>
                                 </div>
                                 <div class="col">
-                                  <span>
-                                    <h5 class="card-title item__store">
-                                      <span class="store-name">蘋果爹商店</span>
-                                      <span><button class="join">加入關注</button></span>
-                                      <span><button class="talk">聊聊</button></span>
-                                    </h5>
-                                    <p>
-                                      <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
-                                      <span class="card-text item__loction">台北市</span>
-                                      <span class="star-icons">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                      </span>
-                                    </p>
-                                  </span>
+                                    <span>
+                                        <h5 class="card-title item__store">
+                                            <span class="store-name">蘋果爹商店</span>
+                                            <span><button class="join_store btn btn-primary">加入關注</button></span>
+                                            <span><button class="talk_store btn btn-primary">聊聊</button></span>
+                                            
+                                        </h5>
+                                        <p>
+                                            <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                            <span class="card-text item__loction">台北市</span>
+                                            <span class="star-icons">
+                                                <img class="star_store" src="../image/star.svg" alt="">
+                                                <img class="star_store" src="../image/star.svg" alt="">
+                                                <img class="star_store" src="../image/star.svg" alt="">
+                                                <img class="star_store" src="../image/Star_self.svg" alt="">
+                                                <img class="star_store" src="../image/Star_zero.svg" alt="">
+                                            </span>
+                                        </p>
+                                    </span>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     <div class="store-action-all">
                         <div class="store-action">
                             <dt>上次上線：</dt>
-                            <dd>1天內</dd>
+                            <dd class="date_one">1天內</dd>
                         </div>
                         <div class="store-action">
                             <dt>回應率：</dt>
-                            <dd>９％</dd>
+                            <dd class="percentage">９％</dd>
                         </div>
                         <div class="store-action">
                             <dt>回應速度：</dt>
-                            <dd>１日內</dd>
+                            <dd class="date_two">１日內</dd>
                         </div>
                     </div>
                     <hr>
                     <div class="container tablethird">
                         <div class="row">
-                            <div class = "col-sm-6 col-lg-4 tablethird">
+                            <div class="col-sm-6 col-lg-4 tablethird">
                                 <div class="card" style="width: 10rem;height:12rem; margin-right: 80px;">
-                                    <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px";>
-                                    <div class="card-body";>
-                                      <h5 class="card-title item__name">APPPLE AIR 5 粉金 <i class="fas fa-heart"></i></h5>
-                                      <p class="card-text item__price">$24,000</p>
-                                      <p class="card-text item__store">蘋果爹商店</p>
+                                    <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX"
+                                        style="height: 260px" ;>
+                                    <div class="card-body" ;>
+                                        <h5 class="card-title item__name">APPPLE AIR 5 粉金 <i class="fas fa-heart"></i>
+                                        </h5>
+                                        <p class="card-text item__price">$24,000</p>
+                                        <p class="card-text item__store">蘋果爹商店</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class = "col-sm-6 col-lg-4 tablethird">
+                            <div class="col-sm-6 col-lg-4 tablethird">
                                 <div class="card" style="width: 10rem;height:12rem; margin-right: 80px;">
-                                    <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                                    <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX"
+                                        style="height: 260px;">
                                     <div class="card-body">
-                                      <h5 class="card-title item__name">APPPLE AIR 5 粉金 <i class="fas fa-heart"></i></h5>
-                                      <p class="card-text item__price">$24,000</p>
-                                      <p class="card-text item__store">蘋果爹商店</p>
+                                        <h5 class="card-title item__name">APPPLE AIR 5 粉金 <i class="fas fa-heart"></i>
+                                        </h5>
+                                        <p class="card-text item__price">$24,000</p>
+                                        <p class="card-text item__store">蘋果爹商店</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class = "col-sm-6 col-lg-4 tablethird">
-                                <div class="card" style="width: 10rem;height:12rem;">
-                                    <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                            <div class="col-sm-6 col-lg-4 tablethird">
+                                <div class="card" style="width: 16rem;height:16rem;">
+                                    <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX"
+                                        style="height: 260px;">
                                     <div class="card-body">
-                                      <h5 class="card-title item__name">APPPLE AIR 5 粉金 <i class="fas fa-heart"></i></h5>
-                                      <p class="card-text item__price">$24,000</p>
-                                      <p class="card-text item__store">蘋果爹商店</p>
+                                        <h5 class="card-title item__name">APPPLE AIR 5 粉金 <i class="fas fa-heart"></i>
+                                        </h5>
+                                        <p class="card-text item__price">$24,000</p>
+                                        <p class="card-text item__store">蘋果爹商店</p>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    
-    
 
-                      
-                      
+                    <!-- 目前剩廣告小圖要修改外加愛心，另外" NETTA城市探索一代M號 (11色)"要加上範圍 -->
+
+
+
 
                 </div>
             </div>
         </div>
-        
-        
-        
+
+
+
     </main>
 
 
@@ -585,33 +611,11 @@
         </div>
     </footer>
 
-    <!-- 這是圖片切換 -->
-    <!-- <script>
-        function change_img(e){
-            //抓你點擊的這個小圖的“屬性”
-            //換路徑給大圖
-            //console.log("點到了");
-            //console.log(e.target.getAttribute("src"))
-            var newSrc = e.target.getAttribute("src");
-            document.querySelector("#show_L > img").setAttribute("src",newSrc);
-    
-        }
-    
-        function init(){
-            //幫小圖註冊事件
-            document.querySelectorAll(".all_img > img").forEach(function(element){
-                // console.log(element);
-                element.addEventListener("click",change_img);
-            })
-        }
-    
-    
-        window.addEventListener('load',init);
-    
-    </script> -->
 
     <script src="https://kit.fontawesome.com/9b63fd54c4.js" crossorigin="anonymous"></script>
     <script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../vendors/jquery/jquery-3.7.0.min.js"></script>
+    <script src="../js/product.js"></script>
 </body>
 
 </html>

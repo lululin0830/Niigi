@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/button.css"> <!-- 所有按鈕共同的CSS 勿動，勿覆蓋！！！！！ 若沒用到按鈕可移除 -->
     <link rel="stylesheet" href="../css/index.header.css"> <!-- header的CSS 勿刪-->
     <link rel="stylesheet" href="../css/index.footer.css"> <!-- footer的CSS 勿刪-->
-    <link rel="stylesheet" href="../css/section.css">
+    <link rel="stylesheet" href="../css/home.css">
 
     <style>
         main {
@@ -410,264 +410,111 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <section class="p-top-section p-top-recommend">
-            <div class="p-top-section__body">
-                <div class="p-top-recommend__head">
-                    <h2 class="p-top-section__ttl">推薦商品</h2>
-                    <div class="p-top-recommend__btns">
-                        <div class="arw-btn prev"></div>
-                        <div class="arw-btn next"></div>
+
+        <h2 class="little">推薦商品</h2>
+        <div class="container tablethird">
+            <div class="row">
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
                     </div>
                 </div>
-                <div class="p-top-recommend__slider swiper">
-                    <ul class="p-top-recommend__list swiper-wrapper">
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX"> <!--  -->
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="p-top-recommend__more"><a href="/item/" class="m-btn"><span class="txt">查看所有商品</span></a>
-                </div>
-            </div>
-        </section>
-        <section class="p-top-section p-top-recommend">
-            <div class="p-top-section__body">
-                <div class="p-top-recommend__head">
-                    <h2 class="p-top-section__ttl">新品上市</h2>
-                    <div class="p-top-recommend__btns">
-                        <div class="arw-btn prev"></div>
-                        <div class="arw-btn next"></div>
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
                     </div>
                 </div>
-                <div class="p-top-recommend__slider swiper">
-                    <ul class="p-top-recommend__list swiper-wrapper">
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="item swiper-slide ">
-                            <a href="" class="item__link">
-                                <div class="item__img">
-                                    <img src="../image/fv_4.jpg" width="260" height="260" alt="BROTHER BOX">
-                                    <!-- <img src="../image/fv_3.jpg" width="260" height="260" alt="BROTHER BOX"> -->
-                                </div>
-                                <div class="item__text">
-                                    <p class="item__ttl">APPLE AIR 5 粉金色</p>
-                                    <div class="item__price">
-                                        <p class="price">
-                                            <span>$3,240</span>
-                                        </p>
-                                    </div>
-                                    <div id="productStockShow8" data="8">
-                                        <span class="sale_price">
-                                            <div class="ec-numberInput joolen-low-stock-notification-list"
-                                                style="display:none">
-                                                <div class="text-danger joolen-low-stock-notification-list-message">
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <ul class="item__cat">
-                                        <li>蘋果爹商店</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-top-recommend__more"><a href="/item/" class="m-btn"><span class="txt">查看所有商品</span></a>
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <a class="list_recommend" href="">查看所有商品></a>
+
+        <h2 class="little">新品上市</h2>
+        <div class="container tablethird">
+            <div class="row">
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 tablethird">
+                    <div class="card" style="width:200px;height:28rem;">
+                        <!-- <img src="../image/fv_4.jpg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;"> -->
+                        <img src="../image/square.svg" class="card-img-top" alt="BROTHER BOX" style="height: 260px;">
+                        <div class="card-body">
+                          <h5 class="card-title item__name">APPPLE AIR 5 粉金 <img class="heart" src="../image/heart_store.svg" alt=""></i></h5>
+                          <p class="card-text item__price">$24,000</p>
+                          <p class="card-text item__store">蘋果爹商店</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <a class="list_NewStore" href="">查看所有商品></a>
+        
+
+
     </main>
 
     <!-- --------------------------------以下是Footer 勿動！！-------------------------------- -->
