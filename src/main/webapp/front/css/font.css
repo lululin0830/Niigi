@@ -83,7 +83,7 @@ select,
 textarea {
     margin: 0;
     font-family: monospace, Helvetica, sans-serif, serif;
-    font-size: initial;
+    font-size: 1.4rem;
     line-height: initial;
 }
 
