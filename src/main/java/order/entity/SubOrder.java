@@ -8,6 +8,7 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class SubOrder implements java.io.Serializable{
 	 */
 	private static final long serialVersionUID = -5618369222849326060L;
 	
+	@Id
 	private String subOrderId;
 	private String orderId;	
 	private String supplierId;
@@ -48,46 +50,5 @@ public class SubOrder implements java.io.Serializable{
 	private String recipient;
 	private String phoneNum;
 	private String deliveryAddress;
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(subOrderId);
-		
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		
-		SubOrder other = (SubOrder) obj;
-		return Objects.equals(subOrderId, other.subOrderId);
-	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		String result = "orderId:" + orderId + 
-						"sub_orderId:" + subOrderId +  
-						"supplierId:" + supplierId + 
-						"memberId:" + memberId + 
-						"orderCreateTime:" + orderCreateTime +
-						"orderCloseTime:" + orderCloseTime +
-						"subOrderStatus:" + subOrderStatus + 
-						"subPaidAmount:" + subPaidAmount +
-						"subPointsDiscount:" + subPointsDiscount +
-						"subCouponDiscount:" + subCouponDiscount +
-						"grossProfit:" + grossProfit + 
-						"pointsReward:" + pointsReward +
-						"grantStatus:" + grantStatus +
-						"grantDate:" + grantDate + 
-						"recipient:" + recipient + 
-						"phoneNum:" + phoneNum + 
-						"deliveryAddress:" + deliveryAddress;
-		return result;
-	}
-	
-	
+
 }

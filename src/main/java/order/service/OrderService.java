@@ -1,10 +1,13 @@
 package order.service;
 
+import java.util.List;
+
 import com.google.gson.JsonObject;
 
-import antlr.collections.List;
+
 import core.service.CoreService;
 import order.entity.MainOrder;
+import order.entity.SubOrder;
 
 public interface OrderService extends CoreService{
 	
@@ -26,7 +29,7 @@ public interface OrderService extends CoreService{
 	
 	//======================後台訂單列表區塊======================
 	
-	public boolean orderlist(JsonObject SearchCondition);
+	public List<SubOrder> orderlist(JsonObject SearchCondition);	
 	
 	//======================後台訂單列表區塊======================
 	

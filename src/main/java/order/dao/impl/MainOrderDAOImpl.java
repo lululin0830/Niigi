@@ -11,9 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import order.dao.MainOrderDAO;
 import order.entity.MainOrder;
+import order.entity.SubOrder;
 
 public class MainOrderDAOImpl implements MainOrderDAO {
 
@@ -37,48 +39,9 @@ public class MainOrderDAOImpl implements MainOrderDAO {
 	@Override
 	public List<MainOrder> getAll() {
 
-		final String url = "jdbc:mysql://localhost:3306/GP?serverTimezone=Asia/Taipei";
-		final String user = "root";
-		final String password = "password";
-		final String GET_ALL_STMT = "select * from MainOrder order by orderId desc ;";
-
-		List<MainOrder> queryResultList = new ArrayList<MainOrder>();
-		MainOrder queryResult = null;
-		try (Connection connection = DriverManager.getConnection(url, user, password);
-				PreparedStatement pstmt = connection.prepareStatement(GET_ALL_STMT);
-				ResultSet rs = pstmt.executeQuery();) {
-
-			while (rs.next()) {
-				queryResult = new MainOrder();
-
-				queryResult.setOrderId(rs.getString(1));
-				queryResult.setMemberId(rs.getString(2));
-				queryResult.setOrderCreateTime(rs.getTimestamp(3));
-				queryResult.setOrderStatus(rs.getString(4));
-				queryResult.setTotalAmount(rs.getInt(5));
-				queryResult.setTotalGrossProfit(rs.getInt(6));
-				queryResult.setPointsDiscount(rs.getInt(7));
-				queryResult.setCouponDiscount(rs.getInt(8));
-				queryResult.setPaidAmount(rs.getInt(9));
-				queryResult.setPaymentType(rs.getString(10));
-				queryResult.setPaymentStatus(rs.getString(11));
-				queryResult.setPaymentTime(rs.getTimestamp(12));
-				queryResult.setBillStatus(rs.getString(13));
-				queryResult.setBillDate(rs.getDate(14));
-				queryResult.setShipmentType(rs.getString(15));
-				queryResult.setPhoneNum(rs.getString(16));
-				queryResult.setPhoneNum(rs.getString(17));
-				queryResult.setDeliveryAddress(rs.getString(18));
-
-				queryResultList.add(queryResult);
-
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return queryResultList;
+		Session session = getSession();
+		Query<MainOrder> query = session.createQuery("FROM MainOrder", MainOrder.class);
+		return query.getResultList();
 	}
 
 	@Override

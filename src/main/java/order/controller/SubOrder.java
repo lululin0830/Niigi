@@ -27,7 +27,12 @@ public class SubOrder extends HttpServlet {
 		
 		var out = response.getWriter(); // 這裡的var 是 PrintWrite類別的意思
 		String getsubOrderId = request.getParameter("getsubOrderId");
-		out.print(gson.toJson(dao.getByPrimaryKey(getsubOrderId))); 
+		try {
+			out.print(gson.toJson(dao.selectById(getsubOrderId)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 		
 	}
 
