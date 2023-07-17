@@ -384,21 +384,19 @@
                 </div><!-- /.container-fluid -->
             </div>
             <div>
-                <input type="text" value="請輸入搜尋條件">
+                <input id="Searchcase" type="text" value="請輸入搜尋條件">
                 <select id="SearchSelect">
-                    <option value="Order_Id">訂單號碼</option>
+                    <option value="Order_Id">子訂單編號</option>
                     <option value="Member_Id">會員帳號</option>
                     <option value="Supplier_Id">商家帳號</option>
-                    <option>訂單成立日期</option>
-                    <option>訂單結案日期</option>
                 </select>
                 <br>
-                <input type="date">
+                <input id="StartDate" type="date">
                 <span>~</span>
-                <input type="date">
-                <select>
-                    <option>訂單成立時間</option>
-                    <option>訂單結案時間</option>
+                <input id="EndDate" type="date">
+                <select id="DateSelect">
+                    <option value="Order_Create_Time">訂單成立日期</option>
+                    <option value="Order_Close_Time">訂單結案日期</option>
                 </select>
                 <input type="button" id="search" value="搜尋">
             </div>
@@ -406,7 +404,7 @@
             <div>
                 <table>
                     <thead>
-                        <th>訂單編號</th>
+                        <th>子訂單編號</th>
                         <th>會員帳號</th>
                         <th>會員編號</th>
                         <th>商家帳號</th>
