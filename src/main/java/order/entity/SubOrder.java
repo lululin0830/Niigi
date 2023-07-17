@@ -7,7 +7,18 @@ import java.sql.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class SubOrder implements java.io.Serializable{
 
 	/**
@@ -38,112 +49,6 @@ public class SubOrder implements java.io.Serializable{
 	private String phoneNum;
 	private String deliveryAddress;
 	
-	
-	public String getSubOrderId() {
-		return subOrderId;
-	}
-	public void setSubOrderId(String subOrderId) {
-		this.subOrderId = subOrderId;
-	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-	public String getSupplierId() {
-		return supplierId;
-	}
-	public void setSupplierId(String supplierId) {
-		this.supplierId = supplierId;
-	}
-	public String getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
-	public Timestamp getOrderCreateTime() {
-		return orderCreateTime;
-	}
-	public void setOrderCreateTime(Timestamp orderCreateTime) {
-		this.orderCreateTime = orderCreateTime;
-	}
-	public Timestamp getOrderCloseTime() {
-		return orderCloseTime;
-	}
-	public void setOrderCloseTime(Timestamp orderCloseTime) {
-		this.orderCloseTime = orderCloseTime;
-	}
-	public String getSubOrderStatus() {
-		return subOrderStatus;
-	}
-	public void setSubOrderStatus(String subOrderStatus) {
-		this.subOrderStatus = subOrderStatus;
-	}
-	public Integer getSubPaidAmount() {
-		return subPaidAmount;
-	}
-	public void setSubPaidAmount(Integer subPaidAmount) {
-		this.subPaidAmount = subPaidAmount;
-	}
-	public Integer getSubPointsDiscount() {
-		return subPointsDiscount;
-	}
-	public void setSubPointsDiscount(Integer subPointsDiscount) {
-		this.subPointsDiscount = subPointsDiscount;
-	}
-	public Integer getSubCouponDiscount() {
-		return subCouponDiscount;
-	}
-	public void setSubCouponDiscount(Integer subCouponDiscount) {
-		this.subCouponDiscount = subCouponDiscount;
-	}
-	public Integer getGrossProfit() {
-		return grossProfit;
-	}
-	public void setGrossProfit(Integer grossProfit) {
-		this.grossProfit = grossProfit;
-	}
-	public Integer getPointsReward() {
-		return pointsReward;
-	}
-	public void setPointsReward(Integer pointsReward) {
-		this.pointsReward = pointsReward;
-	}
-	public String getGrantStatus() {
-		return grantStatus;
-	}
-	public void setGrantStatus(String grantStatus) {
-		this.grantStatus = grantStatus;
-	}
-	public Date getGrantDate() {
-		return grantDate;
-	}
-	public void setGrantDate(Date grantDate) {
-		this.grantDate = grantDate;
-	}
-	public String getRecipient() {
-		return recipient;
-	}
-	public void setRecipient(String recipient) {
-		this.recipient = recipient;
-	}
-	public String getPhoneNum() {
-		return phoneNum;
-	}
-	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
-	}
-	public String getDeliveryAddress() {
-		return deliveryAddress;
-	}
-	public void setDeliveryAddress(String deliveryAddress) {
-		this.deliveryAddress = deliveryAddress;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(subOrderId);

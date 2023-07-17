@@ -1,16 +1,13 @@
 package order.service.impl;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import org.hibernate.Session;
+import com.google.gson.JsonObject;
 
 import order.dao.MainOrderDAO;
-import order.dao.SubOrderDAO;
-import order.dao.SubOrderDetailDAO;
 import order.dao.impl.MainOrderDAOImpl;
-import order.dao.impl.SubOrderDAOImpl;
-import order.dao.impl.SubOrderDetailDAOImpl;
 import order.entity.MainOrder;
 import order.service.OrderService;
 
@@ -88,6 +85,29 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public boolean closeOrder() {
+		return false;
+	}
+
+	
+	//後臺訂單列表-取得查詢結果
+	@Override
+	public boolean orderlist(JsonObject searchCondition) {
+		
+		String searchcase = searchCondition.get("searchcase").getAsString();
+		
+		String searchway = searchCondition.get("searchway").getAsString();
+		
+		String startDateString = searchCondition.get("StartDate").getAsString();
+		LocalDate startDate = LocalDate.parse(startDateString, DateTimeFormatter.ISO_DATE);
+		
+		String closeDateString = searchCondition.get("CloseDate").getAsString();
+		LocalDate closeDate = LocalDate.parse(closeDateString,DateTimeFormatter.ISO_DATE);
+		
+		String dateSelect = searchCondition.get("DateSelect").getAsString();
+		
+		
+		
+		
 		return false;
 	}
 

@@ -1,6 +1,8 @@
 package order.controller;
 
 import java.io.IOException;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import order.service.OrderService;
+import order.service.impl.OrderServiceImpl;
 
 /**
  * Servlet implementation class SubOrderDetail
@@ -36,12 +43,15 @@ public class SubOrderDetail extends HttpServlet {
 		response.setContentType("application/json; charset=utf-8");
 
 		Gson gson = new Gson();
-//		String req = gson.fromJson(request.getReader(),String.class);
+		JsonElement req = gson.fromJson(request.getReader(),JsonElement.class);
+		JsonObject searchCondition = req.getAsJsonObject();
+			
+//		System.out.println(SearchCondition.get("searchcase").getAsString());
+		
+		OrderService orderService = new OrderServiceImpl();
+		
+		response.getWriter().print(orderService.orderlist(searchCondition));
 
-		String req = (String) request.getParameter("searchway");
-		System.out.println("有了");
-
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 }
