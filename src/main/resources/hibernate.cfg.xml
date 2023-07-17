@@ -15,5 +15,14 @@
 		<mapping class="order.entity.MainOrder"/>
 		<mapping class="order.entity.SubOrder"/>
 		<mapping class="order.entity.SubOrderDetail"/>
+		<mapping class="product.entity.Product"/>
+		<mapping class="product.entity.ProductSpec"/>
+		<mapping class="product.entity.Categorie"/>
+		<mapping class="product.entity.FrontendPage"/>
+		<mapping class="product.entity.RestockRecord"/>
+		<mapping class="product.entity.ShelvesStatusRecord"/>
+		<mapping class="product.entity.SortWeight"/>
+		
+		
 	</session-factory>
 </hibernate-configuration>
