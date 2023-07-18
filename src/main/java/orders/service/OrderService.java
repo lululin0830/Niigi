@@ -31,6 +31,8 @@ public interface OrderService extends CoreService{
 	
 	public String orderlist(JsonObject SearchCondition);	
 	
+	public String getAllInit();
+	
 	//======================後台訂單列表區塊======================
 	
 }

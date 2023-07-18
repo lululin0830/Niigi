@@ -2,21 +2,28 @@ package orders.entity;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import org.hibernate.type.TrueFalseType;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class MainOrder implements java.io.Serializable {
 
 	/**
@@ -51,5 +58,9 @@ public class MainOrder implements java.io.Serializable {
 	private String recipient;
 	private String phoneNum;
 	private String deliveryAddress;
+	
+	@OneToMany
+	@JoinColumn(name = "orderId",referencedColumnName = "orderId",insertable = false,updatable = false)
+	private List<SubOrder> subOrders;
 
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 import com.google.gson.JsonObject;
+import com.mysql.cj.xdevapi.Result;
 
 import orders.dao.MainOrderDAO;
 import orders.dao.impl.MainOrderDAOImpl;
@@ -124,8 +125,8 @@ public class OrderServiceImpl implements OrderService {
 
 		String closeDateString = searchCondition.get("EndDate").getAsString();
 
-		if (startDateString.length() > 1) {
-			closeDateString += " 00:00:00";
+		if (closeDateString.length() > 0) {		
+			closeDateString+= " 00:00:00";
 			closeDate = Timestamp.valueOf(closeDateString);
 		}else {
 			closeDate = Timestamp.valueOf(LocalDateTime.now());
@@ -135,8 +136,7 @@ public class OrderServiceImpl implements OrderService {
 
 //		SubOrderDAOImpl subOrderDAOImpl = new SubOrderDAOImpl();
 
-		Session session = dao.getSession();
-		
+	
 		String result = null;
 		try {
 			
@@ -152,4 +152,22 @@ public class OrderServiceImpl implements OrderService {
 		
 
 	}
+
+	@Override
+	public String getAllInit() {
+		
+		String result = null;
+		try {
+			beginTransaction();
+			result = dao.getAllInit();
+			commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
 }
+
+	
