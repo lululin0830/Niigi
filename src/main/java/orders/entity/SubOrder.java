@@ -1,10 +1,7 @@
 package orders.entity;
 
-import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Comparator;
 import java.sql.Date;
-import java.util.Objects;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,12 +11,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class SubOrder implements java.io.Serializable{
 
 	/**
