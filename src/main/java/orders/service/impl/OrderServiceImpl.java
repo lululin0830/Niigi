@@ -124,8 +124,8 @@ public class OrderServiceImpl implements OrderService {
 
 		String closeDateString = searchCondition.get("EndDate").getAsString();
 
-		if (startDateString.length() > 1) {
-			closeDateString += " 00:00:00";
+		if (closeDateString.length() > 0) {		
+			closeDateString+= " 00:00:00";
 			closeDate = Timestamp.valueOf(closeDateString);
 		}else {
 			closeDate = Timestamp.valueOf(LocalDateTime.now());

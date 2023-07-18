@@ -49,3 +49,5 @@ const init = function () {
 }
 console.log("讀到了")
 document.getElementById("search").addEventListener("click", init);
+
+
