@@ -63,7 +63,7 @@ aside.member-aside ul.nav1_list>li a img {
 
 /* lulu edit 這一塊重寫在下方了，之後要刪掉 */
 
-.memberAccount {
+h4.memberAccount {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
