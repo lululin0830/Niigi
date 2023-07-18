@@ -216,7 +216,7 @@
         }
 
         .tableOne .productTotal {
-            width: 350px;
+            width: 360px;
             padding: 0 10px;
         }
 
@@ -278,6 +278,10 @@
 
         .productId {
             color: #94A3B8;
+        }
+
+        .tableTwo tbody td button.edit_btn {
+            margin-bottom: 10px;
         }
     </style>
 
@@ -697,9 +701,6 @@
                             <button class="stock_update btn btn-primary">庫存更新</button>
                         </div>
 
-
-
-
                         <div class="tab-content">
                             <!-- 分頁內容 -->
                             <!-- 全部 -->
@@ -713,12 +714,11 @@
                                                     <button class="dropdown-toggle" type="button"
                                                         id="dropdownMenuButton" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
-                                                        ???
+                                                        商品名稱
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
+                                                        <li><a class="dropdown-item" href="#">商品名稱</a></li>
+                                                        <li><a class="dropdown-item" href="#">商品編號</a></li>
                                                     </ul>
                                                 </div>
                                             </th>
@@ -728,8 +728,7 @@
                                                 </div>
                                             </th>
                                             <th><button class="Search_btn" type="submit">搜尋</button></th>
-                                            <th>篩選??</th>
-                                            <th><button class="product_New" type="submit">新增商品</button></th>
+                                            <th><button class="product_new" type="submit">新增商品</button></th>
                                             <th><button class="status_btn" type="submit">上/下架</button></th>
                                         </tr>
                                     </thead>
@@ -749,7 +748,7 @@
                                             <th>即時庫存</th>
                                             <th>已售出</th>
                                             <th>狀態</th>
-                                            <th>操作</th>
+                                            <th class="operate_txt">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -768,19 +767,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -798,19 +787,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -828,21 +807,16 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
+
+
+
+
+
                                     </tbody>
 
                                 </table>
@@ -858,12 +832,11 @@
                                                     <button class="dropdown-toggle" type="button"
                                                         id="dropdownMenuButton" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
-                                                        ???
+                                                        商品名稱
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
+                                                        <li><a class="dropdown-item" href="#">商品名稱</a></li>
+                                                        <li><a class="dropdown-item" href="#">商品編號</a></li>
                                                     </ul>
                                                 </div>
                                             </th>
@@ -873,7 +846,6 @@
                                                 </div>
                                             </th>
                                             <th><button class="Search_btn" type="submit">搜尋</button></th>
-                                            <th>篩選??</th>
                                             <th><button class="status_btn" type="submit">下架</button></th>
                                         </tr>
                                     </thead>
@@ -893,7 +865,7 @@
                                             <th>即時庫存</th>
                                             <th>已售出</th>
                                             <th>狀態</th>
-                                            <th>操作</th>
+                                            <th class="operate_txt">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -912,19 +884,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -942,19 +904,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -972,21 +924,12 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
+
 
 
 
@@ -1006,12 +949,11 @@
                                                     <button class="dropdown-toggle" type="button"
                                                         id="dropdownMenuButton" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
-                                                        ???
+                                                        商品名稱
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
+                                                        <li><a class="dropdown-item" href="#">商品名稱</a></li>
+                                                        <li><a class="dropdown-item" href="#">商品編號</a></li>
                                                     </ul>
                                                 </div>
                                             </th>
@@ -1021,7 +963,6 @@
                                                 </div>
                                             </th>
                                             <th><button class="Search_btn" type="submit">搜尋</button></th>
-                                            <th>篩選??</th>
                                             <th><button class="status_btn" type="submit">上架</button></th>
                                         </tr>
                                     </thead>
@@ -1041,7 +982,7 @@
                                             <th>即時庫存</th>
                                             <th>已售出</th>
                                             <th>狀態</th>
-                                            <th>操作</th>
+                                            <th class="operate_txt">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1060,19 +1001,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">下架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1090,19 +1021,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">下架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1120,21 +1041,12 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">下架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
+
 
 
 
@@ -1169,8 +1081,6 @@
                                             </th>
                                             <th><button class="Search_btn" type="submit">搜尋</button></th>
                                             <th><button class="status_btn" type="submit">上/下架</button></th>
-                                            <th><button class="Search_btn" type="submit">搜尋</button></th>
-                                            <th><button class="Search_btn" type="submit">搜尋</button></th>
                                         </tr>
                                     </thead>
 
@@ -1189,7 +1099,7 @@
                                             <th>即時庫存</th>
                                             <th>已售出</th>
                                             <th>狀態</th>
-                                            <th>操作</th>
+                                            <th class="operate_txt">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1208,19 +1118,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1238,19 +1138,9 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        編輯
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">項目1</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目2</a></li>
-                                                        <li><a class="dropdown-item" href="#">項目3</a></li>
-                                                    </ul>
-                                                </div>
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1268,20 +1158,12 @@
                                             <td class="stock">100,000</td>
                                             <td class="soldNum">100,000</td>
                                             <td class="status">上架中</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="edit dropdown-toggle btn btn-primary" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
+                                            <td class="edit_delete_btn">
+                                                <button class="edit_btn btn btn-primary" type="button">輯編</button>
+                                                <button class="delete_btn btn btn-primary" type="button">刪除</button>
+                                            </td>
+                                        </tr>
 
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><a class="dropdown-item" href="#">編輯</a></li>
-                                                        <li><a class="dropdown-item" href="#">刪除</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
 
 
 
@@ -1289,10 +1171,6 @@
                                     </tbody>
 
                                 </table>
-
-
-
-
                             </div>
                         </div>
 
@@ -1384,7 +1262,7 @@
             memberAccount.style.setProperty(fontSizeVar, lengthToFontSize[textLength]);
         }
 
-
+        ///////////////////////////////////////////////////////
         // //javaSCIPT寫法
         // // 取得表頭的複選框
         // const selectAll = document.getElementById('selectAll');
@@ -1399,16 +1277,98 @@
         //     });
         // });
 
-        //ajax寫法
-        $(document).ready(function () {
-            // 監聽表頭複選框的變更事件
-            $('#selectAll').change(function () {
-                const isChecked = $(this).prop('checked');
-
-                // 將表格內的每一行的複選框設置為與表頭複選框相同的狀態
-                $('.selectRow').prop('checked', isChecked);
+        //下拉式選單
+        document.querySelectorAll('.dropdown-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                var selectedText = this.textContent; // 取得選擇的項目文字
+                var dropdownToggle = this.closest('.dropdown').querySelector('.dropdown-toggle');
+                dropdownToggle.textContent = selectedText; // 將選擇的項目文字顯示在按鈕上
             });
         });
+
+        //庫存更新鈕
+
+        // $(document).ready(function () {
+        //     // 監聽表頭複選框的變更事件
+        //     $('#selectAll').change(function () {
+        //         const isChecked = $(this).prop('checked');
+
+        //         // 將表格內的每一行的複選框設置為與表頭複選框相同的狀態
+        //         $('.selectRow').prop('checked', isChecked);
+        //     });
+
+
+
+        //     $('.stock_update').click(function () {
+        //         // 按下庫存更新按鈕時的處理邏輯
+        //         if ($('.stock_update').hasClass('-on')) {
+        //             $('.stock_update').removeClass('-on'); // 移除 `-on` 的 class
+        //             $('th.operate_txt').text('操作');
+        //             $('.edit_delete_btn').empty().append('<button class="edit_btn btn btn-primary" type="button">輯編</button><button class="delete_btn btn btn-primary" type="button">刪除</button>');
+        //         } else {
+        //             $('.stock_update').addClass('-on'); // 新增 `-on` 的 class
+        //             $('th.operate_txt').text('庫存更新');
+        //             $('.edit_delete_btn').empty().append('<input class="stock_update_num" style="width:50px;text-align: center;" type="text">');
+        //         }
+        //     });
+        // });
+
+        let activeTab_up = 0;
+        $(document).ready(function () {
+
+            $('#navs-top-home #selectAll').change(function () {
+                const isChecked = $(this).prop('checked');
+                $('#navs-top-home').find('.selectRow').prop('checked', isChecked);
+            });
+
+            // 監聽表頭複選框的變更事件
+            $('.nav-link').click(function () {
+                // 獲取目標元素的ID
+                const targetId = $(this).data('bs-target');
+
+                // 在控制台上輸出目標ID
+                console.log(targetId);
+
+                $(targetId + ' #selectAll').change(function () {
+                    const isChecked = $(this).prop('checked');
+
+                    // 將該分頁內的每一行的複選框設置為與表頭複選框相同的狀態
+                    $(targetId).find('.selectRow').prop('checked', isChecked);
+                });
+
+            });
+
+
+
+
+
+
+            $('.stock_update').click(function () {
+                // 按下库存更新按钮时的处理逻辑
+                // 根据当前活动分页执行相应的操作
+                const activeTab = $('.nav-link.active').attr('aria-controls');
+                if (!(activeTab_up == 0 || activeTab == activeTab_up)) {
+                    $('.stock_update').removeClass('-on');
+                    $('#' + activeTab_up).find('th.operate_txt').text('操作');
+                    $('#' + activeTab_up).find('.edit_delete_btn').empty().append('<button class="edit_btn btn btn-primary" type="button">编辑</button><button class="delete_btn btn btn-primary" type="button">删除</button>');
+                }
+                if ($('.stock_update').hasClass('-on')) {
+                    $('.stock_update').removeClass('-on');
+                    $('#' + activeTab).find('th.operate_txt').text('操作');
+                    $('#' + activeTab).find('.edit_delete_btn').empty().append('<button class="edit_btn btn btn-primary" type="button">编辑</button><button class="delete_btn btn btn-primary" type="button">删除</button>');
+                } else {
+                    $('.stock_update').addClass('-on');
+                    $('#' + activeTab).find('th.operate_txt').text('库存更新');
+                    $('#' + activeTab).find('.edit_delete_btn').empty().append('<input class="stock_update_num" style="width:50px;text-align: center;" type="text">');
+                }
+                activeTab_up = activeTab;
+            });
+        });
+
+
+
+
+
 
         /*為分頁寫法
         $(document).ready(function () {
