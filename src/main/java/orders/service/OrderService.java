@@ -29,7 +29,7 @@ public interface OrderService extends CoreService{
 	
 	//======================後台訂單列表區塊======================
 	
-	public List<SubOrder> orderlist(JsonObject SearchCondition);	
+	public String orderlist(JsonObject SearchCondition);	
 	
 	//======================後台訂單列表區塊======================
 	

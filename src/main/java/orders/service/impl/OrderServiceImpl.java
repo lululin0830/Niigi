@@ -103,7 +103,7 @@ public class OrderServiceImpl implements OrderService {
 
 	// 後臺訂單列表-取得查詢結果
 	@Override
-	public List<SubOrder> orderlist(JsonObject searchCondition) {
+	public String orderlist(JsonObject searchCondition) {
 		
 		
 
@@ -137,16 +137,19 @@ public class OrderServiceImpl implements OrderService {
 
 		Session session = dao.getSession();
 		
+		String result = null;
 		try {
 			
-			beginTransaction();
-			dao.getAllByOrderId(searchcase, SearchSelect, startDate, closeDate, dateSelect);
-			
+			beginTransaction();				
+			result = dao.getAllByOrderId(searchcase, SearchSelect, startDate, closeDate, dateSelect);
 			commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		
+		
+		return result;
+		
 
 	}
 }

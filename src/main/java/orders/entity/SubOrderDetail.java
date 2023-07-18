@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "SubOrderDetail")
+//@Table(name = "SubOrderDetail")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -44,8 +44,8 @@ public class SubOrderDetail implements Serializable{
 	@Column(insertable = false)
 	private Date refundDeadline;
 	@Column(insertable = false)
-	private Date refundDate;
-	@Column(insertable = false)
+//	private Date refundDate;
+//	@Column(insertable = false)
 	private String refundReason;
 	@Column(insertable = false)
 	private String refundRemark;
@@ -87,7 +87,7 @@ public class SubOrderDetail implements Serializable{
 						"comment:" + comment +
 						"comment_date:" + commentDate +
 						"refund_deadline:" + refundDeadline +
-						"refund_date:" + refundDate +
+						"refund_date:" + refundReason +
 						"refund_reason:" + refundReason +
 						"refund_remark:" + refundRemark +
 						"item_status:" + itemStatus;

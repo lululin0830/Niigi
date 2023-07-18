@@ -51,7 +51,7 @@ public class SubOrderDetail extends HttpServlet {
 		OrderService orderService = new OrderServiceImpl();
 		
 		response.getWriter().print(orderService.orderlist(searchCondition));
-
+		System.out.println((orderService.orderlist(searchCondition)));
 	}
 
 }

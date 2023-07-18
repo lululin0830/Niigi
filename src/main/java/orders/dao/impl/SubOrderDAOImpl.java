@@ -7,6 +7,8 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import com.google.gson.Gson;
+import com.mysql.cj.xdevapi.Result;
 import com.mysql.cj.xdevapi.SessionFactory;
 
 import orders.dao.SubOrderDAO;
@@ -63,15 +65,20 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 	}
 
 	@Override
-	public List<SubOrder> getAllByOrderId(String searchcase, String SearchSelect, Timestamp startDate, Timestamp closeDate,
+	public String getAllByOrderId(String searchcase, String SearchSelect, Timestamp startDate, Timestamp closeDate,
 			String dateSelect) throws Exception {
-		String hql = "FROM SubOrder join SubOrderDetail on SubOrder.subOrderId = SubOrderDetail.subOrderId where " + SearchSelect + " like '%" + searchcase + "%'" ;
+		
+		String hql = "FROM SubOrder so JOIN SubOrderDetail sod ON so.subOrderId = sod.subOrderId WHERE " + SearchSelect + " LIKE '%" + searchcase + "%'" ;
 		Session session = getSession();
 		
-		Query<SubOrder> query = session.createQuery(hql,SubOrder.class);
-		List<SubOrder> list= query.getResultList();	
+		Query<?> query = session.createQuery(hql);
+		List<?> list= query.getResultList();	
 		System.out.println("我走到查詢結果了");
-		return list;
+		
+		Gson gson = new Gson();
+		String Result = gson.toJson(list);
+//		System.out.println(Result);
+		return Result;
 		
 		
 		
