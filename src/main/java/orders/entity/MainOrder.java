@@ -1,4 +1,4 @@
-package order.entity;
+package orders.entity;
 
 import java.sql.Date;
 import java.sql.Timestamp;

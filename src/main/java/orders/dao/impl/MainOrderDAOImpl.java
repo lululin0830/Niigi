@@ -1,4 +1,4 @@
-package order.dao.impl;
+package orders.dao.impl;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -13,9 +13,9 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import order.dao.MainOrderDAO;
-import order.entity.MainOrder;
-import order.entity.SubOrder;
+import orders.dao.MainOrderDAO;
+import orders.entity.MainOrder;
+import orders.entity.SubOrder;
 
 public class MainOrderDAOImpl implements MainOrderDAO {
 

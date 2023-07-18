@@ -1,4 +1,4 @@
-package order.dao;
+package orders.dao;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import com.google.gson.JsonObject;
 
 import core.dao.CoreDAO;
-import order.entity.SubOrder;
+import orders.entity.SubOrder;
 
 public interface SubOrderDAO extends CoreDAO<SubOrder, String>{
 	

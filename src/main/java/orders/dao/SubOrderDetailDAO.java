@@ -1,9 +1,9 @@
-package order.dao;
+package orders.dao;
 
 import java.sql.Date;
 
 import core.dao.CoreDAO;
-import order.entity.SubOrderDetail;
+import orders.entity.SubOrderDetail;
 
 
 public interface SubOrderDetailDAO extends CoreDAO<SubOrderDetail, String>{

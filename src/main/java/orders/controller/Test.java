@@ -1,4 +1,4 @@
-package order.controller;
+package orders.controller;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import order.dao.impl.SubOrderDAOImpl;
+import orders.dao.impl.SubOrderDAOImpl;
 
 @WebServlet("/Test")
 public class Test extends HttpServlet {
@@ -18,11 +18,11 @@ public class Test extends HttpServlet {
 		
 		SubOrderDAOImpl dao = new SubOrderDAOImpl();
 		
-		
-		
-		var out = resp.getWriter();
-		out.print(dao.getByPrimaryKey("id"));
-		out.print("Hi");
+//		
+//		
+//		var out = resp.getWriter();
+//		out.print(dao.getByPrimaryKey("id"));
+//		out.print("Hi");
 		
 		
 	}

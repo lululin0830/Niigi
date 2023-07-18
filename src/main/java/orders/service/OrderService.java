@@ -1,4 +1,4 @@
-package order.service;
+package orders.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import com.google.gson.JsonObject;
 
 
 import core.service.CoreService;
-import order.entity.MainOrder;
-import order.entity.SubOrder;
+import orders.entity.MainOrder;
+import orders.entity.SubOrder;
 
 public interface OrderService extends CoreService{
 	

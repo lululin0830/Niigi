@@ -1,9 +1,9 @@
-package order.dao;
+package orders.dao;
 
 import java.util.List;
 
 import core.dao.CoreDAO;
-import order.entity.MainOrder;
+import orders.entity.MainOrder;
 
 public interface MainOrderDAO extends CoreDAO<MainOrder, String> {
 

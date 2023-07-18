@@ -1,11 +1,12 @@
-package order.dao.impl;
+package orders.dao.impl;
 
 import java.sql.Date;
 import java.util.List;
 
-import order.dao.SubOrderDetailDAO;
-import order.entity.SubOrderDetail;
 import org.hibernate.Session;
+
+import orders.dao.SubOrderDetailDAO;
+import orders.entity.SubOrderDetail;
 
 public class SubOrderDetailDAOImpl implements SubOrderDetailDAO{
 

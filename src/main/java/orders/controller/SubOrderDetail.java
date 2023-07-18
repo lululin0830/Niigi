@@ -1,4 +1,4 @@
-package order.controller;
+package orders.controller;
 
 import java.io.IOException;
 import java.util.Map;
@@ -13,8 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import order.service.OrderService;
-import order.service.impl.OrderServiceImpl;
+import orders.service.OrderService;
+import orders.service.impl.OrderServiceImpl;
 
 /**
  * Servlet implementation class SubOrderDetail

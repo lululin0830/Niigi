@@ -1,4 +1,4 @@
-package order.service.impl;
+package orders.service.impl;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -10,12 +10,12 @@ import org.hibernate.Session;
 
 import com.google.gson.JsonObject;
 
-import order.dao.MainOrderDAO;
-import order.dao.impl.MainOrderDAOImpl;
-import order.dao.impl.SubOrderDAOImpl;
-import order.entity.MainOrder;
-import order.entity.SubOrder;
-import order.service.OrderService;
+import orders.dao.MainOrderDAO;
+import orders.dao.impl.MainOrderDAOImpl;
+import orders.dao.impl.SubOrderDAOImpl;
+import orders.entity.MainOrder;
+import orders.entity.SubOrder;
+import orders.service.OrderService;
 
 public class OrderServiceImpl implements OrderService {
 

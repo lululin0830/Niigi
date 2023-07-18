@@ -1,4 +1,4 @@
-package order.dao.impl;
+package orders.dao.impl;
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -9,8 +9,8 @@ import org.hibernate.query.Query;
 
 import com.mysql.cj.xdevapi.SessionFactory;
 
-import order.dao.SubOrderDAO;
-import order.entity.SubOrder;
+import orders.dao.SubOrderDAO;
+import orders.entity.SubOrder;
 
 public class SubOrderDAOImpl implements SubOrderDAO {
 
@@ -65,7 +65,7 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 	@Override
 	public List<SubOrder> getAllByOrderId(String searchcase, String SearchSelect, Timestamp startDate, Timestamp closeDate,
 			String dateSelect) throws Exception {
-		String hql = "FROM SubOrder where " + SearchSelect + " like '%" + searchcase + "%'" ;
+		String hql = "FROM SubOrder join SubOrderDetail on SubOrder.subOrderId = SubOrderDetail.subOrderId where " + SearchSelect + " like '%" + searchcase + "%'" ;
 		Session session = getSession();
 		
 		Query<SubOrder> query = session.createQuery(hql,SubOrder.class);

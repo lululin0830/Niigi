@@ -17,8 +17,12 @@ const init = function () {
             'Content-Type': 'application/json'
         },
         body: data
+    }).then(r => r.json()).then(data => {
+
     })
     console.log(data)
+
+
 
 }
 console.log("讀到了")

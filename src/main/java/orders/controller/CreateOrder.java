@@ -1,4 +1,4 @@
-package order.controller;
+package orders.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import lombok.experimental.var;
-import order.dao.MainOrderDAO;
-import order.dao.impl.MainOrderDAOImpl;
-import order.entity.MainOrder;
-import order.service.OrderService;
-import order.service.impl.OrderServiceImpl;
+import orders.dao.MainOrderDAO;
+import orders.dao.impl.MainOrderDAOImpl;
+import orders.entity.MainOrder;
+import orders.service.OrderService;
+import orders.service.impl.OrderServiceImpl;
 
 @WebServlet("/CreateOrder")
 public class CreateOrder extends HttpServlet {
