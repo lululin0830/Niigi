@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 import com.google.gson.JsonObject;
+import com.mysql.cj.xdevapi.Result;
 
 import orders.dao.MainOrderDAO;
 import orders.dao.impl.MainOrderDAOImpl;
@@ -135,8 +136,7 @@ public class OrderServiceImpl implements OrderService {
 
 //		SubOrderDAOImpl subOrderDAOImpl = new SubOrderDAOImpl();
 
-		Session session = dao.getSession();
-		
+	
 		String result = null;
 		try {
 			
@@ -152,4 +152,21 @@ public class OrderServiceImpl implements OrderService {
 		
 
 	}
+
+	public String getAllInit() {
+		
+		String result = null;
+		try {
+			beginTransaction();
+			result = dao.getAllInit();
+			commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
 }
+
+	

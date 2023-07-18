@@ -53,5 +53,20 @@ public class SubOrderDetail extends HttpServlet {
 		response.getWriter().print(orderService.orderlist(searchCondition));
 		System.out.println((orderService.orderlist(searchCondition)));
 	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+		response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+		response.setHeader("Access-Control-Allow-Credentials", "true");
+		response.setContentType("application/json; charset=utf-8");
+		
+		OrderService orderService = new OrderServiceImpl();
+		
+		response.getWriter().print(orderService.getAllInit());
+//		System.out.println((orderService.orderlist(searchCondition)));
+	}
 
 }

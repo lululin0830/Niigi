@@ -14,6 +14,7 @@ public interface SubOrderDAO extends CoreDAO<SubOrder, String>{
             
     public String getAllByOrderId(String searchcase,String SearchSelect,Timestamp startDate,Timestamp closeDate,String dateSelect) throws Exception;
     
+    public String getAllInit();
    
     
   
