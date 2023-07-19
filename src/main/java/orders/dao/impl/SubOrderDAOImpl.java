@@ -83,9 +83,21 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 		String Result = gson.toJson(list);
 //		System.out.println(Result);
 		return Result;
-		
-		
-		
+				
 	}
 
+	@Override
+	public String getAllInit() {
+		
+		Session session = getSession();
+		
+		Query<?> query = session.createQuery("FROM SubOrder so JOIN SubOrderDetail sod ON so.subOrderId = sod.subOrderId");
+		List<?> list = query.getResultList();
+		
+		Gson gson = new Gson();
+		String result = gson.toJson(list);
+		
+		return result;
+	}
+	
 }
