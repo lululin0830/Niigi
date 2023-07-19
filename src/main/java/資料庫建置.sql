@@ -482,7 +482,7 @@ CREATE TABLE ProductSpec (
   specType2 ENUM('1' ,'2' ,'3','4') comment '規格類型2： 1 尺寸, 2 顏色 , 3 容量 , 4 材質', 
   specInfo2 VARCHAR(10) comment '規格2詳細',
   specPicture LONGBLOB comment '規格圖',
-  shelvesStatus ENUM('0','1','2') not null comment '上架狀態：0 上架 , 1 下架 , 2 永久下架,',
+  shelvesStatus ENUM('0','1','2') default('0') comment '上架狀態：0 上架 , 1 下架 , 2 永久下架',
   initialStock INT unsigned not null comment '首次備貨量',
   specStock INT unsigned not null comment '庫存',
   constraint FK_Product_specProductId foreign key (productId) references Product (productId)
@@ -790,6 +790,7 @@ CREATE TABLE `SubOrderDetail` (
   CONSTRAINT FK_SubOrderDetail_productId FOREIGN KEY (productId) REFERENCES Product (productId),
   CONSTRAINT FK_SubOrderDetail_productSpecId FOREIGN KEY (productSpecId) REFERENCES `ProductSpec` (productSpecId)
 );
+
 -- 會員點數紀錄
 CREATE TABLE MemberPointsRecord (
   pointRecordId INT auto_increment not null PRIMARY KEY comment'點數紀錄編號',
@@ -813,6 +814,7 @@ CREATE TABLE `AdSpace` (
   `adPageId` CHAR(10) NOT NULL comment '所屬頁面',
   CONSTRAINT FK_AdSpace_adPageId FOREIGN KEY (`adPageId`) REFERENCES `FrontendPage` (`pageId`)
 );
+
 -- 廣告
 CREATE TABLE `Advertise` (
   `advertiseId` CHAR(17) comment '廣告編號' PRIMARY KEY,
