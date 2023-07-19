@@ -8,8 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import com.google.gson.Gson;
-import com.mysql.cj.xdevapi.Result;
-import com.mysql.cj.xdevapi.SessionFactory;
 
 import orders.dao.SubOrderDAO;
 import orders.entity.SubOrder;

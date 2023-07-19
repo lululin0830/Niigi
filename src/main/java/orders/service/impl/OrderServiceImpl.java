@@ -20,33 +20,35 @@ import orders.service.OrderService;
 public class OrderServiceImpl implements OrderService {
 
 	private static volatile int orderCounter = 1;
-	private static final int MAX_ORDER_COUNTER_VALUE = 999999999;
 	private static final Object counterLock = new Object();
 
 	SubOrderDAOImpl dao;
-	
+
 	public OrderServiceImpl() {
-		
+
 		dao = new SubOrderDAOImpl();
 	}
-	
+
 	// 取得自動編號
 	public static String generateOrderId() {
 		LocalDate currentDate = LocalDate.now();
 		String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
+		MainOrderDAO dao = new MainOrderDAOImpl();
+		
+		String orderId = formattedDate + String.format("%09d", 1);
+		
 		synchronized (counterLock) {
-			String formattedCounter = String.format("%09d", orderCounter);
-			if (orderCounter >= MAX_ORDER_COUNTER_VALUE) {
+			
+			if (dao.getSession().get(MainOrder.class, orderId) == null ||orderCounter >= 999999999) {
 				orderCounter = 1;
-			} else {
-				orderCounter++;
 			}
-
-			return formattedDate + formattedCounter;
+			orderId = formattedDate + String.format("%09d", orderCounter);
+			orderCounter++; 
 		}
+		return orderId;
 	}
-
+	
 	@Override
 	public boolean createOrder(MainOrder mainOrder) {
 
@@ -54,10 +56,9 @@ public class OrderServiceImpl implements OrderService {
 //		SubOrderDAO subOrderDAO = new SubOrderDAOImpl();
 //		SubOrderDetailDAO subOrderDetailDAO = new SubOrderDetailDAOImpl();
 
-		mainOrder.setOrderId(generateOrderId());
-
 		try {
 			beginTransaction();
+			mainOrder.setOrderId(generateOrderId());
 
 			mainOrderDAO.insert(mainOrder);
 
@@ -104,8 +105,6 @@ public class OrderServiceImpl implements OrderService {
 	// 後臺訂單列表-取得查詢結果
 	@Override
 	public String orderlist(JsonObject searchCondition) {
-		
-		
 
 		String searchcase = searchCondition.get("searchcase").getAsString();
 
@@ -124,32 +123,28 @@ public class OrderServiceImpl implements OrderService {
 
 		String closeDateString = searchCondition.get("EndDate").getAsString();
 
-		if (closeDateString.length() > 0) {		
-			closeDateString+= " 00:00:00";
+		if (closeDateString.length() > 0) {
+			closeDateString += " 00:00:00";
 			closeDate = Timestamp.valueOf(closeDateString);
-		}else {
+		} else {
 			closeDate = Timestamp.valueOf(LocalDateTime.now());
 		}
 
 		String dateSelect = searchCondition.get("DateSelect").getAsString();
 
-//		SubOrderDAOImpl subOrderDAOImpl = new SubOrderDAOImpl();
-
 		Session session = dao.getSession();
-		
+
 		String result = null;
 		try {
-			
-			beginTransaction();				
+
+			beginTransaction();
 			result = dao.getAllByOrderId(searchcase, SearchSelect, startDate, closeDate, dateSelect);
 			commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		return result;
-		
 
 	}
 }
