@@ -19,6 +19,19 @@
         th {
             border: solid 3px white;
         }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            border: solid 3px white;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -370,13 +383,50 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">頁面標題寫在這邊</h1>
+                            <h1 class="m-0">供應商列表</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
-
-            <!-- =================================內容寫在這邊================================= -->
+            <div>
+                <input id="Searchcase" type="text" value="">
+                <select id="SearchSelect">
+                    <option value="supplierMemberAcct">商家帳號</option>
+                    <option value="supplierId">商家編號</option>
+                </select>
+                <br>
+                <input id="StartDate" type="date">
+                <span>~</span>
+                <input id="EndDate" type="date">
+                <select id="DateSelect">
+                    <option value="enableTime">開通時間</option>
+                    <option value="vacationStart">休假起始日</option>
+                    <option value="vacationEnd">休假結束日</option>
+                </select>
+                <input type="button" id="search" value="搜尋">
+            </div>
+            <br>
+            <div>
+                <table>
+                    <thead>
+                        <th>商家編號</th>
+                        <!-- <th>會員帳號</th> -->
+                        <th>會員編號</th>
+                        <!-- <th>商家帳號</th> -->
+                        <th>商家編號</th>
+                        <th>商品名稱</th>
+                        <th>商品編號</th>
+                        <th>數量</th>
+                        <th>價格</th>
+                        <th>訂單成立時間</th>
+                        <th>訂單結案時間</th>
+                        <th>毛利</th>
+                        <th>操作</th>
+                    </thead>
+                    <tbody id="searchResult">
+                    </tbody>
+                </table>
+            </div>
 
         </div>
         <!-- ./wrapper -->
@@ -404,6 +454,8 @@
         <script src="../js/demo.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="../js/dashboard2.js"></script>
+        <!-- 訂單列表功能 -->
+        <script src="../js/Order_List.js"></script>
 </body>
 
 </html>
