@@ -33,6 +33,7 @@ const search = function () {
                 <td> ${element[0].orderCreateTime}</td>
                 <td> ${element[0].orderCloseTime}</td>
                 <td> ${element[0].grossProfit}</td>
+                <td> <input type="button" id="active" value="操作"></td>
                     </tr>`;
             let rowData = "<tr>"
 
@@ -73,6 +74,7 @@ const init = function () {
                 <td> ${element[0].orderCreateTime}</td>
                 <td> ${element[0].orderCloseTime}</td>
                 <td> ${element[0].grossProfit}</td>
+                <td> <input type="button" id="active" value="操作"></td>
                     </tr>`;
             let rowData = "<tr>"
 
