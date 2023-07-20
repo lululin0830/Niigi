@@ -1,9 +1,9 @@
-package product.dao.impl;
+package products.dao.impl;
 
 import java.util.List;
 
-import product.dao.ProductDAO;
-import product.entity.Product;
+import products.dao.ProductDAO;
+import products.entity.Product;
 
 public class ProductDAOImpl implements ProductDAO {
 

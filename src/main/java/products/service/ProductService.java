@@ -1,4 +1,4 @@
-package product.service;
+package products.service;
 
 import core.service.CoreService;
 
