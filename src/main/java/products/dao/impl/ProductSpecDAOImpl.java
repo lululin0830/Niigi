@@ -22,4 +22,9 @@ public class ProductSpecDAOImpl implements ProductSpecDAO {
 		return null;
 	}
 
+	@Override
+	public ProductSpec update(ProductSpec newProductSpec) {
+		return null;
+	}
+
 }

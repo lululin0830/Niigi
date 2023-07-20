@@ -24,8 +24,7 @@ public class SupplierDAOImpl implements SupplierDAO{
 
 	@Override
 	public Supplier selectById(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().get(Supplier.class, id);
 	}
 
 	@Override
@@ -38,8 +37,12 @@ public class SupplierDAOImpl implements SupplierDAO{
 	@Override
 	public String getAllBySearch(String searchCase, String searchSelect, Timestamp startDate, Timestamp closeDate,
 			String dateSelect) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Session session = getSession();
+		Gson gson = new Gson();
+		
+		String hql = "FROM Supplier WHERE " + searchSelect + " LIKE '%" + searchCase + "%' AND " + dateSelect + " BETWEEN '" + startDate +"' AND '" + closeDate + "'";		
+		return gson.toJson(session.createQuery(hql,Supplier.class).getResultList());
 	}
 
 	@Override

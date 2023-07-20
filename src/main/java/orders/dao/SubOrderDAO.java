@@ -16,6 +16,8 @@ public interface SubOrderDAO extends CoreDAO<SubOrder, String>{
     
     public String getAllInit();
    
+    public String getSupplierSubOrderInit(String supplierId);
     
+    public String getSupplierSubOrderSearch();
   
 }

@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import orders.service.OrderService;
 import suppliers.service.SupplierService;
 import suppliers.service.impl.SupplierServiceImpl;
 
@@ -45,8 +50,21 @@ public class Supplier extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+		response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+		response.setHeader("Access-Control-Allow-Credentials", "true");
+		response.setContentType("application/json; charset=utf-8");
+		
+		Gson gson = new Gson();
+		JsonElement req = gson.fromJson(request.getReader(),JsonElement.class);
+		JsonObject searchCondition = req.getAsJsonObject();	
+
+		SupplierService supplierService = new SupplierServiceImpl();
+		
+		response.getWriter().print(supplierService.getBySearch(searchCondition));
+		System.out.println((supplierService.getBySearch(searchCondition)));
 	}
 
 }

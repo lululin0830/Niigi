@@ -99,5 +99,25 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 		
 		return result;
 	}
+
+	@Override
+	public String getSupplierSubOrderInit(String supplierId) {
+		
+		Gson gson = new Gson();
+		Session session = getSession();
+		Query<?>query = session.createQuery("FROM SubOrder WHERE supplierId = :supplierId");
+		query.setParameter("supplierId", supplierId);
+				
+		return gson.toJson(query.getResultList());
+		
+		 
+	}
+
+	@Override
+	public String getSupplierSubOrderSearch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 }

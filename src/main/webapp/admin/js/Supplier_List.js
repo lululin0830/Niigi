@@ -23,16 +23,16 @@ const search = function () {
         data.forEach(element => {
 
             const row = `<tr>
-                <td> ${element[0].shopName}</td>
-                <td> ${element[0].supplierMemberAcct}</td>
-                <td> ${element[0].supplierId}</td>
-                <td> ${element[0].enableTime}</td>
-                <td> ${element[1].businessId}</td>
-                <td> ${element[1].supplierAddress}</td>
-                <td> ${element[0].bankCode}</td>
-                <td> ${element[0].bankAcct}</td>
-                <td> ${element[0].ownerId}</td>
-                <td> ${element[0].supplierBanStatus}</td>     
+                <td> ${element.shopName}</td>
+                <td> ${element.supplierId}</td>
+                <td> ${element.supplierMemberAcct}</td>
+                <td> ${element.enableTime}</td>
+                <td> ${element.businessId}</td>
+                <td> ${element.supplierAddress}</td>
+                <td> ${element.bankCode}</td>
+                <td> ${element.bankAcct}</td>
+                <td> ${element.ownerId}</td>
+                <td> ${element.supplierBanStatus}</td>       
                 <td> <input type="button" id="active" value="操作"></td>
                     </tr>`;
             let rowData = "<tr>"
@@ -65,19 +65,38 @@ const init = function () {
 
         data.forEach(element => {
 
+            let banStatus;
+            switch (element.supplierBanStatus) {
+
+                case '0':
+                    banStatus = '正常';
+                    break;
+                case '3':
+                    banStatus = '停權3天';
+                    break;
+                case '7':
+                    banStatus = '停權7天';
+                    break;
+                case '30':
+                    banStatus = '停權30天';
+                    break;
+                default:
+                    banStatus = '永久停權';
+            }
+
             const row = `<tr>
                 <td> ${element.shopName}</td>
-                <td> ${element.supplierMemberAcct}</td>
                 <td> ${element.supplierId}</td>
+                <td> ${element.supplierMemberAcct}</td>
                 <td> ${element.enableTime}</td>
                 <td> ${element.businessId}</td>
                 <td> ${element.supplierAddress}</td>
                 <td> ${element.bankCode}</td>
                 <td> ${element.bankAcct}</td>
                 <td> ${element.ownerId}</td>
-                <td> ${element.supplierBanStatus}</td>                
+                <td> ${banStatus}</td>                
                 <td> <input type="button" id="active" value="操作"></td>
-                    </tr>`;
+            </tr>`;
             let rowData = "<tr>"
 
             tbody.innerHTML += row;

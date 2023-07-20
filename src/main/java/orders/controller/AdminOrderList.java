@@ -20,7 +20,7 @@ import orders.service.impl.OrderServiceImpl;
  * Servlet implementation class SubOrderDetail
  */
 @WebServlet("/SubOrderDetail")
-public class SubOrderDetail extends HttpServlet {
+public class AdminOrderList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -51,7 +51,6 @@ public class SubOrderDetail extends HttpServlet {
 		OrderService orderService = new OrderServiceImpl();
 		
 		response.getWriter().print(orderService.orderlist(searchCondition));
-		System.out.println((orderService.orderlist(searchCondition)));
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
