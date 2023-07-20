@@ -29,7 +29,7 @@ public class SubOrderDetail implements Serializable{
 	private String orderDetailId;
 	private String subOrderId;
 	private String orderId ;
-	private String productId;
+	private Integer productId;
 	private String productSpecId;
 	private int productPrice;
 	@Column(insertable = false)
@@ -49,6 +49,7 @@ public class SubOrderDetail implements Serializable{
 	private String refundReason;
 	@Column(insertable = false)
 	private String refundRemark;
+	@Column(insertable = false)
 	private String itemStatus;
 	
 	

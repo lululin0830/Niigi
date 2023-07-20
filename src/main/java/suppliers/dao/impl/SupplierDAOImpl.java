@@ -24,8 +24,7 @@ public class SupplierDAOImpl implements SupplierDAO{
 
 	@Override
 	public Supplier selectById(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().get(Supplier.class, id);
 	}
 
 	@Override

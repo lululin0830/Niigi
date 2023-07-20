@@ -63,4 +63,21 @@ public class MainOrder implements java.io.Serializable {
 	@JoinColumn(name = "orderId",referencedColumnName = "orderId",insertable = false,updatable = false)
 	private List<SubOrder> subOrders;
 
+	public MainOrder(String memberId, Integer totalAmount, Integer totalGrossProfit, Integer pointsDiscount,
+			Integer couponDiscount, Integer paidAmount, String paymentType, String recipient, String phoneNum,
+			String deliveryAddress) {
+		super();
+		this.memberId = memberId;
+		this.totalAmount = totalAmount;
+		this.totalGrossProfit = totalGrossProfit;
+		this.pointsDiscount = pointsDiscount;
+		this.couponDiscount = couponDiscount;
+		this.paidAmount = paidAmount;
+		this.paymentType = paymentType;
+		this.recipient = recipient;
+		this.phoneNum = phoneNum;
+		this.deliveryAddress = deliveryAddress;
+	}
+
+	
 }

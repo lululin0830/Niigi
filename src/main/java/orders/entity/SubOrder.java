@@ -42,7 +42,8 @@ public class SubOrder implements java.io.Serializable{
 	@Column(insertable = false)
 	private Integer subCouponDiscount;
 	private Integer grossProfit;
-	private Integer pointsReward;	
+	private Integer pointsReward;
+	@Column(insertable = false)
 	private String grantStatus;
 	@Column(insertable = false)
 	private Date grantDate;
