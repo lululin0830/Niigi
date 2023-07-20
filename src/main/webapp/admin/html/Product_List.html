@@ -19,6 +19,23 @@
         th {
             border: solid 3px white;
         }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            border: solid 3px white;
+            text-align: center;
+        }
+
+        .main_list{
+            padding: 0 0 0 14px;
+        }
     </style>
 </head>
 
@@ -389,13 +406,75 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">頁面標題寫在這邊</h1>
+                            <h1 class="m-0">商品列表</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
-
             <!-- =================================內容寫在這邊================================= -->
+            <div class="main_list">
+                <input class="search_input" type="text" placeholder="請輸入搜尋條件" value="">
+                <select id="collectionSelect" class="form-select" aria-label="Default select example"
+                    style="width: 100px;height: 30px;">
+                    <!-- <option selected disabled>收藏商家</option> -->
+                    <option value="product_name">商品名稱</option>
+                    <option value="product_spac">商品編號</option>
+                    <option value="spacId">規格編號</option>
+                </select>
+                <br>
+                <br>
+                <input id="StartDate" type="date">
+                <!-- <span style="font-size: 50px;text-align: center;margin-top: 20px;">~</span> -->
+                <span style="font-size: 50px; vertical-align: middle; position: relative; top: 0px;">~</span>
+                <input id="EndDate" type="date">
+                <input type="button" id="search" value="搜尋">
+                <input type="button" id="csv" value="CSV" style="margin-left:50px;">
+                <input type="button" id="take_off_the_shelves" value="強制下架">
+                <br>
+                <div>
+                    <table>
+                        <thead>
+                            <th class="checkAll">
+                                <input type="checkbox" id="selectAll">
+                            </th>
+                            <th>商品編號</th>
+                            <th>規格編號</th>
+                            <th>規格1詳細</th>
+                            <th>規格2詳細</th>
+                            <th>所屬商家</th>
+                            <th>商品分類編號</th>
+                            <th>商品名稱</th>
+                            <th>價格</th>
+                            <th>庫存</th>
+                            <th>商品說明</th>
+                            <th>規格圖</th>
+                            <th>上架狀態</th>
+                            <th>平均評價</th>
+                            <th>首次上架日期</th>
+                        </thead>
+                        <tbody id="searchResult">
+                            <td class="check">
+                                <input type="checkbox" class="selectRow">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
         </div>
         <!-- ./wrapper -->
@@ -424,5 +503,24 @@
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="../js/dashboard2.js"></script>
 </body>
+
+<script>
+    // 取得表頭的複選框
+    const selectAll = document.getElementById('selectAll');
+
+    // 取得表格內的每一行的複選框
+    const selectRows = document.querySelectorAll('.selectRow');
+
+    // 監聽表頭複選框的變更事件
+    selectAll.addEventListener('change', function () {
+        const isChecked = this.checked;
+
+        // 將表格內的每一行的複選框設置為與表頭複選框相同的狀態
+        selectRows.forEach(function (selectRow) {
+            selectRow.checked = isChecked;
+        });
+    });
+
+</script>
 
 </html>

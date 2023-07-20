@@ -19,6 +19,23 @@
         th {
             border: solid 3px white;
         }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            border: solid 3px white;
+            text-align: center;
+        }
+
+        .main_list {
+            padding: 0 0 0 14px;
+        }
     </style>
 </head>
 
@@ -389,40 +406,82 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">頁面標題寫在這邊</h1>
+                            <h1 class="m-0">補貨紀錄</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
 
             <!-- =================================內容寫在這邊================================= -->
-
+            <div class="main_list">
+                <input class="search_input" type="text" placeholder="請輸入搜尋條件" value="">
+                <select id="collectionSelect" class="form-select" aria-label="Default select example"
+                    style="width: auto;height: 30px;">
+                    <!-- <option selected disabled>收藏商家</option> -->
+                    <option value="restockId">補貨單號</option>
+                    <option value="productId">商品編號</option>
+                    <option value="spacId">規格編號</option>
+                </select>
+                <br>
+                <br>
+                <input id="StartDate" type="date">
+                <!-- <span style="font-size: 50px;text-align: center;margin-top: 20px;">~</span> -->
+                <span style="font-size: 50px; vertical-align: middle; position: relative; top: 0px;">~</span>
+                <input id="EndDate" type="date">
+                <input type="button" id="search" value="搜尋">
+                <br>
+                <div>
+                    <table>
+                        <thead>
+                            <th>補貨單號</th>
+                            <th>規格編號</th>
+                            <th>商品編號</th>
+                            <th>變更人(會員編號)</th>
+                            <th>變更前數量</th>
+                            <th>變更數量</th>
+                            <th>變更後數量</th>
+                            <th>補貨日期</th>
+                        </thead>
+                        <tbody id="searchResult">
+                            <td>xxxxx</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!-- ./wrapper -->
+    </div>
+    <!-- ./wrapper -->
 
-        <!-- REQUIRED SCRIPTS -->
-        <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <!-- overlayScrollbars -->
-        <script src="../js/jquery.overlayScrollbars.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="../js/adminlte.js"></script>
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../js/adminlte.js"></script>
 
-        <!-- PAGE PLUGINS -->
-        <!-- jQuery Mapael -->
-        <script src="../js/jquery.mousewheel.js"></script>
-        <script src="../js/raphael.min.js"></script>
-        <script src="../js/jquery.mapael.min.js"></script>
-        <script src="../js/usa_states.min.js"></script>
-        <!-- ChartJS -->
-        <script src="../js/Chart.min.js"></script>
+    <!-- PAGE PLUGINS -->
+    <!-- jQuery Mapael -->
+    <script src="../js/jquery.mousewheel.js"></script>
+    <script src="../js/raphael.min.js"></script>
+    <script src="../js/jquery.mapael.min.js"></script>
+    <script src="../js/usa_states.min.js"></script>
+    <!-- ChartJS -->
+    <script src="../js/Chart.min.js"></script>
 
-        <!-- AdminLTE for demo purposes -->
-        <script src="../js/demo.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="../js/dashboard2.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="../js/dashboard2.js"></script>
 </body>
 
 </html>
