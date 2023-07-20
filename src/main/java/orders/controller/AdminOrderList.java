@@ -20,7 +20,7 @@ import orders.service.impl.OrderServiceImpl;
  * Servlet implementation class SubOrderDetail
  */
 @WebServlet("/SubOrderDetail")
-public class SubOrderDetail extends HttpServlet {
+public class AdminOrderList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
