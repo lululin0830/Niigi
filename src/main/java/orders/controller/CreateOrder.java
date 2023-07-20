@@ -25,36 +25,29 @@ public class CreateOrder extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
+	protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setHeader("Access-Control-Allow-Origin", "*");
+		resp.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+		resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
+		resp.setHeader("Access-Control-Allow-Credentials", "true");
+		resp.setContentType("application/json; charset=utf-8");
+		resp.setStatus(HttpServletResponse.SC_OK);
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		resp.setContentType("text/plain; charset=utf-8");
+		resp.setHeader("Access-Control-Allow-Origin", "*");
+		resp.setHeader("Access-Control-Allow-Methods", "POST");
+		resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
+		resp.setHeader("Access-Control-Allow-Credentials", "true");
+		resp.setContentType("application/json; charset=utf-8");
 
-		MainOrder test = new MainOrder();
-		OrderService orderService = new OrderServiceImpl();
-
-		String memberId = "M" + String.format("%09d", (int) Math.random() * 16 + 1);
-		Integer totalAmount = (int) Math.random() * 10000000 +10000;
-		Integer totalGrossProfit = (int) (totalAmount * 0.15) +1;
-		Integer pointsDiscount = (int) Math.random() * 10000 +1;
-		Integer couponDiscount = (int) Math.random() * 5000 +1;
-		Integer paidAmount = totalAmount - pointsDiscount - couponDiscount;
-		String paymentType = "1";
-		String recipient = "王小明";
-		String phoneNum = "0912-123-456";
-		String deliveryAddress = "104 台北市 中山區 南京東路三段219號5樓";
-
-		test.setMemberId(memberId);
-		test.setTotalAmount(totalAmount);
-		test.setTotalGrossProfit(totalGrossProfit);
-		test.setPointsDiscount(pointsDiscount);
-		test.setCouponDiscount(couponDiscount);
-		test.setPaidAmount(paidAmount);
-		test.setPaymentType(paymentType);
-		test.setRecipient(recipient);
-		test.setPhoneNum(phoneNum);
-		test.setDeliveryAddress(deliveryAddress);
 		
-		boolean state = orderService.createOrder(test);
+		
+		OrderService orderService = new OrderServiceImpl();
+		
+		boolean state = orderService.createOrder(null);
 
 		if (state == true) {
 
