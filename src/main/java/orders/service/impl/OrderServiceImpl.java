@@ -251,8 +251,6 @@ public class OrderServiceImpl implements OrderService {
 
 		String dateSelect = searchCondition.get("DateSelect").getAsString();
 
-		Session session = subOrderDAO.getSession();
-
 		String result = null;
 		try {
 
