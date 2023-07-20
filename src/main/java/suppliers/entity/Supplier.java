@@ -44,11 +44,6 @@ public class Supplier implements Serializable{
 	private String pauseNotification;
 	private String approvalRemark;
 	private Timestamp enableTime;
-	private double grossProfitRation;
-	private double pointRewardsRatio;
-	
-	
-
-	
-
+	private Double grossProfitRatio;
+	private Double pointRewardsRatio;
 }

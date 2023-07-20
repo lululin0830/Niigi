@@ -1,5 +1,9 @@
 package suppliers.service;
 
-public interface SupplierService {
+import core.service.CoreService;
+
+public interface SupplierService extends CoreService{
+	
+	public String getAllInit();
 
 }
