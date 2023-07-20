@@ -133,8 +133,6 @@ public class OrderServiceImpl implements OrderService {
 
 		String dateSelect = searchCondition.get("DateSelect").getAsString();
 
-		Session session = dao.getSession();
-
 		String result = null;
 		try {
 
