@@ -1,4 +1,4 @@
-package product.entity;
+package products.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,10 +13,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Categorie {
-
+public class FrontendPage {
 	@Id
-	private String categorieId;
-	private String categorieName;
-	private String mainCategorie;
+	private String pageId;
+	private String pageName;
+	private String pageCategoryId;
 }

@@ -1,39 +1,44 @@
-package product.entity;
+package products.entity;
 
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Product {
 
 	@Id
-	private String productId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer productId;
 	private String registerSupplier;
-	private String categoryId;
+	private String categorieId;
 	private String productName;
-	private int productPrice;
+	private Integer productPrice;
 	private String productInfo;
-	private byte[] picture1;
-	private byte[] picture2;
-	private byte[] picture3;
-	private byte[] picture4;
-	private byte[] picture5;
+	private Byte[] picture1;
+	private Byte[] picture2;
+	private Byte[] picture3;
+	private Byte[] picture4;
+	private Byte[] picture5;
 	@Column(insertable = false)
 	private String productStatus;
 	@Column(insertable = false)
-	private double avgRating;
+	private Double avgRating;
 	@Column(insertable = false)
 	private Date firstOnShelvesDate;
 	
