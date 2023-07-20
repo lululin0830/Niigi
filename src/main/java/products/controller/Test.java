@@ -1,4 +1,4 @@
-package product.controller;
+package products.controller;
 
 
 import java.io.IOException;
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import product.dao.ProductDAO;
-import product.dao.ProductSpecDAO;
-import product.dao.impl.ProductDAOImpl;
-import product.dao.impl.ProductSpecDAOImpl;
-import product.entity.Product;
-import product.entity.ProductSpec;
-import product.service.ProductService;
-import product.service.impl.ProductServiceImpl;
+import products.dao.ProductDAO;
+import products.dao.ProductSpecDAO;
+import products.dao.impl.ProductDAOImpl;
+import products.dao.impl.ProductSpecDAOImpl;
+import products.entity.Product;
+import products.entity.ProductSpec;
+import products.service.ProductService;
+import products.service.impl.ProductServiceImpl;
 
 @WebServlet("/Test01")
 public class Test extends HttpServlet {

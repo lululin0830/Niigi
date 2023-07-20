@@ -1,7 +1,7 @@
-package product.dao;
+package products.dao;
 
 import core.dao.CoreDAO;
-import product.entity.Product;
+import products.entity.Product;
 
 public interface ProductDAO extends CoreDAO<Product, Integer> {
 
