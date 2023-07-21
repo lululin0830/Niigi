@@ -1,22 +1,22 @@
 package user.dao;
 
-import java.util.List;
-
-
-
+import core.dao.CoreDAO;
 import user.entity.User;
 
-public interface UserDAO {
-	public void insert(User user);
+public interface UserDAO extends CoreDAO<User, String> {
+	// 萬用更新
+	public User update(User newUser);
 
-	// 更新一個權限，換四個權限
-	public void updatePermissions(User user);
-	//更新密碼
-	public void updatePassword(User user);
+	// 刪除
+	public User delete(Integer userId);
 
-	public void delete(Integer userId);
+	// 找名稱
+	public User selectByUserName(String userName);
 
-	public User findByPrimaryKey(Integer userId);
+	// 找帳號
+	public User selectByUserAcct(String userAcct);
 
-	public List<User> getAll();
+	// 登入
+	public User selectForLogin(String userAcct, String password);
+
 }

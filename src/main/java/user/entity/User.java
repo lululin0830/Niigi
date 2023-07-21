@@ -1,12 +1,30 @@
 package user.entity;
 
-public class User implements java.io.Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import core.entity.Core;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class User extends Core{
 
 	/**
 	 * 平台使用者
 	 */
 	private static final long serialVersionUID = -6071858145966342981L;
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userId;
 	private String userName;
 	private String userAcct;
@@ -15,52 +33,10 @@ public class User implements java.io.Serializable{
 	private String customerServiceAuthority;
 	private String marketingAuthority;
 	private String hrAuthority;
-	public Integer getUserId() {
-		return userId;
-	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getUserAcct() {
-		return userAcct;
-	}
-	public void setUserAcct(String userAcct) {
+	
+	public User(String userAcct,String password) {
 		this.userAcct = userAcct;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getFinancialAuthority() {
-		return financialAuthority;
-	}
-	public void setFinancialAuthority(String financialAuthority) {
-		this.financialAuthority = financialAuthority;
-	}
-	public String getCustomerServiceAuthority() {
-		return customerServiceAuthority;
-	}
-	public void setCustomerServiceAuthority(String customerServiceAuthority) {
-		this.customerServiceAuthority = customerServiceAuthority;
-	}
-	public String getMarketingAuthority() {
-		return marketingAuthority;
-	}
-	public void setMarketingAuthority(String marketingAuthority) {
-		this.marketingAuthority = marketingAuthority;
-	}
-	public String getHrAuthority() {
-		return hrAuthority;
-	}
-	public void setHrAuthority(String hrAuthority) {
-		this.hrAuthority = hrAuthority;
-	}
+	
 }
