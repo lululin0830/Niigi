@@ -4,82 +4,82 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import member.dao.MemberDAO;
-import member.entity.Member;
+import member.entity.Members;
 
 public class MemberDAOImpl implements MemberDAO{
 
 	@Override
-	public Boolean insert(Member entity) throws Exception {
+	public Boolean insert(Members entity) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectById(String id) throws Exception {
+	public Members selectById(String id) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Member> getAll() throws Exception {
+	public List<Members> getAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member update(Member newMember) {
+	public Members update(Members newMember) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectByLogin(String memberAcct, String password) {
+	public Members selectByLogin(String memberAcct, String password) {
 		final String sql = "select * from Member where memberAcct =:memberAcct and password =:password";
 		return getSession()
-				.createNativeQuery(sql, Member.class)
+				.createNativeQuery(sql, Members.class)
 				.setParameter("memberAcct", memberAcct)
 				.setParameter("password", password)
 				.uniqueResult();
 	}
 
 	@Override
-	public Member selectOneByMemberId(String memberId) {
+	public Members selectOneByMemberId(String memberId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectOneByMemberAcct(String memberAcct) {
+	public Members selectOneByMemberAcct(String memberAcct) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectManyByMemberId(String memberId) {
+	public Members selectManyByMemberId(String memberId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectManyByMemberAcct(String memberAcct) {
+	public Members selectManyByMemberAcct(String memberAcct) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectManyByMemberIdDate(String memberId, Timestamp regTime) {
+	public Members selectManyByMemberIdDate(String memberId, Timestamp regTime) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectManyByMemberIdRegStatusOpen(String memberId, String regStatusOpen) {
+	public Members selectManyByMemberIdRegStatusOpen(String memberId, String regStatusOpen) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Member selectByRecientPhoneNumDeliveryAddress(String lastRecipient, String lastPhoneNum,
+	public Members selectByRecientPhoneNumDeliveryAddress(String lastRecipient, String lastPhoneNum,
 			String lastDeliveryAddress) {
 		// TODO Auto-generated method stub
 		return null;
