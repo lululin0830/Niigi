@@ -5,12 +5,13 @@ import java.time.LocalDateTime;
 
 import com.google.gson.JsonObject;
 
+import orders.dao.impl.SubOrderDAOImpl;
 import suppliers.dao.impl.SupplierDAOImpl;
 import suppliers.service.SupplierService;
 
 public class SupplierServiceImpl implements SupplierService {
 
-	SupplierDAOImpl dao;
+	SupplierDAOImpl dao;	
 	
 	public SupplierServiceImpl(){
 		dao = new SupplierDAOImpl();
@@ -66,6 +67,23 @@ public class SupplierServiceImpl implements SupplierService {
 		try {
 			beginTransaction();
 			result = dao.getAllBySearch(searchcase, SearchSelect, startDate, closeDate, dateSelect);
+			commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	
+	@Override
+	public String supplierSubOrderFront() {
+		
+		String result = null;
+		SubOrderDAOImpl subOrderDAOImpl = new SubOrderDAOImpl();
+		
+		try {
+			beginTransaction();
+			result = subOrderDAOImpl.supplierSubOrderFront();
 			commit();
 		} catch (Exception e) {
 			e.printStackTrace();

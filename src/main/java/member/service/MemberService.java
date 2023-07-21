@@ -3,25 +3,25 @@ package member.service;
 import java.util.List;
 
 import core.service.CoreService;
-import member.entity.Member;
+import member.entity.Members;
 
 public interface MemberService extends CoreService {
 
 	// 註冊
-	public boolean register(Member newMember);
+	public boolean register(Members newMember);
 
 	// 登入
-	public boolean logIn (Member member);
+	public boolean logIn (Members member);
 
-	Member register(Member member);
+	Members register(Members member);
 
-	Member login(Member member);
+	Members login(Members member);
 
-	Member edit(Member member);
+	Members edit(Members member);
 
-	List<Member> findAll();
+	List<Members> findAll();
 
 	boolean remove(Integer id);
 
-	boolean save(Member member);
+	boolean save(Members member);
 }

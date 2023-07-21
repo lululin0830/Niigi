@@ -12,6 +12,7 @@
 		<property name="hibernate.highlight_sql">true</property>
 		
 		<!-- Mapping 範例 <mapping class="web.member.pojo.Member" /> -->
+		<mapping class="member.entity.Members"/>
 		<mapping class="orders.entity.MainOrder"/>
 		<mapping class="orders.entity.SubOrder"/>
 		<mapping class="orders.entity.SubOrderDetail"/>
