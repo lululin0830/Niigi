@@ -1,10 +1,19 @@
+const searchdata = JSON.stringify({
+    searchcase: document.getElementById("selectKey-home").value,
+    searchway: document.getElementById("selectCriteria-home").value,
+    StartDate: document.getElementById("startDate").value,
+    EndDate: document.getElementById("EndDate").value
+})
+
 const init = function () {
-    fetch('http://localhost:8080/Niigi/SubOrder', {
+    fetch('http://localhost:8080/Niigi/SupplierSubOrder', {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'
         }
-    }).then(r => r.json).then(data => {
+    }).then(r => r.json()).then(data => {
+        console.log(data)
+
         data.forEach(element => {
             `<li class="sub-order row">
         <div class="col-sm-4 order-select">
@@ -81,6 +90,7 @@ const init = function () {
             </li>
         </ul>
     </li>`
-        })
+        });
     })
 }
+init();

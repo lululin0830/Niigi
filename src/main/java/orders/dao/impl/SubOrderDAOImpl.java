@@ -13,6 +13,8 @@ import orders.dao.SubOrderDAO;
 import orders.entity.SubOrder;
 
 public class SubOrderDAOImpl implements SubOrderDAO {
+	
+	Gson gson = new Gson();
 
 	@Override
 	public Boolean insert(SubOrder entity) throws Exception {
@@ -69,17 +71,17 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 		String hql = "FROM SubOrder so JOIN SubOrderDetail sod ON so.subOrderId = sod.subOrderId WHERE so." + SearchSelect + " LIKE '%" + searchcase + "%' AND " + dateSelect + " between '" + startDate + "' AND '" + closeDate+"'" ;
 		Session session = getSession();
 		
-		System.out.println(searchcase);
-		System.out.println(SearchSelect);
-		System.out.println(startDate);
-		System.out.println(closeDate);
-		System.out.println(dateSelect);
+//		System.out.println(searchcase);
+//		System.out.println(SearchSelect);
+//		System.out.println(startDate);
+//		System.out.println(closeDate);
+//		System.out.println(dateSelect);
 		
 		Query<?> query = session.createQuery(hql);
 		List<?> list= query.getResultList();	
 		System.out.println("我走到查詢結果了");
 		
-		Gson gson = new Gson();
+		
 		String Result = gson.toJson(list);
 //		System.out.println(Result);
 		return Result;
@@ -94,7 +96,7 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 		Query<?> query = session.createQuery("FROM SubOrder so JOIN SubOrderDetail sod ON so.subOrderId = sod.subOrderId");
 		List<?> list = query.getResultList();
 		
-		Gson gson = new Gson();
+		
 		String result = gson.toJson(list);
 		
 		return result;
@@ -103,7 +105,7 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 	@Override
 	public String getSupplierSubOrderInit(String supplierId) {
 		
-		Gson gson = new Gson();
+		
 		Session session = getSession();
 		Query<?>query = session.createQuery("FROM SubOrder WHERE supplierId = :supplierId");
 		query.setParameter("supplierId", supplierId);
@@ -118,6 +120,14 @@ public class SubOrderDAOImpl implements SubOrderDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+	@Override
+	public String supplierSubOrderFront() {
+
+		return gson.toJson(getSession().createQuery("FROM SubOrder so JOIN Members mb ON so.memberId = mb.memberId").getResultList());
+	}
+	
 	
 	
 }

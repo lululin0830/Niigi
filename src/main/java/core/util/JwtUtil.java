@@ -50,7 +50,8 @@ public class JwtUtil {
 		return jwtToken;
 
 	}
-
+	
+	//Token驗證
 	public static boolean validateJwtToken(String jwtToken) {
 		try {
 			// 使用SecretKeySpec來產生用於驗證JWT簽名的Key

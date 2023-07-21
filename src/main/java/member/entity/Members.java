@@ -18,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Member implements java.io.Serializable{
+public class Members implements java.io.Serializable{
 
 	/**
 	 * 會員資料
@@ -66,7 +66,7 @@ public class Member implements java.io.Serializable{
 	@Column(insertable = false)
 	private String backupStatusOpen;
 	
-	public Member(String memberAcct, String password) {
+	public Members(String memberAcct, String password) {
 		this.memberAcct = memberAcct;
 		this.password = password;
 	}
