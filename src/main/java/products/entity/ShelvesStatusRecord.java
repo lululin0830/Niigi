@@ -19,7 +19,7 @@ public class ShelvesStatusRecord {
 
 	@Id
 	private String shelvesStatusId;
-	private String productId;
+	private Integer productId;
 	private String productSpecId;
 	private String shelvesMemberId;
 	private String statusModify;
