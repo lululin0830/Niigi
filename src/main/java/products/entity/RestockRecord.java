@@ -19,7 +19,7 @@ public class RestockRecord {
 
 	@Id
 	private String restockId;
-	private String productId;
+	private Integer productId;
 	private String productSpecId;
 	private String restockMemberId;
 	private Integer beforeRestockStock;
