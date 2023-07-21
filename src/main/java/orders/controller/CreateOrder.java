@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import lombok.experimental.var;
 import orders.dao.MainOrderDAO;
 import orders.dao.impl.MainOrderDAOImpl;
@@ -33,7 +36,7 @@ public class CreateOrder extends HttpServlet {
 		resp.setContentType("application/json; charset=utf-8");
 		resp.setStatus(HttpServletResponse.SC_OK);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -43,17 +46,20 @@ public class CreateOrder extends HttpServlet {
 		resp.setHeader("Access-Control-Allow-Credentials", "true");
 		resp.setContentType("application/json; charset=utf-8");
 
-		
-		
+		Gson gson = new Gson();
+		JsonObject orderData = gson.fromJson(req.getReader(), JsonObject.class);
+
 		OrderService orderService = new OrderServiceImpl();
-		
-		boolean state = orderService.createOrder(null);
 
+		boolean state = orderService.createOrder(orderData);
+
+		PrintWriter out = resp.getWriter();
 		if (state == true) {
-
 			System.out.println("成功");
-			PrintWriter out = resp.getWriter();
 			out.print("訂單成立！！");
+		} else {
+			System.out.println("失敗");
+			out.print("系統忙碌中");
 		}
 
 	}
