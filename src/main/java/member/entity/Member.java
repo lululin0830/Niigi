@@ -64,5 +64,10 @@ public class Member implements java.io.Serializable{
 	@Column(insertable = false)
 	private String regStatusOpen;
 	@Column(insertable = false)
-	private String backupStatusOpen;		
+	private String backupStatusOpen;
+	
+	public Member(String memberAcct, String password) {
+		this.memberAcct = memberAcct;
+		this.password = password;
+	}
 }
