@@ -280,4 +280,29 @@ public class OrderServiceImpl implements OrderService {
 		return result;
 
 	}
+
+	
+	//前台 商家訂單中心
+	@Override
+	public String getSupplierSubOrderInit(String supplierId) {
+		
+		String result = null;
+		try {
+			beginTransaction();
+			result = subOrderDAO.getSupplierSubOrderInit("");
+			comment();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public String getSupplierSubOrderSearch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
 }

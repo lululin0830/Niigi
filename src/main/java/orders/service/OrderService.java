@@ -28,4 +28,12 @@ public interface OrderService extends CoreService{
 	
 	//======================後台訂單列表區塊======================
 	
+	//======================前台商家訂單區塊======================
+	
+	public String getSupplierSubOrderInit(String supplierId);
+	
+	public String getSupplierSubOrderSearch();
+	
+	//======================前台商家訂單區塊======================
+	
 }
