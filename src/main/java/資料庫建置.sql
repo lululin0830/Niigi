@@ -21,12 +21,12 @@ DROP TABLE IF EXISTS Categorie;
 DROP TABLE IF EXISTS Blacklist;
 DROP TABLE IF EXISTS AccountSuspendRecord;
 DROP TABLE IF EXISTS SupplierMember;
-DROP TABLE IF EXISTS `Supplier`;
-DROP TABLE IF EXISTS `User`;
-DROP TABLE IF EXISTS `Member`;
+DROP TABLE IF EXISTS `Suppliers`;
+DROP TABLE IF EXISTS `Users`;
+DROP TABLE IF EXISTS `Members`;
 
 -- 會員資料表
-CREATE TABLE `Member` (
+CREATE TABLE `Members` (
   memberId CHAR(10) comment'會員編號' primary key,
   memberAcct VARCHAR(50) not null comment'會員帳號' unique,
   `password` VARCHAR(600) not null comment'密碼',
@@ -52,7 +52,7 @@ CREATE TABLE `Member` (
   backupStatusOpen ENUM('0','1') default('0') comment'備用信箱開通狀態：0未開通,1開通'
   )comment '會員資料表';
   
-INSERT INTO `Member` (memberId, memberAcct, `password`, phone, `name`, gender, birthday, memPointBalance, memPointMinExp, creditNum, creditExp, cvv, cardholder, regTime, banStatus, backupEmail, memberAddress, lastRecipient, lastPhoneNum, lastDeliveryAddress, regStatusOpen, backupStatusOpen)
+INSERT INTO `Members` (memberId, memberAcct, `password`, phone, `name`, gender, birthday, memPointBalance, memPointMinExp, creditNum, creditExp, cvv, cardholder, regTime, banStatus, backupEmail, memberAddress, lastRecipient, lastPhoneNum, lastDeliveryAddress, regStatusOpen, backupStatusOpen)
 VALUES
 ('M000000001', 'john@example.com', 'password123', '0912-345-678', '張三', '0', '1990-01-01', FLOOR(RAND()*900)+100, '2023-8-31', '1234567812345678', '1025', '123', 'WANG, SIAO-MING', NOW(), '0', 'backup1@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小美', '0987-654-321', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
 ('M000000002', 'mary@example.com', 'password456', '0922-345-678', '李四', '1', '1995-05-15', FLOOR(RAND()*900)+100, '2023-8-14', '2345678923456789', '1025', '456', 'LEE, YUAN-HUA', NOW(), '0', 'backup2@example.com', '104 台北市 中山區 南京東路三段219號5樓', '張小明', '0912-987-654', '104 台北市 中山區 南京東路三段219號5樓', '1', '1'),
@@ -72,7 +72,7 @@ VALUES
 ('M000000016', 'jocker10113@gmail.com', 'password06', '0921-123-678', '廖韋豪', '0', '1999-05-13', FLOOR(RAND()*900)+100, '2023-8-2', '4617760212345681', '1228', '613', 'LIAO WEI-HAO', NOW(), '0', 'backup10@example.com', '104 台北市 中山區 南京東路三段219號5樓', '王小明', '0912-123-456', '104 台北市 中山區 南京東路三段219號5樓', '1', '1');
   
 -- 平台使用者
-CREATE TABLE `User` (
+CREATE TABLE `Users` (
   userId INT auto_increment comment'使用者編號' primary key,
   userName VARCHAR(15) not null comment'使用者名稱',
   userAcct VARCHAR(15) not null comment'使用者帳號',
@@ -83,7 +83,7 @@ CREATE TABLE `User` (
   hrAuthority ENUM('0','1')  default('0') comment'人事權限'
 )auto_increment=10001 comment '平台使用者';
 
-INSERT INTO `User` (userName, userAcct, `password`, financialAuthority, customerServiceAuthority, marketingAuthority, hrAuthority)
+INSERT INTO `Users` (userName, userAcct, `password`, financialAuthority, customerServiceAuthority, marketingAuthority, hrAuthority)
 VALUES
 ('jeffrey', 'jeffrey', 'password01', '1', '1', '1', '1'),
 ('lulu', 'lulu', 'password02', '1', '1', '1', '1'),
@@ -97,7 +97,7 @@ VALUES
 ('Sarah Brown', 'sarah', 'password123456', '0', '0', '0', '1');
 
 -- 商家資料表
-CREATE TABLE `Supplier` (
+CREATE TABLE `Suppliers` (
   `supplierId` CHAR(10) COMMENT '商家編號',
   `supplierMemberAcct` VARCHAR(50) NOT NULL COMMENT '商家帳號',
   `businessId` CHAR(8) COMMENT '統一編號',
@@ -127,7 +127,7 @@ CREATE TABLE `Supplier` (
 ) COMMENT '商家資料表';
 
 
-INSERT INTO `Supplier` (supplierId, supplierMemberAcct, businessId, ownerId, supplierAddress, bankCode, bankAcct, shopName, shopInfo, logo, shopBackground,approvalStatus, approvalRemark, enableTime)
+INSERT INTO `Suppliers` (supplierId, supplierMemberAcct, businessId, ownerId, supplierAddress, bankCode, bankAcct, shopName, shopInfo, logo, shopBackground,approvalStatus, approvalRemark, enableTime)
 VALUES
 ('S000000001', 'lululin0830@gmail.com', '12868358', 'A222212345', '104 台北市 中山區 南京東路三段219號5樓', '004', '142004254382', 'THE BEST', 'High Quality', NULL, NULL,'0', NULL, '2023-05-05 00:00:00'),
 ('S000000002', 'anthony963741@gmail.com', '24708053', 'A123456789', '104 台北市 中山區 南京東路三段219號5樓', '833', '87273837489506', '好好買', '應有盡有', NULL, NULL,'0', NULL, '2023-05-05 00:00:00'),
